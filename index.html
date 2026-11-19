@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fundament 22 — základy firmy pro 22. století</title>
+<meta name="description" content="Hotový AI podvozek firmy: firemní mozek a agenti postavení na Claude. Agent navrhuje, člověk schvaluje. První funkční případ do týdne.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://adamku8.github.io/fundament22/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:title" content="Fundament 22 — základy firmy pro 22. století">
+<meta property="og:description" content="Hotový AI podvozek firmy: firemní mozek a agenti postavení na Claude. Agent navrhuje, člověk schvaluje. První funkční případ do týdne.">
+<meta property="og:url" content="https://adamku8.github.io/fundament22/">
+<meta property="og:image" content="https://adamku8.github.io/fundament22/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F7F5F0">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" href="assets/fonts/PlusJakartaSans-latin-ext-4.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/DMSans-latin-ext-0.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/site.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"Fundament 22","url":"https://adamku8.github.io/fundament22/","inLanguage":"cs"},
+{"@type":"Service","name":"Fundament 22 — AI podvozek firmy","description":"Hotový AI podvozek firmy: firemní mozek a agenti postavení na Claude. Agent navrhuje, člověk schvaluje. První funkční případ do týdne.","areaServed":"CZ","provider":{"@type":"Organization","name":"Fundament 22","url":"https://adamku8.github.io/fundament22/"}}
+]}
+</script>
+</head>
+<body>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; color: #15183A; background: #F7F5F0; width: 100%; overflow: hidden;">
+
+<!-- NAV -->
+<header style="position: sticky; top: 0; z-index: 20; background: rgba(247,245,240,.82); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(21,24,58,.08);">
+<div style="height: 3px; background: linear-gradient(90deg, #FF9A3D, #E8442A 45%, #C8327E 75%, #6D3BD6);"></div>
+<nav class="lc-nav" style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+<div style="display: flex; align-items: center; gap: 14px;">
+<a href="#top" aria-label="Fundament 22" style="display: flex; align-items: center; gap: 10px;"><svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true" style="display: block;"><rect width="28" height="28" rx="8" fill="#E8541A"></rect><path d="M9.5 18.5L18.5 9.5" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round"></path><circle cx="9.5" cy="18.5" r="3.6" fill="#FFFFFF"></circle><circle cx="18.5" cy="9.5" r="3.6" fill="#15183A"></circle></svg><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; letter-spacing: -.02em; color: #15183A;">Fundament 22</span></a>
+<span style="width: 1px; height: 20px; background: rgba(21,24,58,.18);"></span>
+<span style="font-size: 14px; color: #4A4E6E;">Základy firmy pro 22. století.</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; font-size: 14px;">
+<a class="lc-navlink" href="#mozek" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">Mozek</a>
+<a class="lc-navlink" href="#agenti" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">Agenti</a>
+<a class="lc-navlink" href="#noc" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">V noci</a>
+<a class="lc-navlink" href="#postup" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">Postup</a>
+<a class="lc-navlink" href="#cena" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">Cena</a>
+<a class="lc-navlink" href="#demo" style="color: #4A4E6E; padding: 10px 12px; border-radius: 8px;">Demo</a>
+<a class="lc-btn" href="https://calendar.app.google/v39ka3uchSRSSG2AA" style="margin-left: 8px; background: #15183A; color: #FFFFFF; font-weight: 700; padding: 11px 18px; border-radius: 10px;">Domluvit workshop</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section id="top" style="position: relative; padding: 96px 24px 0;">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: -260px; width: 1200px; height: 760px; transform: translateX(-50%); background: none; pointer-events: none;"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 26px;">
+<div class="lc-in1" style="display: inline-flex; align-items: center; gap: 10px; padding: 6px 14px 6px 6px; border-radius: 999px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; font-size: 13px; color: #4A4E6E; box-shadow: 0 4px 20px rgba(21,24,58,.06);">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .08em; background: #E8541A; color: #FFFFFF; padding: 4px 9px; border-radius: 999px; font-weight: 500;">POSTAVENO NA SOBĚ</span>
+<span>Živá firma + agenti, kteří pracují jako lidé</span>
+</div>
+<h1 class="lc-in2" style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(42px, 7vw, 84px); line-height: 1.02; letter-spacing: -.035em; max-width: 980px; color: #15183A;">Základy firmy<br><span style="color: #E8541A;">pro 22. století.</span></h1>
+<p class="lc-in3" style="margin: 0; font-size: clamp(17px, 2vw, 21px); line-height: 1.55; color: #4A4E6E; max-width: 680px;">Hotový AI podvozek firmy. Postaveno na Claude. Zapsané know-how vaší firmy a agenti, kteří s ním pracují — i v noci, když u toho nikdo nesedí. Ráno vám nechají hotovou práci ke schválení.</p>
+<div class="lc-in4" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+<a class="lc-btn" href="https://calendar.app.google/v39ka3uchSRSSG2AA" style="background: #E8541A; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 15px 24px; border-radius: 12px; box-shadow: 0 10px 36px rgba(232,84,26,.3);">Začít workshopem</a>
+<a href="#demo" style="color: #15183A; font-weight: 600; font-size: 16px; padding: 15px 24px; border-radius: 12px; border: 1px solid rgba(21,24,58,.16); background: #FFFFFF;">Podívat se na demo</a>
+</div>
+<div class="lc-in4" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 22px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #6B6F8F; letter-spacing: .04em;">
+<span>● vaše know-how zůstává u vás</span><span>● agent navrhuje, člověk schvaluje</span><span>● první funkční případ do týdne</span>
+</div>
+<div class="lc-in4" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 26px; margin-top: 6px;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #6B6F8F;">BĚŽÍ VE FIRMÁCH</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #4A4E6E;">EXPANDO</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #4A4E6E;">LOCO</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #4A4E6E;">Ecomail</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; color: #4A4E6E;">DMARCeye</span></div>
+
+<!-- Product mock: ranní fronta -->
+<div class="lc-in5" style="margin-top: 36px; width: 100%; max-width: 1040px; text-align: left; border-radius: 18px 18px 0 0; padding: 1px 1px 0; background: rgba(21,24,58,.18); color: #F3F1FA;">
+<div style="border-radius: 17px 17px 0 0; background: #10143A; overflow: hidden; box-shadow: 0 40px 120px rgba(21,24,58,.35);">
+<div style="display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,.07); background: #0D1133;">
+<span style="width: 11px; height: 11px; border-radius: 50%; background: #3A3F6B;"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #3A3F6B;"></span><span style="width: 11px; height: 11px; border-radius: 50%; background: #3A3F6B;"></span>
+<span style="margin-left: 12px; font-size: 12px; color: #9DA1C4; background: rgba(255,255,255,.05); padding: 4px 12px; border-radius: 6px;">Slack · vaše-firma</span>
+<span style="margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #9DA1C4;">ukázková data</span>
+</div>
+<div style="display: flex; flex-wrap: wrap;">
+<div style="flex: 1 1 200px; max-width: 240px; padding: 18px 14px; border-right: 1px solid rgba(255,255,255,.07); display: flex; flex-direction: column; gap: 4px; font-size: 14px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #8E93BA; padding: 0 10px 8px;">KANÁLY</div>
+<div style="display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; border-radius: 8px; background: rgba(255,122,47,.14); color: #FFFFFF; font-weight: 600;"><span># ranní-fronta</span><span style="font-size: 11px; background: #FF7A2F; color: #1A0E05; border-radius: 999px; padding: 1px 7px; font-weight: 700;">4</span></div>
+<div style="padding: 8px 10px; color: #A9ADCB;"># obchod</div>
+<div style="padding: 8px 10px; color: #A9ADCB;"># vývoj</div>
+<div style="padding: 8px 10px; color: #A9ADCB;"># support</div>
+<div style="padding: 8px 10px; color: #A9ADCB;"># mozek-návrhy</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #8E93BA; padding: 16px 10px 8px;">AGENTI</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; color: #C9CCE6;"><span class="lc-live" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97;"></span>Kurátor</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; color: #C9CCE6;"><span class="lc-live" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97;"></span>Obchod</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; color: #C9CCE6;"><span class="lc-live" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97;"></span>Vývoj</div>
+<div style="display: flex; align-items: center; gap: 8px; padding: 6px 10px; color: #C9CCE6;"><span class="lc-live" style="width: 8px; height: 8px; border-radius: 50%; background: #3DDC97;"></span>Support</div>
+</div>
+<div style="flex: 999 1 420px; min-width: 0; padding: 18px 22px; display: flex; flex-direction: column; gap: 18px;">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 17px;"># ranní-fronta</div>
+<div style="font-size: 12px; color: #9DA1C4;">Čtvrtek 7:12 · nic neodešlo bez vás</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<div style="flex: 0 0 36px; height: 36px; border-radius: 10px; background: #6D3BD6; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px;">K</div>
+<div style="flex: 1; min-width: 0;">
+<div style="font-size: 14px;"><b>Kurátor</b> <span style="color: #8E93BA; font-size: 12px;">07:02</span></div>
+<div style="font-size: 14.5px; color: #D9DBEF; line-height: 1.5; margin-top: 2px;">Z inboxu jsem do mozku zapsal 4 věci. Jedna si odporuje s CRM: <span style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; background: rgba(255,255,255,.07); padding: 1px 6px; border-radius: 4px; color: #FFB872;">pravidla.md</span> × ceník. Rozhodnete?</div>
+<div style="display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap;"><span style="font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 8px; background: #FF7A2F; color: #1A0E05;">Schválit 3</span><span style="font-size: 13px; padding: 7px 12px; border-radius: 8px; border: 1px solid rgba(255,255,255,.14); color: #D9DBEF;">Otevřít rozpor</span></div>
+</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<div style="flex: 0 0 36px; height: 36px; border-radius: 10px; background: #FF9A3D; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #1A0E05;">O</div>
+<div style="flex: 1; min-width: 0;">
+<div style="font-size: 14px;"><b>Obchod</b> <span style="color: #8E93BA; font-size: 12px;">06:45</span></div>
+<div style="font-size: 14.5px; color: #D9DBEF; line-height: 1.5; margin-top: 2px;">Follow-upy na rozjednané obchody jsou připravené jako drafty v CRM. Ke každému jsem přidal, o čem byla poslední řeč.</div>
+</div>
+</div>
+<div style="display: flex; gap: 12px;">
+<div style="flex: 0 0 36px; height: 36px; border-radius: 10px; background: #2F7BF0; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px;">V</div>
+<div style="flex: 1; min-width: 0;">
+<div style="font-size: 14px;"><b>Vývoj</b> <span style="color: #8E93BA; font-size: 12px;">03:10</span></div>
+<div style="font-size: 14.5px; color: #D9DBEF; line-height: 1.5; margin-top: 2px;">Noční kontrola logů: dvě chyby → dva tickety. Na jeden už je pull request, čeká na review.</div>
+</div>
+</div>
+<div style="display: flex; gap: 12px; padding: 12px; border-radius: 12px; background: rgba(255,154,61,.07); border: 1px dashed rgba(255,154,61,.35);">
+<div style="flex: 0 0 36px; height: 36px; border-radius: 10px; background: #3DDC97; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; color: #062018;">S</div>
+<div style="flex: 1; min-width: 0;">
+<div style="font-size: 14px;"><b>Support</b> <span style="color: #8E93BA; font-size: 12px;">01:38</span> <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .08em; color: #FFB872; margin-left: 6px;">NEVÍM</span></div>
+<div style="font-size: 14.5px; color: #D9DBEF; line-height: 1.5; margin-top: 2px;">K reklamaci po lhůtě v mozku nic není. Neodpověděl jsem — nechávám to na vás a navrhuju pravidlo dopsat.</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- QUESTION BAND (dark) -->
+<section style="padding: 88px 24px; background: #10143A; color: #F3F1FA;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; justify-content: space-between;">
+<div style="flex: 1 1 560px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #FF9A3D; margin-bottom: 18px;">OTÁZKA NA ZAČÁTEK</div>
+<p style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: clamp(28px, 4vw, 46px); line-height: 1.12; letter-spacing: -.02em;">Kolik věcí u vás dneska běží, aniž by u toho <span style="color: #FF9A3D;">někdo seděl?</span></p>
+</div>
+<p style="flex: 1 1 320px; margin: 0; font-size: 17px; line-height: 1.6; color: #A9ADCB;">Skoro všude je odpověď „nic". S AI dnes pracuje skoro každý — ale končí to u jednotlivců. Každý si pomáhá sám a firma si z toho nic neuloží.</p>
+</div>
+<div style="max-width: 1200px; margin: 48px auto 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.1); border-radius: 18px; overflow: hidden;">
+<div style="padding: 28px 30px; background: #10143A; display: flex; flex-direction: column; gap: 8px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -.03em; color: #FF6A2A;">3,2 h</div>
+<div style="font-size: 15.5px; color: #E6E7F5; line-height: 1.45;">týdně stráví člověk hledáním informací, které firma někde má</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8E93BA; margin-top: 6px;">Slite, Enterprise Search Survey 2025</div>
+</div>
+<div style="padding: 28px 30px; background: #10143A; display: flex; flex-direction: column; gap: 8px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -.03em; color: #FF6A2A;">79 %</div>
+<div style="font-size: 15.5px; color: #E6E7F5; line-height: 1.45;">firem drží znalost ve dvou a více systémech — a žádný z nich není ten „pravý"</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8E93BA; margin-top: 6px;">Slite, The Company Brain 2026</div>
+</div>
+<div style="padding: 28px 30px; background: #10143A; display: flex; flex-direction: column; gap: 8px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -.03em; color: #FF6A2A;">17 %</div>
+<div style="font-size: 15.5px; color: #E6E7F5; line-height: 1.45;">firem má firemní mozek, který opravdu funguje. Zbytek má wiki, do které nikdo nepíše</div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8E93BA; margin-top: 6px;">Slite, The Company Brain 2026</div>
+</div>
+</div>
+<p style="max-width: 1200px; margin: 14px auto 0; font-size: 13px; color: #8E93BA;">Cizí průzkumy, ne naše měření. Na workshopu si to přepočítáme ve vašich číslech.</p>
+</section>
+
+<!-- DEMO (light) -->
+<section id="demo" style="padding: 104px 24px; background: #F7F5F0; border-top: 1px solid rgba(21,24,58,.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="max-width: 800px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">UKÁZKA</div><h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Takhle může vypadat přehled vaší firmy. Nasadíme za pár minut.</h2><p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Zelená bedýnka je vymyšlený e-shop s ovocem a zeleninou — 16 lidí, Shoptet, Fakturoid, Pipedrive, Freshdesk, Ecomail, Slack a Claude. Data jsou fiktivní, přehledy a návrhy agentů vypadají stejně jako u nás.</p></div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px;"><a href="https://claude.ai/artifact/5cwbqqFPDAZBFaTwHyiR94" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">PF</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Přehled firmy</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Dnešní stav celé firmy pro celý tým</span></span></a><a href="https://claude.ai/artifact/2QEaQTMXJBWbUeykwEHfPn" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">OB</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Objednávky</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Objednávky po dnech, kapacita rozvozu</span></span></a><a href="https://claude.ai/artifact/DmtZG9yeHKrj3NdRS2HqsZ" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">FI</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Finance</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">P&L, cash, faktury po splatnosti</span></span></a><a href="https://claude.ai/artifact/M6nN9WB4M4NTkrHxpkvkYH" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">PR</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Produkty</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Zásoby, odpis, nákupní návrhy</span></span></a><a href="https://claude.ai/artifact/3AaYgzVv2kPSj9227A2GSr" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">SU</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Support</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Tikety a návrhy odpovědí</span></span></a><a href="https://claude.ai/artifact/KEQEEPrhB2rNg6htQ8x9T6" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">KL</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Klienti</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Segmenty, odchody, B2B obchod</span></span></a><a href="https://claude.ai/artifact/8khf7z3YkZTzmvFXjbfyDs" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">MA</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">Marketing</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Výkon kanálů, přesuny rozpočtu</span></span></a><a href="https://claude.ai/artifact/Dk3MupU3rh2HhLvQcJbw2G" class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF; color: inherit;"><span style="flex: 0 0 40px; height: 40px; border-radius: 10px; background: #FFF0E6; color: #C2410C; display: flex; align-items: center; justify-content: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 14px;">CE</span><span style="display: flex; flex-direction: column; gap: 2px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 16px; color: #15183A;">CEO</b><span style="font-size: 13.5px; line-height: 1.45; color: #4A4E6E;">Jen pro vedení: týden, cíle, rozhodnutí</span></span></a></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;"><a class="lc-btn" href="https://claude.ai/artifact/XfPjf2XopGAoyADtrRPvjM" style="background: #15183A; color: #FFFFFF; font-weight: 700; font-size: 16px; padding: 15px 24px; border-radius: 12px;">Otevřít demo</a><span style="font-size: 14px; color: #4A4E6E;">Každý přehled má frontu „Ke schválení“: agent navrhuje, člověk schvaluje.</span></div>
+</div>
+</section>
+
+<!-- CENA (white) -->
+<section id="cena" style="padding: 104px 24px; background: #FFFFFF; border-top: 1px solid rgba(21,24,58,.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px;">
+<div style="max-width: 800px;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">NABÍDKA</div><h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Základy, patra, servis.</h2><p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Nasadíme vám rovnou náš nejlepší setup a naučíme vás s ním pracovat. Nejdřív to musí fungovat na jedné úloze, pak stavíme dál.</p></div>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: stretch;"><div class="lc-card" style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 18px; border: 1px solid rgba(21,24,58,.12); background: #15183A; color: #F3F1FA;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #FF9A3D;">1 · ZÁKLADY</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Úvodní setup</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 38px; letter-spacing: -.03em; line-height: 1.1;">50 000 Kč</div><div style="font-size: 13px; color: #C9CCE6;">workshop 30 000 Kč + první funkční případ 20 000 Kč</div><div style="font-size: 15px; line-height: 1.55; color: #C9CCE6;">Na workshopu u vás založíme mozek, napojíme jeden systém a uděláme diagnózu, kde to nejvíc pálí. Do týdne běží první případ: Claude a první automatizace na úloze, kterou jsme spolu vybrali.</div></div><div class="lc-card" style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 18px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0; color: #15183A;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #C2410C;">2 · PATRA</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Další agenti a oddělení</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 38px; letter-spacing: -.03em; line-height: 1.1;">podle hodin</div><div style="font-size: 13px; color: #4A4E6E;">po jednom, jak je potřebujete</div><div style="font-size: 15px; line-height: 1.55; color: #3A3E5E;">Na základy stavíme další patra: agenty, skilly a přehledy pro obchod, support, finance nebo marketing. Základ už stojí, takže jde o nastavení, ne o další projekt.</div></div><div class="lc-card" style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 10px; padding: 26px; border-radius: 18px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0; color: #15183A;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #C2410C;">3 · SERVIS</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">AI interim pro vaši firmu</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 38px; letter-spacing: -.03em; line-height: 1.1;">měsíčně</div><div style="font-size: 13px; color: #4A4E6E;">rozsah domluvíme po základech</div><div style="font-size: 15px; line-height: 1.55; color: #3A3E5E;">Staráme se, aby to běželo, a vedeme vás novinkami v AI. Co se osvědčí u nás, nasadíme i u vás.</div></div></div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 32px; padding: 26px 30px; border-radius: 20px; background: #FFF0E6; border: 1px solid #FFC9A3;"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(26px, 3vw, 34px); letter-spacing: -.02em; color: #15183A;">Nasadíme systém, který už běží.</div><p style="flex: 1 1 320px; margin: 0; font-size: 16px; line-height: 1.55; color: #3A3E5E;">Nestavíme od nuly. Stejný mozek, skilly a přehledy používáme ve firmách EXPANDO, LOCO, Ecomail a DMARCeye. U vás je jen naroubujeme a napojíme.</p></div>
+</div>
+</section>
+
+<!-- COMPARISON (light) -->
+<section style="padding: 104px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<div style="max-width: 760px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">KDE JE PŘÍLEŽITOST</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Rozdíl není v tom, jakou AI máte. Je v tom, jak daleko ji pustíte.</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch;">
+<div style="flex: 1 1 380px; border-radius: 20px; border: 1px solid rgba(21,24,58,.1); background: #FFFFFF; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #4A4E6E; border: 1px solid rgba(21,24,58,.16); padding: 5px 10px; border-radius: 999px;">CO SE DĚJE DNES</span>
+<div style="display: flex; flex-direction: column; gap: 14px; font-size: 16px; color: #3A3E5E;">
+<div>— Každý si pomáhá sám: rychleji píše, rychleji hledá</div>
+<div>— Co jeden vyřeší, ostatní se nedozví</div>
+<div>— Nikde není zapsané, co u vás platí a proč</div>
+<div>— Firma jede stejně jako dřív, jen lidi jsou rychlejší</div>
+</div>
+<div style="margin-top: auto; padding-top: 18px; border-top: 1px solid rgba(21,24,58,.08); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 26px; color: #8E93BA;">+ lineárně</span><span style="font-size: 14px; color: #6B6F8F;">Přírůstek roste s počtem lidí.</span></div>
+</div>
+<div style="flex: 1 1 380px; border-radius: 20px; padding: 1px; background: linear-gradient(150deg, #FF9A3D, #E8442A 40%, #C8327E);">
+<div style="height: 100%; box-sizing: border-box; border-radius: 19px; background: #15183A; color: #F3F1FA; padding: 32px; display: flex; flex-direction: column; gap: 18px;">
+<span style="align-self: flex-start; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #1A0E05; background: #FF9A3D; padding: 5px 10px; border-radius: 999px;">S MOZKEM A AGENTY</span>
+<div style="font-size: 20px; color: #8E93BA; text-decoration: line-through;">Psát rychleji.</div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(34px, 4vw, 48px); line-height: 1; letter-spacing: -.03em; color: #FF9A3D;">Autonomie.</div>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #D9DBEF;">Když agent ví, co u vás platí, začnete práci násobit. Kapacita roste — a lidi přibývat nemusí.</p>
+<div style="margin-top: auto; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 17px; color: #FFFFFF;">Neprodáváme školení. Nasadíme vám rovnou to nejlepší, co umíme, naučíme vás s tím pracovat a dál vás vedeme AI novinkami.</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MOZEK HUB (dark) -->
+<section id="mozek" style="position: relative; padding: 104px 24px; background: #10143A; color: #F3F1FA;">
+<div aria-hidden="true" style="position: absolute; left: 50%; top: 50%; width: 900px; height: 600px; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(255,122,47,.16), rgba(16,20,58,0)); pointer-events: none;"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
+<div style="flex: 1 1 560px; max-width: 720px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #FF9A3D; margin-bottom: 14px;">JAK TO MÁME MY</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Jeden zdroj pravdy. Čtou z něj lidi i agenti.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #A9ADCB;">Kontext se mezi lidmi a agenty sdílí hned. V každém okamžiku víte, co se děje a jak na tom firma je. Tohle není návrh — stojí na tom naše vlastní firma.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); color: #C9CCE6;">mozek v gitu</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); color: #C9CCE6;">agenti ve Slacku</span>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,.16); color: #C9CCE6;">práce přes stav úkolu</span>
+</div>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px;">
+<div style="flex: 1 1 220px; max-width: 260px; display: flex; flex-direction: column; gap: 10px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #8E93BA; margin-bottom: 4px;">KDE VZNIKÁ PRÁCE</div>
+<div class="lc-dcard" style="padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); font-weight: 600; display: flex; justify-content: space-between;"><span>Slack / Teams</span><span style="color: #FF9A3D;">→</span></div>
+<div class="lc-dcard" style="padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); font-weight: 600; display: flex; justify-content: space-between;"><span>CRM</span><span style="color: #FF9A3D;">→</span></div>
+<div class="lc-dcard" style="padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); font-weight: 600; display: flex; justify-content: space-between;"><span>Tickety</span><span style="color: #FF9A3D;">→</span></div>
+<div class="lc-dcard" style="padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); font-weight: 600; display: flex; justify-content: space-between;"><span>Web a data</span><span style="color: #FF9A3D;">→</span></div>
+<div class="lc-dcard" style="padding: 14px 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); font-weight: 600; display: flex; justify-content: space-between;"><span>Dokumenty</span><span style="color: #FF9A3D;">→</span></div>
+</div>
+
+<div class="lc-link" aria-hidden="true" style="flex: 1 1 40px; max-width: 90px; height: 2px; background: linear-gradient(90deg, rgba(255,154,61,.1), #FF9A3D); border-radius: 2px;"></div>
+
+<div style="flex: 0 1 340px; display: flex; justify-content: center;">
+<div style="position: relative; width: 320px; height: 320px;">
+<div class="lc-ring" aria-hidden="true" style="position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(from 0deg, #FFB25C, #FF6A2A, #E0407E, #6D3BD6, #2F7BF0, #FFB25C);"></div>
+<div aria-hidden="true" style="position: absolute; inset: -40px; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,106,42,.3), rgba(16,20,58,0));"></div>
+<div style="position: absolute; inset: 4px; border-radius: 50%; background: radial-gradient(circle at 50% 35%, #1E1A4A, #10143A 70%); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 30px; box-sizing: border-box;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: .16em; color: #FF9A3D;">JEDEN ZDROJ PRAVDY</div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 46px; letter-spacing: -.03em;">Mozek</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 220px;">
+<span style="font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #D9DBEF;">Profil</span>
+<span style="font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #D9DBEF;">Pravidla</span>
+<span style="font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #D9DBEF;">Rozhodnutí</span>
+<span style="font-size: 12px; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.2); color: #D9DBEF;">Zákazníci</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="lc-link" aria-hidden="true" style="flex: 1 1 40px; max-width: 90px; height: 2px; background: linear-gradient(90deg, #E0407E, rgba(224,64,126,.1)); border-radius: 2px;"></div>
+
+<div style="flex: 1 1 300px; max-width: 380px; display: flex; flex-direction: column; gap: 14px;">
+<div class="lc-dcard" style="padding: 22px; border-radius: 16px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05);">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 6px;">Lidi</div>
+<div style="font-size: 15px; line-height: 1.55; color: #A9ADCB;">Ptají se, zadávají a schvalují. Nic nehledají — čtou ze stejného místa.</div>
+</div>
+<div class="lc-dcard" style="padding: 22px; border-radius: 16px; border: 1px solid rgba(255,154,61,.4); background: linear-gradient(150deg, rgba(255,122,47,.18), rgba(200,50,126,.08));">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; margin-bottom: 6px; color: #FF9A3D;">Agenti</div>
+<div style="font-size: 15px; line-height: 1.55; color: #D9DBEF;">Čtou totéž a dělají z toho práci. Než něco udělají, přečtou si, co platí.</div>
+</div>
+</div>
+</div>
+
+<p style="margin: 0; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px);">Zeptejte se své firmy, jak se jí daří. Odpoví hned.</p>
+</div>
+</section>
+
+<!-- AGENTI: oddělení (light) -->
+<section id="agenti" style="padding: 104px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="max-width: 760px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">CO NA TOM JEDE</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Na tom podvozku pak jedou jednotlivá oddělení.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Tohle u nás běží dnes. Další agenti přibývají po jednom — základ už stojí, takže je to otázka nastavení, ne dalšího projektu.</p>
+</div>
+<div style="border-top: 1px solid rgba(21,24,58,.12);">
+<div class="lc-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 24px 8px; border-bottom: 1px solid rgba(21,24,58,.12);">
+<div style="flex: 1 1 280px; display: flex; gap: 16px; align-items: center;">
+<div style="flex: 0 0 44px; height: 44px; border-radius: 12px; background: #E6F8F0; border: 1px solid #A8E6CB; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#17875E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
+<div><div style="display: flex; align-items: center; gap: 10px;"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Support</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; background: #15183A; color: #FFFFFF; padding: 3px 7px; border-radius: 4px;">BĚŽÍ U NÁS</span></div><div style="font-size: 14.5px; color: #6B6F8F; margin-top: 3px;">Administrativa kolem tiketů, než se toho chytne člověk.</div></div>
+</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Podklady k tiketu předem</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Řekne „nevím", když neví</div>
+</div>
+<div class="lc-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 24px 8px; border-bottom: 1px solid rgba(21,24,58,.12);">
+<div style="flex: 1 1 280px; display: flex; gap: 16px; align-items: center;">
+<div style="flex: 0 0 44px; height: 44px; border-radius: 12px; background: #FFF0E6; border: 1px solid #FFC9A3; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8541A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><path d="M7 15l4-4 3 3 5-6"></path></svg></div>
+<div><div style="display: flex; align-items: center; gap: 10px;"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Obchod</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; background: #15183A; color: #FFFFFF; padding: 3px 7px; border-radius: 4px;">BĚŽÍ U NÁS</span></div><div style="font-size: 14.5px; color: #6B6F8F; margin-top: 3px;">Obchodník mluví s klienty, ne s formulářem.</div></div>
+</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Zápisy z callů a follow-upy</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Hlídá pipeline a pořádek v CRM</div>
+</div>
+<div class="lc-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 24px 8px; border-bottom: 1px solid rgba(21,24,58,.12);">
+<div style="flex: 1 1 280px; display: flex; gap: 16px; align-items: center;">
+<div style="flex: 0 0 44px; height: 44px; border-radius: 12px; background: #FCE9F1; border: 1px solid #F4B3CF; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C8327E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"></path></svg></div>
+<div><div style="display: flex; align-items: center; gap: 10px;"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Marketing</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; background: #15183A; color: #FFFFFF; padding: 3px 7px; border-radius: 4px;">BĚŽÍ U NÁS</span></div><div style="font-size: 14.5px; color: #6B6F8F; margin-top: 3px;">Témata a podklady připravené, než je někdo hledá.</div></div>
+</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Podklady na obsah</div>
+<div style="flex: 1 1 220px; font-size: 15px; color: #3A3E5E;"><span style="color: #E8541A;">●</span> Píše v hlasu firmy z mozku</div>
+</div>
+<div class="lc-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; padding: 24px 8px; border-bottom: 1px solid rgba(21,24,58,.12);">
+<div style="flex: 1 1 280px; display: flex; gap: 16px; align-items: center;">
+<div style="flex: 0 0 44px; height: 44px; border-radius: 12px; background: #EFEAFD; border: 1px solid #C9B8F7; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6D3BD6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg></div>
+<div><div style="display: flex; align-items: center; gap: 10px;"><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Vývoj</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .08em; background: #E8541A; color: #FFFFFF; padding: 3px 7px; border-radius: 4px;">SMYČKA</span></div><div style="font-size: 14.5px; color: #6B6F8F; margin-top: 3px;">Nejdál to došlo tady.</div></div>
+</div>
+<div style="flex: 2 1 460px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 13.5px;">
+<span style="padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(21,24,58,.18); background: #FFFFFF; color: #3A3E5E;">Vezme ticket</span><span style="color: #E8541A;">▸</span>
+<span style="padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(21,24,58,.18); background: #FFFFFF; color: #3A3E5E;">Kód</span><span style="color: #E8541A;">▸</span>
+<span style="padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(21,24,58,.18); background: #FFFFFF; color: #3A3E5E;">Testy</span><span style="color: #E8541A;">▸</span>
+<span style="padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(21,24,58,.18); background: #FFFFFF; color: #3A3E5E;">Pull request</span><span style="color: #E8541A;">▸</span>
+<span style="padding: 7px 12px; border-radius: 999px; border: 1px solid #E8541A; background: #FFF0E6; color: #C2410C; font-weight: 600;">↻ Další ticket</span>
+</div>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px;">
+<div style="flex: 1 1 380px; padding: 26px 28px; border-radius: 18px; border: 1px solid #A8E6CB; background: #FFFFFF;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #17875E; margin-bottom: 14px;">CO U NÁS BĚŽÍ</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #3A3E5E; line-height: 1.5;">
+<div>✓ Mozek v gitu s denním kurátorem, který publikuje z fronty návrhů</div>
+<div>✓ Agenti ve Slacku pro obchod, support, marketing a vývoj</div>
+<div>✓ Každý ticket = izolovaná session agenta → branch → pull request</div>
+<div>✓ Mozek čitelný odkudkoli přes MCP, skilly na vkládání znalosti</div>
+</div>
+</div>
+<div style="flex: 1 1 380px; padding: 26px 28px; border-radius: 18px; border: 1px solid #FFC9A3; background: #FFF8F2;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #C2410C; margin-bottom: 14px;">CO JEŠTĚ LADÍME — ŘÍKÁME TO NAHLAS</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 15px; color: #3A3E5E; line-height: 1.5;">
+<div>○ Samovolný přítok do mozku ze Slacku, CRM a tiketů</div>
+<div>○ Předávání práce mezi agenty bez člověka uprostřed</div>
+<div>○ Sémantické hledání nad mozkem</div>
+<div style="color: #6B6F8F; font-size: 14px; margin-top: 4px;">Právě proto víme, kde to praskne. Odbyli jsme si to sami.</div>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Nejsou to nástroje, které jsme si někde přečetli. Je to práce, která se u nás dneska udělá.</p>
+</div>
+</section>
+
+<!-- MOZEK vs AGENT (white) -->
+<section style="padding: 104px 24px; background: #FFFFFF; border-top: 1px solid rgba(21,24,58,.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<div style="max-width: 780px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">CO TEN MOZEK VLASTNĚ JE</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Mozek není další nástroj do sbírky.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Textové soubory u vás, verzované jako kód. Čitelné pro člověka, psané tak, aby si je přečetla AI — a čte si je pokaždé, než něco udělá.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 1 1 420px; border-radius: 20px; background: #10143A; color: #F3F1FA; overflow: hidden; box-shadow: 0 30px 80px rgba(21,24,58,.2);">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,.08); background: linear-gradient(90deg, rgba(255,122,47,.14), rgba(255,122,47,0));">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 8px; background: #FF6A2A; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #1A0E05;">M</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px;">Mozek</span></div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #FF9A3D;">/brain · main</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+<div style="padding: 14px 16px; border-radius: 10px; background: rgba(255,255,255,.04); border-left: 2px solid #FFB25C;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #FFB25C;">profil.md</div><div style="font-size: 15px; color: #D9DBEF; margin-top: 4px;">Co děláte a pro koho</div></div>
+<div style="padding: 14px 16px; border-radius: 10px; background: rgba(255,255,255,.04); border-left: 2px solid #FF7A2F;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #FF9A3D;">pravidla.md</div><div style="font-size: 15px; color: #D9DBEF; margin-top: 4px;">Co se smí, co ne a proč</div></div>
+<div style="padding: 14px 16px; border-radius: 10px; background: rgba(255,255,255,.04); border-left: 2px solid #E0407E;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #F06AA0;">rozhodnuti.md</div><div style="font-size: 15px; color: #D9DBEF; margin-top: 4px;">Co padlo a proč právě takhle</div></div>
+<div style="padding: 14px 16px; border-radius: 10px; background: rgba(255,255,255,.04); border-left: 2px solid #8C64F0;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; color: #A98BFA;">zakaznici.md</div><div style="font-size: 15px; color: #D9DBEF; margin-top: 4px;">Co jsme komu slíbili a jak s kým mluvíme</div></div>
+<div style="font-size: 13px; color: #8E93BA; padding-top: 6px;">Stav — ceník, tým, projekty — se nekopíruje. Čte se živě tam, kde vzniká.</div>
+</div>
+</div>
+<div style="flex: 1 1 420px; border-radius: 20px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0; overflow: hidden;">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; border-bottom: 1px solid rgba(21,24,58,.1); background: linear-gradient(90deg, rgba(200,50,126,.1), rgba(200,50,126,0));">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 8px; background: #C8327E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px;">A</span><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px;">Agent</span></div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #6B6F8F;">JAK PRACUJE</span>
+</div>
+<div style="padding: 20px; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; gap: 14px; align-items: center; padding: 12px 14px;"><span style="flex: 0 0 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(21,24,58,.25); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4A4E6E;">1</span><span style="font-size: 15.5px; color: #3A3E5E;">Jedna opakovaná práce, kterou dělá pořád stejně</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 12px 14px;"><span style="flex: 0 0 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(21,24,58,.25); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4A4E6E;">2</span><span style="font-size: 15.5px; color: #3A3E5E;">Nespouští ho člověk, ale plán</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 14px; border-radius: 12px; background: #15183A; color: #FFFFFF;"><span style="flex: 0 0 26px; height: 26px; border-radius: 50%; background: #FF6A2A; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #1A0E05;">3</span><span style="font-size: 16.5px; font-weight: 700;">Než něco udělá, přečte si mozek</span></div>
+<div style="display: flex; gap: 14px; align-items: center; padding: 12px 14px;"><span style="flex: 0 0 26px; height: 26px; border-radius: 50%; border: 1px solid rgba(21,24,58,.25); display: flex; align-items: center; justify-content: center; font-size: 12px; color: #4A4E6E;">4</span><span style="font-size: 15.5px; color: #3A3E5E;">Hotovou práci dá ke schválení, ne přímo do akce</span></div>
+<div style="margin-top: 6px; padding-top: 14px; border-top: 1px solid rgba(21,24,58,.1); font-size: 14px; color: #6B6F8F;">Sedí ve vašem chatu. Mluvíte s ním jako s kolegou.</div>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Model o vaší firmě neví nic — a je to tak správně. Ví to mozek, a ten patří vám.</p>
+</div>
+</section>
+
+<!-- DOKUMENTACE pipeline (light) -->
+<section style="padding: 104px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+<div style="max-width: 800px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">NEJČASTĚJŠÍ OBAVA</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Nikdo u vás nebude psát dokumentaci.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Každá firemní wiki umřela na to, že do ní nikdo nepíše. Tady psát nemusí nikdo — znalost se sbírá při práci, ne z disciplíny.</p>
+</div>
+<div style="border-radius: 22px; padding: 2px; background: linear-gradient(120deg, #FF9A3D, #E8442A 40%, #C8327E 75%, #6D3BD6);">
+<div style="border-radius: 20px; background: #FFFFFF; padding: 28px; display: flex; flex-wrap: wrap; align-items: stretch; gap: 14px;">
+<div style="flex: 1 1 220px; padding: 22px; border-radius: 14px; background: #FFF6EE; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 50%; background: #E8541A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">1</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #B23A0C;">30 VTEŘIN</span></div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Člověk</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4A4E6E;">Myšlenka, poznámka z hovoru, rozhodnutí — tak, jak to má zrovna v hlavě.</div>
+</div>
+<div style="flex: 1 1 220px; padding: 22px; border-radius: 14px; background: #FFF6EE; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 50%; background: #F07A1A; color: #1A0E05; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">2</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #A84E08;">ŽÁDNÁ DISCIPLÍNA</span></div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Inbox</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4A4E6E;">Jedno místo, kam to hodí. Netřídí, neformátuje, neřeší, kam to patří.</div>
+</div>
+<div style="flex: 1 1 220px; padding: 22px; border-radius: 14px; background: #FDF0F4; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 50%; background: #C8327E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">3</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #A52566;">BĚŽÍ SAMO</span></div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Kurátor</div>
+<div style="font-size: 15px; line-height: 1.55; color: #4A4E6E;">Přečte inbox, rozhodne, co z toho platí, a zapíše to na správné místo. Rozpory pošle vám.</div>
+</div>
+<div style="flex: 1 1 220px; padding: 22px; border-radius: 14px; background: #15183A; color: #F3F1FA; display: flex; flex-direction: column; gap: 10px;">
+<div style="display: flex; align-items: center; gap: 10px;"><span style="width: 28px; height: 28px; border-radius: 50%; background: #FF9A3D; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;">4</span><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .1em; color: #FFB25C;">JEDEN ZDROJ</span></div>
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Váš mozek</div>
+<div style="font-size: 15px; line-height: 1.55; color: #C9CCE6;">U každé věci je vidět, kdo ji zapsal a kdy. Čte z toho celá firma i agenti.</div>
+</div>
+</div>
+</div>
+<p style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px;">Mozek roste o to, co se reálně řešilo. Ne o to, na co si někdo jednou za rok udělá čas.</p>
+</div>
+</section>
+
+<!-- NOC (dark) -->
+<section id="noc" style="padding: 104px 24px; background: #10143A; color: #F3F1FA;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+<div style="flex: 1 1 440px; display: flex; flex-direction: column; gap: 26px;">
+<div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #FF9A3D; margin-bottom: 14px;">ZATÍMCO SPÍTE</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">V noci pracují. Ráno to leží ve vašem chatu.</h2>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div style="padding-left: 16px; border-left: 2px solid #FF9A3D;"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px;">Návrh, ne akce</div><div style="font-size: 15px; color: #A9ADCB; margin-top: 4px;">Draft, ticket, přehled. Vratné, čitelné, ke schválení.</div></div>
+<div style="padding-left: 16px; border-left: 2px solid rgba(255,255,255,.2);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px;">Strop na všechno bez dozoru</div><div style="font-size: 15px; color: #A9ADCB; margin-top: 4px;">Počet úloh, výstupů, tokenů i peněz na noc.</div></div>
+<div style="padding-left: 16px; border-left: 2px solid rgba(255,255,255,.2);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px;">Zásek je stav, ne zpráva</div><div style="font-size: 15px; color: #A9ADCB; margin-top: 4px;">Když agent neví, řekne to — a nezastaví zbytek noci.</div></div>
+</div>
+</div>
+<div style="flex: 1 1 440px; display: flex; flex-direction: column; gap: 16px;">
+<div style="border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); padding: 8px 20px 12px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #8E93BA; padding: 12px 0;">NOČNÍ SMĚNA · UKÁZKA</div>
+<div style="display: flex; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08);"><span style="flex: 0 0 64px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A98BFA;">02:00</span><span style="font-size: 15.5px; color: #E6E7F5;">Kontrola logů → tickety s popisem</span></div>
+<div style="display: flex; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08);"><span style="flex: 0 0 64px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #F06AA0;">04:30</span><span style="font-size: 15.5px; color: #E6E7F5;">Kurátor zpracuje inbox do mozku</span></div>
+<div style="display: flex; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08);"><span style="flex: 0 0 64px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF9A3D;">06:30</span><span style="font-size: 15.5px; color: #E6E7F5;">Follow-up drafty v CRM</span></div>
+<div style="display: flex; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08);"><span style="flex: 0 0 64px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFB25C;">07:00</span><span style="font-size: 15.5px; color: #E6E7F5;">Ranní fronta: co čeká na koho</span></div>
+<div style="display: flex; gap: 18px; align-items: baseline; padding: 13px 0; border-top: 1px solid rgba(255,255,255,.08);"><span style="flex: 0 0 64px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3DDC97;">kdykoli</span><span style="font-size: 15.5px; color: #E6E7F5;">Eskalace „nevím" — jako stav, ne jako ticho</span></div>
+</div>
+<div style="align-self: flex-end; max-width: 380px; display: flex; gap: 12px; padding: 14px 16px; border-radius: 16px 16px 4px 16px; background: #F7F5F0; color: #15183A; box-shadow: 0 20px 60px rgba(0,0,0,.35);">
+<span style="flex: 0 0 34px; height: 34px; border-radius: 10px; background: #FF9A3D; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 13px; color: #1A0E05;">O</span>
+<div><div style="font-weight: 700; font-size: 14px;">Obchodní agent</div><div style="font-size: 14px; line-height: 1.5; color: #3A3E5E; margin-top: 2px;">Dobré ráno. Drafty jsou v CRM, nic neodešlo. U dvou obchodů chybí v mozku, co jsme slíbili — doplníte?</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- SPECIALISTÉ (light) -->
+<section style="padding: 104px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="max-width: 780px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">CO DÁL MŮŽOU AGENTI ŘEŠIT</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Specialisté, které nemáte. Nebo to musí dělat vaši lidi.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Každý agent je jeden specialista na jednu práci. Tohle je jen ukázka — u vás se začne tam, kde je to zrovna nejvíc potřeba.</p>
+</div>
+<div style="overflow-x: auto; border-radius: 18px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;">
+<div style="min-width: 760px;">
+<div style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 14px 22px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #6B6F8F; background: #F7F5F0;"><span>SPECIALISTA</span><span>CO DĚLÁ</span><span>JAK TO JE DNES</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif;">Párování plateb</b><span style="color: #3A3E5E;">spáruje včerejší platby s doklady a zařadí je do účetnictví</span><span style="color: #6B6F8F;">bere to čas účetní a stejně se to dělá pozdě</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px; background: #FFF6EE;"><b style="font-family: 'Plus Jakarta Sans', sans-serif; color: #C2410C;">Obsah a SEO</b><span style="color: #3A3E5E;">měří výkon webu, navrhne SEO úpravy, články i newsletter</span><span style="color: #6B6F8F;">dělá to marketér místo kampaní, nebo nikdo</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif;">Hlídání webu</b><span style="color: #3A3E5E;">title, canonical, noindex a sitemap na klíčových stránkách</span><span style="color: #6B6F8F;">chyba se pozná, až spadne provoz</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif;">Byznys report</b><span style="color: #3A3E5E;">registrace a objednávky, včerejšek a měsíc proti předchozímu</span><span style="color: #6B6F8F;">ruční export, na který denně nikdo nemá čas</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif;">Podklad na poradu</b><span style="color: #3A3E5E;">co se posunulo, co stojí a co čeká na rozhodnutí</span><span style="color: #6B6F8F;">hodina někomu, kdo měl dělat něco jiného</span></div>
+<div class="lc-row" style="display: grid; grid-template-columns: 1.1fr 2fr 1.6fr; gap: 20px; padding: 18px 22px; border-top: 1px solid rgba(21,24,58,.08); font-size: 15px;"><b style="font-family: 'Plus Jakarta Sans', sans-serif;">Souhrn na konec dne</b><span style="color: #3A3E5E;">projde, co všechny úlohy udělaly, a pošle jeden přehled</span><span style="color: #6B6F8F;">tohle nešlo dělat vůbec</span></div>
+</div>
+</div>
+<div style="padding: 22px 26px; border-radius: 16px; background: #15183A; color: #FFFFFF; text-align: center; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 19px;">Ani jeden z nich nenahradil člověka. Vrátili lidem čas na věci, které za ně AI neudělá.</div>
+</div>
+</section>
+
+<!-- POSTUP (white) -->
+<section id="postup" style="padding: 104px 24px; background: #FFFFFF; border-top: 1px solid rgba(21,24,58,.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 44px;">
+<div style="max-width: 800px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">JAK SE NA TOM PODĚLÍME</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Postavíme vám podvozek. Vybavíte si ho sami.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">U každé firmy je stejný. Co si na něj namontujete, je jen vaše — jaké úlohy má agent dělat, víte vy, ne my.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch;">
+<div style="flex: 1 1 460px; display: flex; flex-direction: column; gap: 10px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #6B6F8F; margin-bottom: 4px;">POSTAVÍME MY</div>
+<div class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0;"><span style="flex: 0 0 28px; height: 28px; border-radius: 8px; background: #15183A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">1</span><span style="font-size: 15.5px; line-height: 1.5; color: #3A3E5E;"><b style="color: #15183A;">Mozek</b> — know-how firmy ve verzovaném repozitáři, u vás</span></div>
+<div class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0;"><span style="flex: 0 0 28px; height: 28px; border-radius: 8px; background: #15183A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">2</span><span style="font-size: 15.5px; line-height: 1.5; color: #3A3E5E;"><b style="color: #15183A;">Agenti ve Slacku</b> — hotové prostředí, nebo vaše vlastní</span></div>
+<div class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0;"><span style="flex: 0 0 28px; height: 28px; border-radius: 8px; background: #15183A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">3</span><span style="font-size: 15.5px; line-height: 1.5; color: #3A3E5E;"><b style="color: #15183A;">Claude vedle Slacku</b> — čte ze stejného mozku</span></div>
+<div class="lc-card" style="display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 14px; border: 1px solid rgba(21,24,58,.12); background: #F7F5F0;"><span style="flex: 0 0 28px; height: 28px; border-radius: 8px; background: #15183A; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700;">4</span><span style="font-size: 15.5px; line-height: 1.5; color: #3A3E5E;"><b style="color: #15183A;">První agenti</b> na úlohy, fronta návrhů a plán, který je spouští</span></div>
+</div>
+<div style="flex: 1 1 460px; border-radius: 20px; padding: 1px; background: #313452;">
+<div style="height: 100%; box-sizing: border-box; border-radius: 19px; background: #10143A; color: #F3F1FA; display: flex; flex-direction: column;">
+<div style="padding: 18px 22px; border-bottom: 1px solid rgba(255,255,255,.1); display: flex; align-items: baseline; gap: 10px;"><span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: .12em; color: #FF9A3D;">OD VÁS TO CHCE</span><span style="font-size: 13px; color: #8E93BA;">tohle, nic víc</span></div>
+<div style="padding: 18px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; flex: 1;">
+<div style="padding: 18px; border-radius: 12px; background: rgba(255,255,255,.05);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 34px; color: #FF9A3D; letter-spacing: -.02em;">30 s</div><div style="font-size: 14px; color: #C9CCE6; margin-top: 4px;">na myšlenku do inboxu</div></div>
+<div style="padding: 18px; border-radius: 12px; background: rgba(255,255,255,.05);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 34px; color: #FF9A3D; letter-spacing: -.02em;">10 min</div><div style="font-size: 14px; color: #C9CCE6; margin-top: 4px;">ráno na frontu návrhů</div></div>
+<div style="padding: 18px; border-radius: 12px; background: rgba(255,255,255,.05);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 34px; color: #FF9A3D; letter-spacing: -.02em;">1 člověk</div><div style="font-size: 14px; color: #C9CCE6; margin-top: 4px;">který to po předání povede</div></div>
+<div style="padding: 18px; border-radius: 12px; background: rgba(255,255,255,.05);"><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 34px; color: #FF9A3D; letter-spacing: -.02em;">1×</div><div style="font-size: 14px; color: #C9CCE6; margin-top: 4px;">váš směr písemně — zeptáme se, vy odpovíte</div></div>
+</div>
+<div style="padding: 14px 22px; border-top: 1px solid rgba(255,255,255,.1); font-size: 14px; font-weight: 600; color: #FFB872;">Bez toho člověka do toho nejdeme.</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- PRINCIPY (light) -->
+<section style="padding: 104px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 20px;">
+<div style="max-width: 720px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">CO SI NEODKOUKÁTE</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Repozitář se dá okopírovat. Tyhle pravidla ne.</h2>
+</div>
+<p style="flex: 0 1 380px; margin: 0; font-size: 16px; line-height: 1.6; color: #4A4E6E;">Postavit si to umí každý, kdo má šikovné vývojáře. Postavit to napoprvé správně a vědět, kde to za rok praskne, už skoro nikdo.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px;">
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">01</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Mozek vlastníte, prostředí pronajímáte</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">Koupeného agenta vyměníte za odpoledne. Mozek pod ním ne.</div></div>
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">02</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Agent navrhuje, člověk schvaluje</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">Fronta funguje ve dvě ráno. Zpráva ve Slacku ne.</div></div>
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">03</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Každý zápis nese původ</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">Bez doložení se nedá schvalovat ani dohledávat.</div></div>
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">04</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Agent musí umět říct „nevím"</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">Výslovný stav, ne mlčení a ne vymýšlení.</div></div>
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">05</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Začněte tam, kde je omyl levný</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">První noční úloha se dá zkontrolovat za dvě minuty a vrátit.</div></div>
+<div class="lc-card" style="padding: 24px; border-radius: 16px; border: 1px solid rgba(21,24,58,.12); background: #FFFFFF;"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8541A;">06</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 18px; margin: 10px 0 6px;">Co má živý zdroj, se nekopíruje</div><div style="font-size: 14.5px; line-height: 1.55; color: #4A4E6E;">Do mozku patří to, co je jen v hlavách a v rozhodnutích.</div></div>
+</div>
+</div>
+</section>
+
+<!-- PRO KOHO (white) -->
+<section style="padding: 96px 24px; background: #FFFFFF; border-top: 1px solid rgba(21,24,58,.08);">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 36px;">
+<div style="max-width: 760px;">
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #C2410C; margin-bottom: 14px;">NAROVINU</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(32px, 4.4vw, 52px); line-height: 1.06; letter-spacing: -.03em;">Není to pro každého. A radši to řekneme dopředu.</h2>
+<p style="margin: 18px 0 0; font-size: 17px; line-height: 1.6; color: #4A4E6E;">Nepovedená zakázka je ztráta pro obě strany. Takže než se do toho pustíme, projdeme tohle.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+<div style="flex: 1 1 400px; padding: 30px; border-radius: 20px; border: 1px solid #A8E6CB; background: #F3FBF7; display: flex; flex-direction: column; gap: 16px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 22px; color: #17875E;">Dává to smysl, když</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; color: #3A3E5E; line-height: 1.5;">
+<div style="display: flex; gap: 12px;"><span style="color: #17875E;">●</span><span>Claude už ve firmě používáte naplno, narážíte na limity a chcete zkratku místo dalšího roku zkoušení.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #17875E;">●</span><span>Máte opakovanou práci, která stojí na znalosti v hlavách — a ta znalost odchází s lidmi.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #17875E;">●</span><span>Je u vás někdo technický, kdo si to po předání vezme za své.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #17875E;">●</span><span>Majitel je ochotný dát směr firmy písemně. Bez toho nemá mozek vršek.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #17875E;">●</span><span>Chcete, aby u vás něco běželo i bez vás — ne jen rychleji psát.</span></div>
+</div>
+</div>
+<div style="flex: 1 1 400px; padding: 30px; border-radius: 20px; border: 1px solid #FFC9A3; background: #FFF8F2; display: flex; flex-direction: column; gap: 16px;">
+<div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 22px; color: #C2410C;">Nedává to smysl, když</div>
+<div style="display: flex; flex-direction: column; gap: 12px; font-size: 15.5px; color: #3A3E5E; line-height: 1.5;">
+<div style="display: flex; gap: 12px;"><span style="color: #E8541A;">●</span><span>Hledáte „AI strategii". Jiný produkt, neděláme ho. Naše metoda končí něčím, co v noci běží.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #E8541A;">●</span><span>Nechcete měnit, jak se u vás pracuje. Mozek se naplní jednou a pak vyhladoví.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #E8541A;">●</span><span>Nemáte komu to předat. Za tři měsíce to zhnije a bude to vypadat jako naše chyba.</span></div>
+<div style="display: flex; gap: 12px;"><span style="color: #E8541A;">●</span><span>Je vás pod patnáct. Úspora vyjde tak nízko, že to poznáte sami — tam nabídneme jen diagnostiku.</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- WORKSHOP CTA (dark) -->
+<section id="workshop" style="position: relative; padding: 120px 24px 96px; background: #10143A; color: #F3F1FA; overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; left: 50%; bottom: -200px; width: 1200px; height: 700px; transform: translateX(-50%); background: none; pointer-events: none;"></div>
+<div style="position: relative; max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px;">
+<div style="text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px;">
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;"><svg viewBox="0 0 28 28" width="30" height="30" aria-hidden="true" style="display: block;"><rect width="28" height="28" rx="8" fill="#FF6A2A"></rect><path d="M9.5 18.5L18.5 9.5" stroke="#15183A" stroke-width="2.6" stroke-linecap="round"></path><circle cx="9.5" cy="18.5" r="3.6" fill="#15183A"></circle><circle cx="18.5" cy="9.5" r="3.6" fill="#15183A"></circle></svg><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -.02em; color: #F3F1FA;">Fundament 22</span></div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: .14em; color: #FF9A3D;">DALŠÍ KROK</div>
+<h2 style="margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: clamp(38px, 6vw, 72px); line-height: 1.02; letter-spacing: -.035em;">Začneme workshopem<br><span style="color: #FF6A2A;">u vás.</span></h2>
+<p style="margin: 0; max-width: 620px; font-size: 18px; line-height: 1.6; color: #C9CCE6;">Začít se má tam, kde to nejvíc pálí. Odejdete se třemi úlohami, které u vás můžou běžet první — a s výstupem, který použijete, i kdybyste dál nešli s námi.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+<div class="lc-dcard" style="padding: 28px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); border-top: 3px solid #FF6A2A;"><div style="width: 34px; height: 34px; border-radius: 50%; background: #E8541A; display: flex; align-items: center; justify-content: center; font-weight: 700;">1</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; margin: 16px 0 8px;">Co vás nejvíc pálí</div><div style="font-size: 15px; line-height: 1.55; color: #A9ADCB;">Začneme u vašich priorit, ne u našeho seznamu. Tam, kde to tlačí, se agent nasazuje první.</div></div>
+<div class="lc-dcard" style="padding: 28px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); border-top: 3px solid #FF9A3D;"><div style="width: 34px; height: 34px; border-radius: 50%; background: #F07A1A; color: #1A0E05; display: flex; align-items: center; justify-content: center; font-weight: 700;">2</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; margin: 16px 0 8px;">Napojíme jeden systém</div><div style="font-size: 15px; line-height: 1.55; color: #A9ADCB;">Stačí jeden. Hned je vidět, co to odemkne — a co se v něm ukáže, o čem se nevědělo.</div></div>
+<div class="lc-dcard" style="padding: 28px; border-radius: 18px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.04); border-top: 3px solid #E0407E;"><div style="width: 34px; height: 34px; border-radius: 50%; background: #C8327E; display: flex; align-items: center; justify-content: center; font-weight: 700;">3</div><div style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 20px; margin: 16px 0 8px;">Předáme know-how</div><div style="font-size: 15px; line-height: 1.55; color: #A9ADCB;">Jak se AI firma staví a jak se řídí. Odejdete s tím, i kdybyste si ji pak stavěli sami.</div></div>
+</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 12px;">
+<a class="lc-btn" href="https://calendar.app.google/v39ka3uchSRSSG2AA" style="background: #FF6A2A; color: #1A0E05; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 12px; box-shadow: 0 10px 40px rgba(255,106,42,.35);">Domluvit workshop</a>
+<a href="https://claude.ai/artifact/XfPjf2XopGAoyADtrRPvjM" style="color: #F3F1FA; font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 12px; border: 1px solid rgba(255,255,255,.2);">Otevřít demo</a>
+</div>
+<div style="text-align: center; font-size: 15px; color: #A9ADCB;">30 minut s Petrem v kalendáři, nebo napište na petr@locoglobal.ai
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background: #0B0F2E; color: #8E93BA; padding: 32px 24px;">
+<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; font-size: 14px;">
+<div style="display: flex; align-items: center; gap: 16px;"><span style="display: flex; align-items: center; gap: 8px;"><svg viewBox="0 0 28 28" width="20" height="20" aria-hidden="true" style="display: block;"><rect width="28" height="28" rx="8" fill="#FF6A2A"></rect><path d="M9.5 18.5L18.5 9.5" stroke="#0B0F2E" stroke-width="2.6" stroke-linecap="round"></path><circle cx="9.5" cy="18.5" r="3.6" fill="#0B0F2E"></circle><circle cx="18.5" cy="9.5" r="3.6" fill="#0B0F2E"></circle></svg><span style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 15px; letter-spacing: -.02em; color: #C9CCE6;">Fundament 22</span></span><span>Základy firmy pro 22. století. · Petr Sedláček</span></div>
+<span>petr@locoglobal.ai</span>
+</div>
+</footer>
+
+</div>
+</body>
+</html>
