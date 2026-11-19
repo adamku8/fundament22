@@ -180,7 +180,7 @@ section{padding:72px 0}
 .az .task .n{flex:none;font-family:var(--mono);color:var(--o1);font-size:13px;padding-top:3px}
 .az .task p{margin:0;font-size:15px}
 .az .locked{position:relative;margin-top:10px}
-.az .locked .blur{filter:blur(6px);opacity:.55;pointer-events:none;user-select:none}
+.az .locked .blur{filter:blur(6px);opacity:.55;pointer-events:none;user-select:none;max-height:104px;overflow:hidden}
 .az .locked .veil{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:16px}
 .az .veil span{background:rgba(16,20,58,.85);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px;font-weight:600}
 .az form{display:grid;gap:12px;margin-top:14px}
@@ -211,7 +211,22 @@ section{padding:72px 0}
 footer{background:#0B0F2E;color:#8E93BA;padding:28px 0;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
 footer a{color:#C9CCE6}
-@media(max-width:600px){section{padding:56px 0}.hero{padding:48px 0 44px}.btn{width:100%;text-align:center}.top .btn{width:auto}.az{padding:60px 0}}
+.micro{margin-top:14px;font-size:15px;color:var(--ink3)}
+.az .verdict h2{font-size:clamp(22px,4.6vw,30px);margin:0 0 6px}
+.az .cal{display:inline-block;text-decoration:none;color:#fff;margin-top:6px}
+@media(max-width:639px){
+.ucs{gap:0;margin-top:22px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:2px 18px}
+.uc,.uc:first-child{display:grid;grid-template-columns:1fr auto;align-items:center;gap:8px 12px;padding:14px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;box-shadow:none;background:none}
+.uc:last-child{border-bottom:0}
+.uc h3{font-size:16px}
+.uc .nums{margin:0;gap:6px;justify-content:flex-end;flex-wrap:wrap}
+.uc .was{font-size:15px}.uc .arr{font-size:14px}.uc .now{font-size:24px}
+.uc .per{flex-basis:100%;text-align:right;margin:0;font-size:10px}
+.uc .bars{grid-column:1/-1;margin:0;height:6px}.uc .bars i{height:6px}
+.uc p{display:none}
+}
+@media(max-width:600px){section{padding:44px 0}.hero{padding:40px 0 40px}.btn{width:100%;text-align:center}.top .btn{width:auto}.az{padding:44px 0 52px}.az .cal{width:100%;text-align:center}
+.free{margin-bottom:20px}.flow{gap:14px;margin-top:26px}.flownote{margin-top:20px}.queue .m{padding:12px 16px}.az .bar{margin-bottom:20px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -223,91 +238,76 @@ footer a{color:#C9CCE6}
 
 <main>
 <section class="hero"><div class="wrap">
-<a class="free" href="#analyza"><b>Zdarma</b>30 minut konzultace o vaší firmě</a>
+<a class="free" href="#analyza"><b>Zdarma</b>30 minut konzultace</a>
 <h1>Přestaňte dělat práci,<br><span>kterou zvládne AI.</span></h1>
-<p class="lead">Zpracování dokladů: místo 30 hodin práce 3 hodiny kontroly. Stejně tak odpovědi zákazníkům, reporty nebo upomínky. Připraví je AI agenti, <b>vy jen schvalujete.</b></p>
+<p class="lead">AI agenti práci připraví. <b>Vy ji jen zkontrolujete.</b></p>
 <a class="herostat" href="#pripady" aria-label="Zpracování dokladů: z 30 hodin práce na 3 hodiny kontroly"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span><span class="what">zpracování dokladů<br>práce → jen kontrola</span></a>
-<div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a><a class="btn ghost" href="../demo/">Podívat se na ukázku</a></div>
-<ul class="pills" style="margin-top:22px"><li>30 minut, nic neplatíte</li><li>k ničemu se nezavazujete</li><li>bez vás nic neodejde</li></ul>
+<div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a></div>
+<p class="micro">Pět otázek, dvě minuty. Pak si domluvíme termín.</p>
 </div></section>
 
 <section id="pripady"><div class="wrap">
-<p class="eyebrow">Kde se vám vrátí čas</p>
-<h2>Z hodin práce zbydou hodiny kontroly.</h2>
-<p class="sub">Šest prací, které firmy dělají ručně každý týden. Agent je připraví, člověk zkontroluje a schválí.</p>
+<p class="eyebrow">Úspora času</p>
+<h2>Z hodin práce hodiny kontroly.</h2>
 <div class="ucs">
 <article class="uc"><h3>Zpracování dokladů</h3>
 <div class="nums"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:10%"></i></div>
-<p>Agent doklady přečte, zařadí a připraví k zaúčtování. Vy projdete jen to, co označil.</p></article>
+<p>Agent je přečte, zařadí a připraví k zaúčtování.</p></article>
 <article class="uc"><h3>Dotazy zákazníků</h3>
 <div class="nums"><span class="was">15 h</span><span class="arr">→</span><span class="now">6 h</span><span class="per">týdně</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:40%"></i></div>
-<p>U každého dotazu čeká návrh odpovědi s údaji z objednávky. Stačí schválit nebo upravit.</p></article>
+<p>Odpověď je připravená, vy ji schválíte.</p></article>
 <article class="uc"><h3>Poptávky a připomenutí</h3>
 <div class="nums"><span class="was">8 h</span><span class="arr">→</span><span class="now">3 h</span><span class="per">týdně</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:38%"></i></div>
-<p>Odpovědi na poptávky a zprávy rozjednaným klientům jsou nachystané. Odesíláte vy.</p></article>
+<p>Zprávy jsou nachystané, odesíláte vy.</p></article>
 <article class="uc"><h3>Reporty a zjišťování stavu</h3>
 <div class="nums"><span class="was">6 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:17%"></i></div>
-<p>Místo exportů a dotazů kolegům přijde ráno hotový přehled.</p></article>
+<p>Ráno přijde hotový přehled.</p></article>
 <article class="uc"><h3>Zápisy a hledání informací</h3>
 <div class="nums"><span class="was">5 h</span><span class="arr">→</span><span class="now">1,5 h</span><span class="per">týdně</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:30%"></i></div>
-<p>Co se domluvilo, je zapsané na jednom místě. Nikdo to nehledá v e-mailech.</p></article>
-<article class="uc"><h3>Kontroly e-shopu a reklamy</h3>
+<p>Všechno je zapsané na jednom místě.</p></article>
+<article class="uc"><h3>Kontroly e‑shopu a reklamy</h3>
 <div class="nums"><span class="was">4 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
 <div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:25%"></i></div>
-<p>Agent kontroluje každý den. Člověk řeší jen to, co našel.</p></article>
+<p>Agent hlídá každý den, vy řešíte nálezy.</p></article>
 </div>
-<p class="est"><b>Jsou to odhady, ne měření.</b> Čísla týdně počítáme pro tříčlenný tým menšího e-shopu. Jak to vyjde u vás, spočítáme na vašich datech v první analýze.</p>
-<div class="cta"><a class="btn big" href="#analyza">Chci vědět, kolik ušetříme my</a></div>
+<p class="est"><b>Jsou to odhady, ne měření.</b> Týdenní čísla platí pro tříčlenný tým menšího e‑shopu. Vaše spočítáme v první analýze.</p>
+<div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a></div>
 </div></section>
 
 <section class="white"><div class="wrap split">
 <div>
-<p class="eyebrow">Jak vypadá ráno</p>
-<h2>Přijdete do práce a&nbsp;půlka je hotová.</h2>
-<p class="sub">Agent není chatovací okno, do kterého musíte psát. Je to pomocník s jednou jasnou prací. Udělá ji sám podle plánu a výsledek vám pošle tam, kde už pracujete, třeba do Slacku nebo e-mailu.</p>
-<p class="sub">Vy návrh schválíte, upravíte, nebo vrátíte. Když si agent není jistý, řekne to a nechá rozhodnutí na vás.</p>
+<p class="eyebrow">Jak to vypadá</p>
+<h2>Ráno máte půlku hotovou.</h2>
+<p class="sub">Agent pracuje sám podle plánu. Výsledek vám pošle do Slacku nebo e-mailu a vy ho schválíte, upravíte, nebo vrátíte.</p>
+<p class="sub"><a href="../demo/">Prohlédnout ukázku na vymyšleném e‑shopu →</a></p>
 </div>
 <div class="queue" aria-label="Ukázka ranních zpráv od agentů">
 <div class="qh"><span># ranní-fronta</span><span>ukázka</span></div>
-<div class="m"><div class="av">P</div><div><b>Podpora</b><time>06:30</time><p>K devíti dotazům mám připravené odpovědi. Jednu reklamaci nechávám na vás, nejsem si jistý.</p><span class="ok">Schválit 9</span><span class="no">Otevřít</span></div></div>
-<div class="m"><div class="av">O</div><div><b>Obchod</b><time>06:45</time><p>Tři rozjednané nabídky čekají na ozvání. Zprávy mám nachystané, u každé je, o čem byla řeč naposledy.</p></div></div>
-<div class="m"><div class="av">F</div><div><b>Finance</b><time>07:00</time><p>Tři faktury jsou po splatnosti. Upomínky jsou připravené, nic neodešlo.</p></div></div>
+<div class="m"><div class="av">P</div><div><b>Podpora</b><time>06:30</time><p>Devět odpovědí je připravených. Jednu reklamaci nechávám na vás.</p><span class="ok">Schválit 9</span><span class="no">Otevřít</span></div></div>
+<div class="m"><div class="av">O</div><div><b>Obchod</b><time>06:45</time><p>Tři nabídky čekají na ozvání. Zprávy mám nachystané.</p></div></div>
+<div class="m"><div class="av">F</div><div><b>Finance</b><time>07:00</time><p>Tři faktury jsou po splatnosti. Upomínky čekají na schválení.</p></div></div>
 </div>
-</div></section>
-
-<section class="white"><div class="wrap demo">
-<div><p class="eyebrow">Ukázka</p><h2>Podívejte se, jak to vypadá v provozu.</h2><p>Vymyšlený e-shop Zelená bedýnka: osm přehledů od objednávek po finance a u každého návrhy agentů ke schválení. Data jsou smyšlená, systém je stejný, jaký používáme sami.</p></div>
-<a class="btn ghost" href="../demo/">Otevřít ukázku</a>
 </div></section>
 
 <section id="postup"><div class="wrap">
-<p class="eyebrow">Jak to proběhne</p>
-<h2>Čtyři kroky. První dva vás nestojí nic.</h2>
+<p class="eyebrow">Postup</p>
+<h2>Čtyři kroky. První dva jsou zdarma.</h2>
 <ol class="flow">
-<li class="free1"><span class="dot">1</span><div class="fb"><span class="tag">2 minuty · zdarma</span><h3>Pět otázek</h3><p>Odpovíte dole na stránce. Hned uvidíte tři agenty, kteří by u vás mohli běžet první.</p></div></li>
-<li class="main"><span class="dot">2</span><div class="fb"><span class="tag">30 minut · zdarma</span><h3>Konzultace</h3><p>Zavoláme si. Projdeme, co vás pálí a kde začít. Přístupy do systémů nepotřebujeme.</p></div></li>
-<li><span class="dot">3</span><div class="fb"><span class="tag">cena podle rozsahu</span><h3>První analýza</h3><p>Na vašich datech spočítáme, kde se ztrácí nejvíc času. Dostanete čísla a zkušební přehled firmy.</p></div></li>
-<li><span class="dot">4</span><div class="fb"><span class="tag">nabídka po analýze</span><h3>Zavedení a péče</h3><p>Postavíme, co dává smysl, zaučíme vaše lidi a hlídáme, že to běží.</p></div></li>
+<li class="free1"><span class="dot">1</span><div class="fb"><span class="tag">2 minuty · zdarma</span><h3>Pět otázek</h3><p>Uvidíte, kterým agentem začít.</p></div></li>
+<li class="main"><span class="dot">2</span><div class="fb"><span class="tag">30 minut · zdarma</span><h3>Konzultace</h3><p>Projdeme, co vás pálí a kde začít.</p></div></li>
+<li><span class="dot">3</span><div class="fb"><span class="tag">cena podle rozsahu</span><h3>První analýza</h3><p>Spočítáme úsporu na vašich datech.</p></div></li>
+<li><span class="dot">4</span><div class="fb"><span class="tag">nabídka po analýze</span><h3>Zavedení a péče</h3><p>Postavíme, zaučíme lidi a hlídáme provoz.</p></div></li>
 </ol>
-<p class="flownote">Po každém kroku se rozhodujete znovu. Když to nedává smysl, skončíme.</p>
-<div class="fit">
-<div class="card yes"><h3>Dává to smysl, když</h3><ul><li>je vás ve firmě aspoň 15</li><li>se u vás opakuje hodně stejné práce</li><li>máte člověka, který si to vezme za své</li></ul></div>
-<div class="card nope"><h3>Zatím to není pro vás, když</h3><ul><li>je vás pár a všechno víte z hlavy</li><li>čekáte, že AI nahradí lidi</li><li>nechcete nikomu říct, jak má firma fungovat</li></ul></div>
-</div>
-</div></section>
-
-<section class="band"><div class="wrap">
-<div><h2>30 minut. Zdarma. K&nbsp;ničemu se&nbsp;nezavazujete.</h2><p>Odpovězte na pět otázek a ozveme se s termínem. Na konzultaci už budeme vědět, o čem mluvit.</p></div>
-<a class="btn white" href="#analyza">Začít pěti otázkami ↓</a>
+<p class="flownote">Po každém kroku se rozhodujete znovu.</p>
 </div></section>
 
 <section class="az" id="analyza"><div class="in">
-<div class="hd"><span class="mono">Online analýza</span><span class="mono" id="stepLabel"></span></div>
+<div class="hd"><span class="mono" id="hdLeft"></span><span class="mono" id="stepLabel"></span></div>
 <div class="bar" aria-hidden="true"><i id="bar"></i></div>
 <div id="app" aria-live="polite"></div>
 <noscript><p>Formulář potřebuje zapnutý JavaScript. Můžete nám také napsat na <a href="mailto:petr@locoglobal.ai">petr@locoglobal.ai</a>.</p></noscript>
@@ -328,7 +328,9 @@ const CONFIG = {
   // Kam se odešle kontakt (POST, JSON). Prázdné = prototyp, nic se neodesílá.
   submitUrl: "",
   // Správce osobních údajů — doplnit před spuštěním.
-  privacyText: "Kontakt použijeme jen k tomu, abychom se vám ozvali s výsledkem a termínem konzultace.",
+  // Kalendář pro výběr termínu konzultace (stejný odkaz jako v podrobné verzi webu).
+  calendarUrl: "https://calendar.app.google/v39ka3uchSRSSG2AA",
+  privacyText: "Kontakt použijeme jen k domluvě konzultace.",
   privacyUrl: ""
 };
 
@@ -362,26 +364,26 @@ const CATALOG = {
 
 /* ---------- Otázky ---------- */
 const QUESTIONS = [
-  { id:"industry", title:"V jakém oboru podnikáte?", hint:"Podle oboru vybereme agenty z katalogu.", options:[
+  { id:"industry", title:"V jakém oboru podnikáte?", hint:"Pět otázek, pak si domluvíme termín konzultace. Hned uvidíte, kterým agentem začít.", options:[
     {v:"ecom", t:"E-commerce a retail"},
     {v:"services", t:"Profesní služby", s:"Účetní, právní, poradenské a podobné firmy."},
     {v:"production", t:"Výroba a velkoobchod"},
     {v:"other", t:"Jiný obor"} ]},
-  { id:"size", title:"Kolik vás ve firmě je?", hint:"Podle velikosti se liší, kde začít.", cols:2, options:[
+  { id:"size", title:"Kolik vás ve firmě je?", cols:2, options:[
     {v:"lt15", t:"Do 15 lidí"},
     {v:"15-50", t:"15–50 lidí"},
     {v:"50-250", t:"50–250 lidí"},
     {v:"250+", t:"Přes 250 lidí"} ]},
-  { id:"pain", title:"Co vás dnes nejvíc pálí?", hint:"Agent se nasazuje první tam, kde to tlačí.",
+  { id:"pain", title:"Co vás dnes nejvíc pálí?",
     options:(a)=>CATALOG[a.industry||"other"].map((u,i)=>({v:String(i), t:u.pain})) },
-  { id:"systems", multi:true, title:"Kde u vás vzniká práce?", hint:"Vyberte všechno, co platí. Na jeden z těch systémů se první agent napojí.", cols:2, options:[
+  { id:"systems", multi:true, title:"Kde u vás vzniká práce?", hint:"Vyberte všechno, co platí.", cols:2, options:[
     {v:"mail", t:"E-mail a dokumenty"},
     {v:"chat", t:"Slack nebo Teams"},
     {v:"crm", t:"CRM"},
     {v:"helpdesk", t:"Helpdesk a tikety"},
     {v:"erp", t:"ERP nebo účetnictví"},
     {v:"eshop", t:"E-shop"} ]},
-  { id:"owner", title:"Máte člověka, který by si AI ve firmě vzal za své?", hint:"Nemusí být programátor. Stačí, že to povede.", options:[
+  { id:"owner", title:"Máte člověka, který si AI vezme za své?", hint:"Nemusí to být programátor.", options:[
     {v:"yes", t:"Ano, víme kdo"},
     {v:"maybe", t:"Asi ano, našli bychom ho"},
     {v:"no", t:"Ne, nikoho takového nemáme"} ]}
@@ -389,7 +391,7 @@ const QUESTIONS = [
 
 /* ---------- Stav ---------- */
 let started=false;
-const state = { step:-1, answers:{}, lead:null, sent:false };
+const state = { step:0, answers:{}, lead:null, sent:false };
 const app = document.getElementById("app");
 const $ = (h)=>{ const t=document.createElement("template"); t.innerHTML=h.trim(); return t.content.firstElementChild; };
 const esc = (s)=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -401,49 +403,35 @@ function pickTasks(a){
   return [list[first], ...list.filter((_,i)=>i!==first)].slice(0,3);
 }
 function verdict(a){
-  if(a.size==="lt15") return {kind:"entry", title:"Začněte jedním hotovým agentem.", text:"Ve firmě do 15 lidí dává smysl jeden hotový agent na jednu práci. Řešení pro celou firmu se vyplatí až větším týmům."};
-  if(a.owner==="no") return {kind:"entry", title:"Začněte hotovým agentem. Na víc bude potřeba vlastník.", text:"Hotový agent vlastníka nepotřebuje. Řešení pro celou firmu ano: jednoho člověka, který ho po předání povede. Na konzultaci ho pomůžeme vybrat."};
-  return {kind:"fit", title:"Dává to u vás smysl i pro celou firmu.", text:"Začít můžete jedním hotovým agentem. Na konzultaci pak projdeme, co by šlo dál: zapsané know-how firmy a agenti pro další oddělení."};
+  if(a.size==="lt15") return {kind:"entry", title:"Začněte jedním hotovým agentem.", text:"Ve firmě do 15 lidí stačí jeden agent na jednu práci."};
+  if(a.owner==="no") return {kind:"entry", title:"Začněte jedním hotovým agentem.", text:"Na řešení pro celou firmu je potřeba člověk, který ho povede. Pomůžeme vám ho vybrat."};
+  return {kind:"fit", title:"Dává to u vás smysl pro celou firmu.", text:"Začněte jedním agentem. Co dál, probereme na konzultaci."};
 }
 
 /* ---------- Vykreslení ---------- */
 function setProgress(){
-  const total = QUESTIONS.length+1, cur = state.step<0?0:Math.min(state.step+1,total);
-  document.getElementById("bar").style.width = (state.step<0?0:Math.round(cur/total*100))+"%";
-  document.getElementById("stepLabel").textContent =
-    state.step<0 ? "2 minuty" : state.step<QUESTIONS.length ? `otázka ${state.step+1} / ${QUESTIONS.length}` : (state.sent?"výsledek":"váš výsledek");
+  const total = QUESTIONS.length+1, inQ = state.step<QUESTIONS.length;
+  document.getElementById("bar").style.width = Math.round(Math.min(state.step+1,total)/total*100)+"%";
+  document.getElementById("hdLeft").textContent = inQ ? "Konzultace zdarma" : "Váš výsledek";
+  document.getElementById("stepLabel").textContent = inQ ? `otázka ${state.step+1} / ${QUESTIONS.length}` : "";
 }
 function render(){
   setProgress(); app.innerHTML="";
-  let view;
-  if(state.step<0) view=intro();
-  else if(state.step<QUESTIONS.length) view=question(QUESTIONS[state.step]);
-  else view=result();
+  const view = state.step<QUESTIONS.length ? question(QUESTIONS[state.step]) : result();
   view.classList.add("fade"); app.appendChild(view);
   if(started){ document.getElementById("analyza").scrollIntoView({behavior:"auto",block:"start"});
     const h=app.querySelector("h2"); if(h){ h.tabIndex=-1; h.focus({preventScroll:true}); } }
   started=true;
 }
-function intro(){
-  const el=$(`<div>
-        <h2>Kolik věcí u vás běží, <span class="grad">aniž by u toho někdo seděl?</span></h2>
-    <p class="lead">Skoro všude je odpověď „nic“. Pět otázek a uvidíte tři agenty, kteří by u vás mohli běžet první. Pracují podle plánu, i v noci, a výsledek vám ráno nechají ke schválení.</p>
-    <div class="row"><button class="btn" id="go">Zjistit, kde začít →</button><span class="hint">5 otázek · 2 minuty</span></div>
-    <ul class="pills"><li>znalost zůstává vám</li><li>agent navrhuje, člověk schvaluje</li><li>první agent do několika dnů</li></ul>
-  </div>`);
-  el.querySelector("#go").onclick=()=>{ state.step=0; render(); };
-  return el;
-}
 function question(q){
   const opts = typeof q.options==="function" ? q.options(state.answers) : q.options;
   const sel = state.answers[q.id] ?? (q.multi?[]:null);
   const el=$(`<div>
-    <div class="mono">${state.step+1} / ${QUESTIONS.length}</div>
     <h2>${esc(q.title)}</h2>
-    <p class="hint">${esc(q.hint)}</p>
+    ${q.hint?`<p class="hint">${esc(q.hint)}</p>`:""}
     <div class="opts ${q.cols===2?"c2":""}" role="group" aria-label="${esc(q.title)}"></div>
     ${q.multi?`<div class="row"><button class="btn" id="next" disabled>Pokračovat →</button></div>`:""}
-    <button class="back" id="back">← Zpět</button>
+    ${state.step>0?`<button class="back" id="back">← Zpět</button>`:""}
   </div>`);
   const box=el.querySelector(".opts");
   opts.forEach((o,i)=>{
@@ -460,22 +448,22 @@ function question(q){
     box.appendChild(b);
   });
   if(q.multi){ const n=el.querySelector("#next"); n.disabled = sel.length===0; n.onclick=()=>{ state.step++; render(); }; }
-  el.querySelector("#back").onclick=()=>{ state.step--; render(); };
+  const bk=el.querySelector("#back"); if(bk) bk.onclick=()=>{ state.step--; render(); };
   return el;
 }
 function taskLi(t,i){ return `<li class="task"><span class="n">0${i+1}</span><div><h3>${esc(t.name)}</h3><p>${esc(t.desc)}</p></div></li>`; }
 function queue(tasks){
   const sorted=[...tasks].sort((a,b)=>a.time.localeCompare(b.time));
-  return `<div class="slack"><div class="top"><span># ranní-fronta</span><span>ukázková data · nic neodešlo bez vás</span></div>
+  return `<div class="slack"><div class="top"><span style="white-space:nowrap"># ranní‑fronta</span><span>ukázková data</span></div>
     ${sorted.map(t=>`<div class="msg"><div class="av">${esc(t.agent[0])}</div><div><b>${esc(t.agent)}</b><time>${t.time}</time><p>${esc(t.msg)}</p></div></div>`).join("")}</div>`;
 }
 function result(){
   const a=state.answers, v=verdict(a), tasks=pickTasks(a);
   const el=$(`<div>
-    <div class="mono">Váš výsledek</div>
-    <section class="card verdict"><h2>${esc(v.title)}</h2><p style="margin:0">${esc(v.text)}</p></section>
+    <div id="doneBox"></div>
+    ${state.sent?"":`<section class="card verdict"><h2>${esc(v.title)}</h2><p style="margin:0">${esc(v.text)}</p></section>`}
     <section>
-      <h3>Tři agenti, kteří u vás můžou běžet první</h3>
+      <h3>${state.sent?"Tři agenti, kterými můžete začít":"Váš první agent"}</h3>
       <ul class="tasks">${taskLi(tasks[0],0)}</ul>
       <div id="rest"></div>
     </section>
@@ -487,7 +475,7 @@ function result(){
     <h3 style="margin-top:22px">Takhle by vypadalo vaše ráno</h3>${queue(tasks)}`;
   if(state.sent){
     rest.innerHTML=restHtml;
-    gate.appendChild(done(v));
+    el.querySelector("#doneBox").appendChild(done(v));
   } else {
     rest.innerHTML=`<div class="locked"><div class="blur" aria-hidden="true">${restHtml}</div><div class="veil"><span>🔒 Další dva agenti a ukázka vašeho rána</span></div></div>`;
     gate.appendChild(leadForm(v,tasks));
@@ -498,17 +486,14 @@ function result(){
 function leadForm(v,tasks){
   const cta = "Chci celý výsledek a konzultaci";
   const el=$(`<div class="card">
-    <h3>Kam vám celý výsledek poslat?</h3>
-    <p class="hint">Odemkne se hned. ${esc(CONFIG.contactName)} se vám pak ozve s termínem konzultace. Je zdarma a trvá 30 minut.</p>
+    <h3>Odemkněte celý výsledek</h3>
+    <p class="hint">Ukáže se hned. Pak se ozveme s termínem konzultace: 30 minut, zdarma.</p>
     <form novalidate>
       <div class="two">
         <label>Jméno<input name="name" autocomplete="name" placeholder="Jan Novák" required></label>
         <label>Firma<input name="company" autocomplete="organization" placeholder="Firma s.r.o." required></label>
       </div>
-      <div class="two">
-        <label>Pracovní e-mail<input name="email" type="email" inputmode="email" autocomplete="email" placeholder="jan@firma.cz" required></label>
-        <label>Telefon (nepovinné)<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+420"></label>
-      </div>
+      <label>Pracovní e-mail<input name="email" type="email" inputmode="email" autocomplete="email" placeholder="jan@firma.cz" required></label>
       <p class="err" role="alert"></p>
       <button class="btn" type="submit">${cta} →</button>
       <p class="legal">${esc(CONFIG.privacyText)}${CONFIG.privacyUrl?` <a href="${esc(CONFIG.privacyUrl)}" target="_blank" rel="noopener">Zásady zpracování</a>.`:""}</p>
@@ -539,17 +524,12 @@ function leadForm(v,tasks){
 }
 function done(v){
   const proto = !CONFIG.submitUrl;
-  return $(`<div class="card">
-    <h3>${proto?"Výsledek je odemčený.":"Díky, máme to."}</h3>
-    ${proto?`<div class="note"><b>Prototyp:</b> formulář zatím není napojený, kontakt se nikam neodeslal.</div>`
-           :`<p>${esc(CONFIG.contactName)} se vám ozve s termínem konzultace.</p>`}
-    <h3 style="margin-top:18px">Co bude dál</h3>
-    <ol class="steps">
-      <li>Na konzultaci projdeme váš výsledek. Je zdarma, trvá 30 minut a přístupy do systémů na ni nepotřebujeme.</li>
-      <li>Vyberete agenta, kterým začít. Napojí se na jeden váš systém a běží do několika dnů.</li>
-      <li>Po prvním týdnu provozu se podíváme na výsledky a na to, co by šlo předat agentům dál.</li>
-    </ol>
-    <p class="hint" style="margin:16px 0 0">Nechcete čekat? Napište na <a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>.</p>
+  return $(`<div class="card" style="margin-bottom:22px">
+    <h2>${proto?"Výsledek je odemčený.":"Díky, máme to."}</h2>
+    ${proto?`<div class="note" style="margin:0 0 14px"><b>Prototyp:</b> formulář zatím není napojený, kontakt se nikam neodeslal.</div>`
+           :`<p>Ozveme se vám s termínem konzultace. Nechcete čekat? Vyberte si ho hned.</p>`}
+    <a class="btn cal" href="${esc(CONFIG.calendarUrl)}" target="_blank" rel="noopener">Vybrat termín konzultace →</a>
+    <p class="hint" style="margin:14px 0 0">30 minut, zdarma. Nebo napište na <a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>.</p>
   </div>`);
 }
 render();
