@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fundament 22 — rutinu udělají AI agenti, vy schvalujete</title>
+<title>AI agenti pro firmy: konzultace 30 minut zdarma | Fundament 22</title>
 <meta name="description" content="Naučíme AI, jak vaše firma funguje, a nasadíme agenty, kteří připraví odpovědi zákazníkům, přehledy a podklady. Pět otázek a uvidíte, kde u vás začít. Konzultace 30 minut zdarma.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://adamku8.github.io/fundament22/start/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="cs_CZ">
 <meta property="og:site_name" content="Fundament 22">
-<meta property="og:title" content="Fundament 22 — rutinu udělají AI agenti, vy schvalujete">
+<meta property="og:title" content="Přestaňte dělat práci, kterou zvládne AI — Fundament 22">
 <meta property="og:description" content="Pět otázek a uvidíte tři agenty, kteří by u vás mohli běžet první. Konzultace 30 minut zdarma.">
 <meta property="og:url" content="https://adamku8.github.io/fundament22/start/">
 <meta property="og:image" content="https://adamku8.github.io/fundament22/assets/og-start.png">
@@ -85,6 +85,41 @@ section{padding:72px 0}
 .fit .yes li::before{content:"✓";color:#127552}.fit .nope li::before{content:"✕";color:#B3261E}
 .demo{display:flex;flex-wrap:wrap;gap:18px 30px;align-items:center;justify-content:space-between}
 .demo p{color:var(--ink2);margin-top:8px;max-width:560px}
+.hero{background:radial-gradient(900px 420px at 50% -80px,rgba(255,154,61,.28),transparent 70%)}
+.hero h1{font-size:clamp(38px,7vw,72px);letter-spacing:-.035em}
+.hero .lead{font-size:20px;color:var(--ink)}
+.hero .lead b{color:var(--or2)}
+.free{display:inline-flex;align-items:center;gap:12px;margin-bottom:26px;padding:6px 18px 6px 6px;border-radius:999px;background:#fff;border:1px solid rgba(232,84,26,.35);box-shadow:0 8px 26px rgba(232,84,26,.14);font-weight:600;font-size:15.5px;color:var(--ink);text-decoration:none}
+.free b{background:var(--or);color:#fff;border-radius:999px;padding:5px 13px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.btn.big{font-size:18px;padding:17px 30px;box-shadow:0 14px 40px rgba(232,84,26,.38)}
+.btn.white{background:#fff;color:var(--or2);box-shadow:0 10px 30px rgba(0,0,0,.18);white-space:nowrap}
+.btn.white:hover{color:var(--or2)}
+.flow{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.flow::before{content:"";position:absolute;left:12.5%;right:12.5%;top:27px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--or) 0,var(--or) 34%,rgba(21,24,58,.16) 34%)}
+.flow li{position:relative;padding:0 10px;text-align:center}
+.flow .dot{position:relative;z-index:1;display:grid;place-items:center;width:56px;height:56px;margin:0 auto 18px;border-radius:50%;background:#fff;border:3px solid rgba(21,24,58,.18);font-family:var(--disp);font-weight:800;font-size:21px;color:var(--ink3)}
+.flow .free1 .dot{border-color:var(--or);color:var(--or2)}
+.flow .main .dot{background:var(--or);border-color:var(--or);color:#fff;width:68px;height:68px;margin-top:-6px;margin-bottom:12px;font-size:26px;box-shadow:0 0 0 8px rgba(232,84,26,.16)}
+.flow .tag{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);background:rgba(21,24,58,.06);border-radius:999px;padding:4px 10px;margin-bottom:10px}
+.flow .free1 .tag{background:#FFF0E6;color:var(--or2)}
+.flow .main .tag{background:var(--or);color:#fff}
+.flow h3{font-size:20px}
+.flow p{font-size:15.5px;color:var(--ink2);margin-top:6px}
+.flow .main .fb{background:#fff;border:1px solid rgba(232,84,26,.45);border-radius:16px;padding:16px 14px;box-shadow:0 18px 50px rgba(232,84,26,.12)}
+.flow li:not(.main) .fb{padding:16px 6px}
+.flownote{margin-top:26px;text-align:center;font-weight:600;color:var(--ink2)}
+@media(max-width:820px){
+.flow{grid-template-columns:1fr;gap:18px;margin-top:32px}
+.flow::before{left:27px;right:auto;top:28px;bottom:60px;width:4px;height:auto;background:linear-gradient(180deg,var(--or) 0,var(--or) 34%,rgba(21,24,58,.16) 34%)}
+.flow li{display:flex;gap:16px;text-align:left;padding:0;align-items:flex-start}
+.flow .dot,.flow .main .dot{flex:none;width:56px;height:56px;margin:0;font-size:21px}
+.flow li:not(.main) .fb{padding:4px 0 0}
+.flow .fb{flex:1}
+}
+.band{background:var(--or);color:#fff;padding:52px 0;background-image:linear-gradient(100deg,#FF8A2A,#E8541A 50%,#C8327E)}
+.band .wrap{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:center;justify-content:space-between}
+.band h2{color:#fff;font-size:clamp(28px,4.4vw,44px)}
+.band p{margin-top:10px;font-size:18px;max-width:560px;color:#FFE9DC}
 /* ---------- online analýza (formulář z FIREMNI AI) ---------- */
 .az{background:var(--dark);color:#fff;padding:80px 0;background-image:radial-gradient(900px 500px at 85% -10%,rgba(200,50,126,.22),transparent 60%),radial-gradient(700px 420px at -10% 110%,rgba(255,154,61,.14),transparent 60%);scroll-margin-top:60px;
 --line:#3a3e5e;--muted:#a9adcb;--soft:#d9dbef;--acard:#1d2150;--bg2:#15183a;--o1:#ff9a3d;font-family:var(--disp);font-size:16px;line-height:1.5}
@@ -159,22 +194,22 @@ footer a{color:#C9CCE6}
 <body>
 <header class="top"><div class="wrap">
 <a class="logo" href="../" aria-label="Fundament 22"><svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#E8541A"/><path d="M9.5 18.5L18.5 9.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="9.5" cy="18.5" r="3.6" fill="#fff"/><circle cx="18.5" cy="9.5" r="3.6" fill="#15183A"/></svg>Fundament 22</a>
-<a class="btn sm" href="#analyza">Zjistit, kde začít</a>
+<a class="btn sm" href="#analyza">Konzultace zdarma</a>
 </div></header>
 
 <main>
 <section class="hero"><div class="wrap">
-<p class="eyebrow">Základy firmy pro 22. století</p>
-<h1>Rutinu udělají AI agenti.<br><span>Vy jen schvalujete.</span></h1>
-<p class="lead">Naučíme AI, jak vaše firma funguje, a nasadíme pomocníky, kteří připraví odpovědi zákazníkům, přehledy a podklady. Pracují i v noci. Ráno na vás čeká hotová práce ke schválení.</p>
-<div class="cta"><a class="btn" href="#analyza">Zjistit, kde u nás začít</a><a class="btn ghost" href="../demo/">Podívat se na ukázku</a></div>
-<ul class="pills"><li>5 otázek, 2 minuty</li><li>konzultace 30 minut zdarma</li><li>bez vás nic neodejde</li></ul>
+<a class="free" href="#analyza"><b>Zdarma</b>30 minut konzultace o vaší firmě</a>
+<h1>Přestaňte dělat práci,<br><span>kterou zvládne AI.</span></h1>
+<p class="lead">Odpovědi zákazníkům, ranní přehledy, upomínky, podklady na poradu. Tohle za vás připraví AI agenti. I v noci. <b>Vy jen schvalujete.</b></p>
+<div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a><a class="btn ghost" href="../demo/">Podívat se na ukázku</a></div>
+<ul class="pills"><li>30 minut, nic neplatíte</li><li>k ničemu se nezavazujete</li><li>bez vás nic neodejde</li></ul>
 </div></section>
 
 <section class="white"><div class="wrap split">
 <div>
 <p class="eyebrow">Jak vypadá ráno</p>
-<h2>Přijdete do práce a půlka je hotová.</h2>
+<h2>Přijdete do práce a&nbsp;půlka je hotová.</h2>
 <p class="sub">Agent není chatovací okno, do kterého musíte psát. Je to pomocník s jednou jasnou prací. Udělá ji sám podle plánu a výsledek vám pošle tam, kde už pracujete, třeba do Slacku nebo e-mailu.</p>
 <p class="sub">Vy návrh schválíte, upravíte, nebo vrátíte. Když si agent není jistý, řekne to a nechá rozhodnutí na vás.</p>
 </div>
@@ -201,18 +236,25 @@ footer a{color:#C9CCE6}
 <a class="btn ghost" href="../demo/">Otevřít ukázku</a>
 </div></section>
 
-<section><div class="wrap">
-<p class="eyebrow">Jak začít</p>
-<h2>Nejdřív si popovídáme. Zdarma.</h2>
-<div class="grid3">
-<div class="card hl"><div class="n">Krok 1</div><h3>Konzultace</h3><p>Půl hodiny po telefonu nebo online. Projdeme, co vás pálí a kde by agent pomohl nejdřív. Přístupy do systémů nepotřebujeme.</p><div class="price">Zdarma</div></div>
-<div class="card"><div class="n">Krok 2</div><h3>První analýza</h3><p>Podíváme se na vaše data a spočítáme, kde se ztrácí nejvíc času. Dostanete čísla a zkušební přehled své firmy.</p><div class="price">Cena podle rozsahu</div></div>
-<div class="card"><div class="n">Krok 3</div><h3>Zavedení a péče</h3><p>Postavíme, co dává smysl, naučíme s tím vaše lidi a hlídáme, že to běží. Můžete skončit po každém kroku.</p><div class="price">Nabídka po analýze</div></div>
-</div>
+<section id="postup"><div class="wrap">
+<p class="eyebrow">Jak to proběhne</p>
+<h2>Čtyři kroky. První dva vás nestojí nic.</h2>
+<ol class="flow">
+<li class="free1"><span class="dot">1</span><div class="fb"><span class="tag">2 minuty · zdarma</span><h3>Pět otázek</h3><p>Odpovíte dole na stránce. Hned uvidíte tři agenty, kteří by u vás mohli běžet první.</p></div></li>
+<li class="main"><span class="dot">2</span><div class="fb"><span class="tag">30 minut · zdarma</span><h3>Konzultace</h3><p>Zavoláme si. Projdeme, co vás pálí a kde začít. Přístupy do systémů nepotřebujeme.</p></div></li>
+<li><span class="dot">3</span><div class="fb"><span class="tag">cena podle rozsahu</span><h3>První analýza</h3><p>Na vašich datech spočítáme, kde se ztrácí nejvíc času. Dostanete čísla a zkušební přehled firmy.</p></div></li>
+<li><span class="dot">4</span><div class="fb"><span class="tag">nabídka po analýze</span><h3>Zavedení a péče</h3><p>Postavíme, co dává smysl, zaučíme vaše lidi a hlídáme, že to běží.</p></div></li>
+</ol>
+<p class="flownote">Po každém kroku se rozhodujete znovu. Když to nedává smysl, skončíme.</p>
 <div class="fit">
 <div class="card yes"><h3>Dává to smysl, když</h3><ul><li>je vás ve firmě aspoň 15</li><li>se u vás opakuje hodně stejné práce</li><li>máte člověka, který si to vezme za své</li></ul></div>
 <div class="card nope"><h3>Zatím to není pro vás, když</h3><ul><li>je vás pár a všechno víte z hlavy</li><li>čekáte, že AI nahradí lidi</li><li>nechcete nikomu říct, jak má firma fungovat</li></ul></div>
 </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+<div><h2>30 minut. Zdarma. K&nbsp;ničemu se&nbsp;nezavazujete.</h2><p>Odpovězte na pět otázek a ozveme se s termínem. Na konzultaci už budeme vědět, o čem mluvit.</p></div>
+<a class="btn white" href="#analyza">Začít pěti otázkami ↓</a>
 </div></section>
 
 <section class="az" id="analyza"><div class="in">
