@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finance — ukázkový přehled e-shopu | Fundament 22</title>
+<meta name="description" content="Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku. Ukázka s fiktivními daty e-shopu Zelená bedýnka: přehled, který čtou lidé i AI agenti, s frontou návrhů ke schválení.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://adamku8.github.io/fundament22/demo/finance/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Fundament 22">
+<meta property="og:title" content="Finance — ukázkový přehled e-shopu | Fundament 22">
+<meta property="og:description" content="Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku. Ukázka s fiktivními daty e-shopu Zelená bedýnka: přehled, který čtou lidé i AI agenti, s frontou návrhů ke schválení.">
+<meta property="og:url" content="https://adamku8.github.io/fundament22/demo/finance/">
+<meta property="og:image" content="https://adamku8.github.io/fundament22/assets/og-demo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../../assets/fonts.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Finance — ukázkový přehled e-shopu | Fundament 22", "description": "Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku. Ukázka s fiktivními daty e-shopu Zelená bedýnka: přehled, který čtou lidé i AI agenti, s frontou návrhů ke schválení.", "url": "https://adamku8.github.io/fundament22/demo/finance/", "inLanguage": "cs", "isPartOf": {"@type": "WebSite", "name": "Fundament 22", "url": "https://adamku8.github.io/fundament22/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fundament 22", "item": "https://adamku8.github.io/fundament22/"}, {"@type": "ListItem", "position": 2, "name": "Demo", "item": "https://adamku8.github.io/fundament22/demo/"}, {"@type": "ListItem", "position": 3, "name": "Finance", "item": "https://adamku8.github.io/fundament22/demo/finance/"}]}]}</script>
+<script>(function(){try{var t=localStorage.getItem("board-theme");
+if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<style>
+:root{--font:"DM Sans",system-ui,-apple-system,sans-serif;--font-display:"Plus Jakarta Sans","DM Sans",system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --bg:#f7f5f0;--surface:#fff;--surface-2:#f3f1fa;--ink:#15183a;--ink-2:#4a4e6e;--ink-3:#64688a;--line:#e4e2e6;--field-line:#8a8fae;--link:#c2410c;--accent:#e8541a;--accent-hover:#c2410c;--accent-ink:#fff;--accent-soft:#fff0e6;--accent-line:#ffc9a3;--accent-tint:#e8541a1f;--violet-soft:#efeafd;--success-soft:#e6f8f0;--blue-soft:#e8f0fe;--magenta-soft:#fbe9f2;--tile-shadow:0 18px 50px rgba(21,24,58,.10);--hover:#15183a0f;--count-ink:#1a0e05;--inverse:#15183a;--on-inverse:#fff;--magenta:#c8327e;--violet:#6d3bd6;--blue:#2f7bf0;--success:#127552;--danger:#d32f2f;--danger-ink:#fff;--danger-bg:#fdecec;--soft:#fff0e6;--seg-shadow:0 1px 3px rgba(21,24,58,.14);--cta-shadow:0 10px 36px rgba(232,84,26,.3);--modal-shadow:0 30px 80px rgba(21,24,58,.2);color-scheme:light;--r-btn:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10143a;--surface:#15183a;--surface-2:#232646;--ink:#f3f1fa;--ink-2:#c9cce6;--ink-3:#8e93ba;--line:#313452;--field-line:#6b6f9a;--link:#ffb25c;--accent:#ff6a2a;--accent-hover:#ff9a3d;--accent-ink:#1a0e05;--accent-soft:#3a2d3a;--accent-line:#6b3b2c;--accent-tint:#ff7a2f24;--violet-soft:#2a2556;--success-soft:#173a3a;--blue-soft:#1d2a55;--magenta-soft:#3a1c34;--tile-shadow:0 18px 50px rgba(0,0,0,.35);--hover:#ffffff0f;--count-ink:#1a0e05;--inverse:#f3f1fa;--on-inverse:#15183a;--magenta:#e0407e;--violet:#a98bfa;--blue:#659df2;--success:#3ddc97;--danger:#f87171;--danger-ink:#15183a;--danger-bg:#3a1c2a;--soft:#3a2d3a;--seg-shadow:0 1px 3px #0007;--cta-shadow:0 10px 40px rgba(255,106,42,.35);--modal-shadow:0 30px 80px #0008;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10143a;--surface:#15183a;--surface-2:#232646;--ink:#f3f1fa;--ink-2:#c9cce6;--ink-3:#8e93ba;--line:#313452;--field-line:#6b6f9a;--link:#ffb25c;--accent:#ff6a2a;--accent-hover:#ff9a3d;--accent-ink:#1a0e05;--accent-soft:#3a2d3a;--accent-line:#6b3b2c;--accent-tint:#ff7a2f24;--violet-soft:#2a2556;--success-soft:#173a3a;--blue-soft:#1d2a55;--magenta-soft:#3a1c34;--tile-shadow:0 18px 50px rgba(0,0,0,.35);--hover:#ffffff0f;--count-ink:#1a0e05;--inverse:#f3f1fa;--on-inverse:#15183a;--magenta:#e0407e;--violet:#a98bfa;--blue:#659df2;--success:#3ddc97;--danger:#f87171;--danger-ink:#15183a;--danger-bg:#3a1c2a;--soft:#3a2d3a;--seg-shadow:0 1px 3px #0007;--cta-shadow:0 10px 40px rgba(255,106,42,.35);--modal-shadow:0 30px 80px #0008;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}[hidden]{display:none!important}
+/* HLAVIČKA (neměnit) – značkový proužek, logo AI Firma, Zpět, CZ/EN/PL, režim */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.strip{height:3px;background:linear-gradient(90deg,#ff9a3d,var(--accent) 40%,var(--magenta) 75%,var(--violet))}
+.logo-word{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.02em;margin-left:10px;white-space:nowrap}
+.mark-a{fill:var(--accent)}.mark-b{fill:var(--inverse)}.mark-c{fill:var(--surface)}
+.top-in{max-width:1440px;margin:0 auto;padding:10px 32px;display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;flex:none;color:var(--ink)}.logo svg{height:28px;width:28px;display:block}
+.sep{width:1px;height:22px;background:var(--line);flex:none}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
+.back:hover{color:var(--link)}.back svg{width:16px;height:16px}
+.spacer{flex:1}
+.lang-seg{display:flex;gap:2px}
+.lang-seg button{border:none;background:transparent;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--ink-3);padding:6px 8px;border-radius:8px}
+.lang-seg button:hover{background:var(--hover);color:var(--ink)}
+.lang-seg button[aria-pressed="true"]{background:var(--accent-tint);color:var(--ink)}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--r-btn);border:1px solid var(--field-line);background:var(--surface);color:var(--ink-2);flex:none}
+.icon-btn:hover{color:var(--ink);border-color:var(--ink-2)}.icon-btn svg{width:18px;height:18px}
+/* TITULEK + CTA */
+.wrap{max-width:1440px;margin:0 auto;padding:0 32px 64px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:44px 0 32px}
+.titles{min-width:0;flex:1 1 420px}
+h1{font-family:var(--font-display);font-size:36px;line-height:1.22;font-weight:700;letter-spacing:-.02em;margin:0}
+.subtitle{margin:10px 0 0;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r-btn);border:1px solid transparent;font-weight:700;font-size:15px;padding:10px 18px;min-height:44px;background:none;transition:background-color .15s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:14px}.btn.lg{min-height:52px;padding:12px 24px;font-size:16px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}.btn.primary.lg{box-shadow:var(--cta-shadow)}.btn.primary:hover{background:var(--accent-hover)}
+.btn.secondary{background:var(--inverse);color:var(--on-inverse)}.btn.secondary:hover{opacity:.88}
+.btn.outline{border-color:var(--field-line);color:var(--ink);background:var(--surface)}.btn.outline:hover{background:var(--surface-2)}
+.btn.ghost{color:var(--ink-2)}.btn.ghost:hover{background:var(--surface-2);color:var(--ink)}
+.btn.danger{background:var(--danger);color:var(--danger-ink)}.btn:disabled{opacity:.5;cursor:not-allowed}
+/* MENU – lišta odkazů na vlasové lince, 48 px, položky vlevo, .nav-right doprava, aktivní = oranžový nádech */
+.nav{display:flex;width:100%;height:48px;align-items:center;justify-content:flex-start;gap:4px;margin-bottom:28px;border-bottom:1px solid var(--line);overflow-x:auto}
+.nav button{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 12px;border:none;background:transparent;font-size:14px;font-weight:500;color:var(--ink-2);border-radius:8px;white-space:nowrap;transition:background-color .15s,color .15s}
+.nav button:hover{background:var(--hover);color:var(--ink)}
+.nav button[aria-current="page"]{background:var(--accent-tint);color:var(--ink);font-weight:600}
+.nav .nav-right{margin-left:auto}
+.count{font-size:11px;font-weight:700;line-height:1.5;background:var(--accent);color:var(--count-ink);border-radius:999px;padding:0 7px;min-width:20px;text-align:center}
+/* KARTY, KPI, TABULKY */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.card h2{font-family:var(--font-display);font-size:16px;font-weight:700;margin:0 0 14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:16px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.kpi.accent{background:var(--accent-soft);border-color:var(--accent-line)}
+.kpi-l{font-size:13px;font-weight:600;color:var(--ink-2)}.kpi.accent .kpi-l{color:var(--ink)}
+.kpi-v{font-family:var(--font-display);font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.03em;margin:6px 0 4px}
+.kpi-s{font-size:12.5px;color:var(--ink-2)}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font-family:var(--font-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-size:10.5px;padding:8px 10px;background:var(--surface-2);white-space:nowrap}
+th:first-child{border-radius:6px 0 0 6px}th:last-child{border-radius:0 6px 6px 0}
+td{padding:10px;border-bottom:1px solid var(--line)}td.num,th.num{text-align:right;white-space:nowrap}
+.muted{color:var(--ink-2)}
+.meter{margin-bottom:14px}.meter-h{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.meter-h b{font-weight:700}.track{height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.fill{height:100%;border-radius:4px;background:var(--accent)}.fill.warn{background:var(--danger)}
+.bars{display:flex;align-items:flex-end;gap:4px;height:140px;padding-top:8px}
+.bars div{flex:1;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+/* NASTAVENÍ – svislý seznam jako postranní panel chatu: mono nadpisy skupin, aktivní řádek s oranžovým nádechem */
+.settings{display:grid;grid-template-columns:232px minmax(0,1fr);gap:24px;align-items:start}
+.smenu{position:sticky;top:84px;display:flex;flex-direction:column;gap:4px;padding-right:16px;border-right:1px solid var(--line)}
+.smenu-sec{display:flex;flex-direction:column;gap:2px}.smenu-sec+.smenu-sec{margin-top:12px}
+.smenu-h{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0 10px 8px}
+.smenu button{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink-2);transition:background-color .15s,color .15s}
+.smenu button:hover{background:var(--hover);color:var(--ink)}
+.smenu button[aria-current="page"]{background:var(--accent-tint);color:var(--ink);font-weight:600}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--inverse);color:var(--on-inverse);box-shadow:var(--modal-shadow);padding:12px 18px;border-radius:var(--r-btn);font-size:14px;font-weight:500;z-index:60;max-width:90vw}
+@media (max-width:900px){.top-in,.wrap{padding-left:16px;padding-right:16px}}
+@media (max-width:760px){.settings{grid-template-columns:1fr}.smenu{position:static;flex-direction:row;flex-wrap:wrap;gap:8px;padding:0 0 12px;border-right:0;border-bottom:1px solid var(--line)}.smenu-sec{flex-direction:row;flex-wrap:wrap}.smenu-sec+.smenu-sec{margin-top:0}.smenu-h{display:none}.smenu button{width:auto}}
+@media (max-width:640px){h1{font-size:28px}.ctas{width:100%}.ctas .btn{flex:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+.badge{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap;display:inline-block;line-height:1.5}
+.eyebrow{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:16px;margin-bottom:0}
+.cols>.card{margin-bottom:16px}
+.badge.ok{background:var(--success-soft);color:var(--success)}.badge.warn{background:var(--accent-soft);color:var(--link)}.badge.bad{background:var(--danger-bg);color:var(--danger)}
+.axis{display:flex;justify-content:space-between;font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink-3);margin-top:6px}
+.alist{display:flex;flex-direction:column}.arow{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}.arow:last-child{border-bottom:0}
+.arow .txt{flex:1;font-size:14px}.arow a{color:var(--link);font-size:13px;font-weight:600;text-decoration:none;white-space:nowrap}.arow a:hover{text-decoration:underline}
+.appr{display:flex;gap:16px;align-items:center;flex-wrap:wrap;padding:16px 0;border-bottom:1px solid var(--line)}.appr:last-child{border-bottom:0}
+.appr .body{flex:1 1 320px;min-width:0}.appr .txt{font-size:15px;margin:6px 0 2px}.appr .src{font-size:12.5px;color:var(--ink-3)}.appr .acts{display:flex;gap:8px}
+.appr.done .txt{color:var(--ink-2)}.appr.done .acts{display:none}.appr .res{font-size:13px;color:var(--success);margin-top:6px}
+.kpi-src{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.card>.kpis{margin-bottom:0}.card>.note{margin:14px 0 0;font-size:13px;color:var(--ink-2)}
+.tl{display:flex;flex-direction:column}.tl-row{display:grid;grid-template-columns:56px 170px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line)}.tl-row:last-child{border-bottom:0}
+.tl-time{font-family:var(--font-mono);font-size:12px;color:var(--ink-3)}.tl-txt{font-size:14px}.tl-src{font-family:var(--font-mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+@media (max-width:760px){.tl-row{grid-template-columns:56px minmax(0,1fr)}.tl-txt,.tl-src{grid-column:2}}
+.lnk{color:var(--link);text-decoration:none;font-weight:600}.lnk:hover{text-decoration:underline}
+.rel{display:flex;gap:8px;flex-wrap:wrap}.rel a.btn{text-decoration:none}
+.text p{margin:0 0 10px;font-size:15px;max-width:72ch}.text p:last-child{margin:0}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+
+/* --- web Fundament 22: úpravy proti verzi v Claude --- */
+#nav button[data-view="settings"],#nav button[data-view="favs"]{display:none}
+.f22-bar{margin:40px auto 0;max-width:1200px;padding:20px 24px 32px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.f22-bar a{color:var(--link);font-weight:600;text-decoration:none}.f22-bar a:hover{text-decoration:underline}
+.f22-bar .f22-cta{background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px}
+.f22-bar nav{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="strip"></div><div class="top-in">
+  <span class="logo" role="img" aria-label="Zelená bedýnka"><svg viewBox="0 0 28 28" aria-hidden="true"><rect class="mark-a" width="28" height="28" rx="8"/><path d="M9.5 18.5L18.5 9.5" stroke="var(--surface)" stroke-width="2.6" stroke-linecap="round"/><circle class="mark-c" cx="9.5" cy="18.5" r="3.6"/><circle class="mark-b" cx="18.5" cy="9.5" r="3.6"/></svg><span class="logo-word">Zelená bedýnka</span></span>
+  <span class="sep"></span>
+  <a class="back" href="https://adamku8.github.io/fundament22/demo/" target="_top" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    <span data-t="Zpět na board">Zpět na board</span></a>
+  <span class="spacer"></span>
+  <div class="lang-seg" id="lang" role="group" aria-label="Jazyk">
+    <button type="button" data-lang="cs">CZ</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pl">PL</button></div>
+  <button class="icon-btn" id="theme" type="button"></button>
+</div></header>
+
+<div class="wrap">
+  <div class="head">
+    <div class="titles"><span class="eyebrow" data-t="DEMO · FIKTIVNÍ DATA">DEMO · FIKTIVNÍ DATA</span>
+    <h1 data-t="Finance">Finance</h1>
+      <p class="subtitle" data-t="Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku.">Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku.</p></div>
+    <div class="ctas"><!-- hlavní CTA, max 2; vynech celý div, pokud nejsou -->
+      <button class="btn primary lg" id="ctaMain" type="button"><span data-t="Ke schválení">Ke schválení</span></button>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Sekce">
+    <button data-view="home" aria-current="page" data-t="Přehled">Přehled</button>
+    <button data-view="approvals"><span data-t="Ke schválení">Ke schválení</span><span class="count" id="apCount"></span></button>
+    <button data-view="settings" data-t="Nastavení">Nastavení</button>
+    <button data-view="help" class="nav-right" data-t="Nápověda">Nápověda</button>
+  </nav>
+  <main id="view"><div class="kpis"><div class="kpi accent"><div class="kpi-l">Tržby MTD</div><div class="kpi-v">3&nbsp;130&nbsp;554&nbsp;Kč</div><div class="kpi-s">říjen celkem 5&nbsp;217&nbsp;745&nbsp;Kč</div><div class="kpi-src">zdroj: Shoptet</div></div><div class="kpi"><div class="kpi-l">Hrubá marže MTD</div><div class="kpi-v">36,4&nbsp;%</div><div class="kpi-s">říjen 35,8 %</div><div class="kpi-src">zdroj: Shoptet + Fakturoid</div></div><div class="kpi"><div class="kpi-l">EBITDA MTD</div><div class="kpi-v">63&nbsp;681&nbsp;Kč</div><div class="kpi-s">září ve ztrátě, od října v plusu</div><div class="kpi-src">zdroj: Fakturoid</div></div><div class="kpi"><div class="kpi-l">Po splatnosti</div><div class="kpi-v">86&nbsp;400&nbsp;Kč</div><div class="kpi-s">3 faktury, B2B</div><div class="kpi-src">zdroj: Fakturoid</div></div></div><div class="card"><h2>Výsledovka po měsících</h2><div class="tbl-wrap"><table><thead><tr><th>Měsíc</th><th class="num">Tržby</th><th class="num">Hrubý zisk</th><th class="num">Marže</th><th class="num">Provozní náklady</th><th class="num">EBITDA</th></tr></thead><tbody><tr><td>Září</td><td class="num">4&nbsp;899&nbsp;599&nbsp;Kč</td><td class="num">1&nbsp;724&nbsp;659&nbsp;Kč</td><td class="num">35,2&nbsp;%</td><td class="num">1&nbsp;752&nbsp;049&nbsp;Kč</td><td class="num">−27&nbsp;390&nbsp;Kč</td></tr><tr><td>Říjen</td><td class="num">5&nbsp;217&nbsp;745&nbsp;Kč</td><td class="num">1&nbsp;867&nbsp;953&nbsp;Kč</td><td class="num">35,8&nbsp;%</td><td class="num">1&nbsp;793&nbsp;089&nbsp;Kč</td><td class="num">74&nbsp;864&nbsp;Kč</td></tr><tr><td>Listopad (do 18.)</td><td class="num">3&nbsp;130&nbsp;554&nbsp;Kč</td><td class="num">1&nbsp;139&nbsp;522&nbsp;Kč</td><td class="num">36,4&nbsp;%</td><td class="num">1&nbsp;075&nbsp;841&nbsp;Kč</td><td class="num">63&nbsp;681&nbsp;Kč</td></tr></tbody></table></div></div><div class="cols"><div class="card"><h2>Cash a závazky</h2><div class="meter"><div class="meter-h"><span><b>Splatné do 14 dní vs. na účtu</b> · 742&nbsp;000 Kč / 1&nbsp;284&nbsp;000 Kč</span><span>58 %</span></div><div class="track"><div class="fill" style="width: 57.7882%;"></div></div></div><div class="meter"><div class="meter-h"><span><b>Rozpočet marketingu – listopad</b> · 222&nbsp;269 Kč / 380&nbsp;000 Kč</span><span>58 %</span></div><div class="track"><div class="fill" style="width: 58.4918%;"></div></div></div></div><div class="card"><h2>Faktury po splatnosti</h2><div class="tbl-wrap"><table><thead><tr><th>Odběratel</th><th class="num">Dní</th><th class="num">Částka</th></tr></thead><tbody><tr><td>Restaurace Na Rohu</td><td class="num">21</td><td class="num">31&nbsp;200&nbsp;Kč</td></tr><tr><td>Bistro Kořen</td><td class="num">12</td><td class="num">18&nbsp;400&nbsp;Kč</td></tr><tr><td>Kantýna Technopark</td><td class="num">5</td><td class="num">36&nbsp;800&nbsp;Kč</td></tr></tbody></table></div></div></div><div class="card"><h2>Souvisí s</h2><div class="rel"><a class="btn outline sm" href="https://adamku8.github.io/fundament22/demo/prehled-firmy/" target="_top" rel="noopener">Přehled firmy →</a><a class="btn outline sm" href="https://adamku8.github.io/fundament22/demo/ceo/" target="_top" rel="noopener">CEO →</a><a class="btn outline sm" href="https://adamku8.github.io/fundament22/demo/klienti/" target="_top" rel="noopener">Klienti →</a></div></div></main>
+</div>
+
+<footer class="f22-bar"><span>Ukázka systému <a href="../../">Fundament 22</a>. Data jsou fiktivní.</span><nav aria-label="Fundament 22"><a href="../">Všechny přehledy</a><a href="../../#cena">Nabídka a cena</a><a class="f22-cta" href="https://calendar.app.google/v39ka3uchSRSSG2AA" rel="noopener">Domluvit workshop</a></nav></footer>
+<script>
+(function(){"use strict";
+const $=s=>document.querySelector(s);
+const el=(tag,attrs,...kids)=>{const e=document.createElement(tag);if(attrs)for(const[k,v]of Object.entries(attrs)){if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='text')e.textContent=v;else if(k==='style')e.style.cssText=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?'':v)}for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e};
+
+/* ---------- i18n: klíč = český text, hodnota = [EN, PL] ---------- */
+const LANGS=['cs','en','pl'];
+let LANG=(()=>{try{const l=localStorage.getItem('board-lang');return LANGS.includes(l)?l:'cs'}catch(e){return 'cs'}})();
+const D={
+ 'Zpět na board':['Back to board','Powrót do tablicy'],'Přehled':['Overview','Przegląd'],'Nastavení':['Settings','Ustawienia'],'Nápověda':['Help','Pomoc'],
+ 'Přepnout na světlý režim':['Switch to light mode','Przełącz na tryb jasny'],'Přepnout na tmavý režim':['Switch to dark mode','Przełącz na tryb ciemny'],
+ 'Statistiky':['Statistics','Statystyki'],'Návštěvnost':['Traffic','Odwiedziny'],'Využití databáze a úložiště':['Database & storage usage','Wykorzystanie bazy i magazynu'],
+ 'Návštěv za 30 dní':['Visits in 30 days','Wizyty w 30 dni'],'Unikátních uživatelů':['Unique users','Unikalni użytkownicy'],'Dnes':['Today','Dziś'],
+ 'Návštěvy po dnech':['Visits per day','Wizyty dziennie'],'Nejaktivnější uživatelé':['Most active users','Najaktywniejsi użytkownicy'],'Uživatel':['User','Użytkownik'],'Návštěv':['Visits','Wizyt'],'Naposledy':['Last seen','Ostatnio'],
+ 'Databáze':['Database','Baza danych'],'dokumentů':['documents','dokumentów'],'Úložiště souborů':['File storage','Magazyn plików'],'souborů':['files','plików'],
+ 'Statistiky vidí jen admini.':['Only admins can see statistics.','Statystyki widzą tylko administratorzy.'],'Žádná data.':['No data.','Brak danych.'],'Načítám…':['Loading…','Wczytywanie…'],
+ 'Úložiště je plné.':['Storage is full.','Magazyn jest pełny.'],'Neznámý':['Unknown','Nieznany'],
+ "Ke schválení":["For approval", "Do zatwierdzenia"],
+ "Schválit":["Approve", "Zatwierdź"],
+ "Upravit":["Edit", "Edytuj"],
+ "Schváleno":["Approved", "Zatwierdzono"],
+ "Demo: ve skutečném provozu se schválení propíše do Slacku a do mozku firmy.":["Demo: in real use, the approval goes to Slack and the company brain.", "Demo: w realnym użyciu zatwierdzenie trafi do Slacka i do mózgu firmy."],
+ "Demo: tady byste návrh upravili v chatu s Claude.":["Demo: you would edit the proposal in a Claude chat.", "Demo: tutaj edytowalibyście propozycję w czacie z Claude."],
+ "Zdroj":["Source", "Źródło"],
+ "Otevřít":["Open", "Otwórz"],
+ "DEMO · FIKTIVNÍ DATA":["DEMO · FICTIONAL DATA", "DEMO · DANE FIKCYJNE"],
+ "Všechno je vyřízené.":["All done.", "Wszystko załatwione."],
+ "Data: Shoptet, Fakturoid, Pipedrive, Freshdesk, Ecomail, Google Ads, Meta, Slack. Stav k 18. 11. 2026.":["Data: Shoptet, Fakturoid, Pipedrive, Freshdesk, Ecomail, Google Ads, Meta, Slack. As of 18 Nov 2026.", "Dane: Shoptet, Fakturoid, Pipedrive, Freshdesk, Ecomail, Google Ads, Meta, Slack. Stan na 18.11.2026."],
+ "Jak to funguje":["How it works", "Jak to działa"],
+ "Agenti každé ráno načtou data z napojených nástrojů, zapíšou je do firemního mozku a připraví návrhy. Člověk je schválí – tady, ve Slacku nebo v chatu s Claude.":["Every morning the agents read data from connected tools, write it into the company brain and prepare proposals. A person approves them – here, in Slack or in a Claude chat.", "Każdego ranka agenci czytają dane z podłączonych narzędzi, zapisują je w mózgu firmy i przygotowują propozycje. Człowiek je zatwierdza – tutaj, na Slacku lub w czacie z Claude."],
+ "Tohle je demo s fiktivními daty e-shopu Zelená bedýnka. Stejný systém provozujeme u sebe a nasadíme ho i u vás.":["This is a demo with fictional data of the Zelená bedýnka e-shop. We run the same system ourselves and can deploy it for you.", "To demo z fikcyjnymi danymi e-sklepu Zelená bedýnka. Ten sam system prowadzimy u siebie i wdrożymy go u was."],
+ "Omezení":["Limitations", "Ograniczenia"],
+ "Kapacita databáze je odhad. Návštěvnost zachytí jen úroveň Contributor a výš. Statistiky vidí jen admini. Plné úložiště se hlásí „Úložiště je plné.“":["Database capacity is an estimate. Traffic only captures Contributor level and up. Only admins see statistics. A full storage reports “Storage is full.”", "Pojemność bazy to szacunek. Ruch rejestruje tylko poziom Contributor i wyżej. Statystyki widzą tylko administratorzy. Pełny magazyn zgłasza „Magazyn jest pełny.”"],
+ "Souvisí s":["Related", "Powiązane"],
+ "Zapsáno do mozku → rozhodnuti.md":["Written to the brain → rozhodnuti.md", "Zapisano w mózgu → rozhodnuti.md"],
+ "Oznámeno ve Slacku v":["Announced in Slack in", "Ogłoszono na Slacku w"],
+ "Další krok provede agent v nástroji":["The agent takes the next step in", "Kolejny krok agent wykona w narzędziu"],
+ "zdroj":["source", "źródło"],
+ "Přehled firmy":["Company overview", "Przegląd firmy"],
+ "Jak je na tom firma dnes. Čísla napříč odděleními, co hoří a kde čeká schválení. Pro celý tým, každé ráno.":["How the company is doing today. Numbers across departments, what is on fire and what awaits approval. For the whole team, every morning.", "Jak firma radzi sobie dziś. Liczby ze wszystkich działów, co się pali i co czeka na zatwierdzenie. Dla całego zespołu, każdego ranka."],
+ "Dnešní stav celé firmy pro celý tým: čísla, co hoří, co čeká na schválení.":["Today's state of the whole company for the whole team: numbers, fires, approvals.", "Dzisiejszy stan całej firmy dla całego zespołu: liczby, problemy, zatwierdzenia."],
+ "Tržby včera":["Revenue yesterday", "Przychód wczoraj"],
+ "−4,5 % vs. minulý týden":["−4.5% vs. last week", "−4,5 % vs. poprzedni tydzień"],
+ "Objednávky včera":["Orders yesterday", "Zamówienia wczoraj"],
+ "−7,6 % vs. minulý týden":["−7.6% vs. last week", "−7,6 % vs. poprzedni tydzień"],
+ "Hrubá marže MTD":["Gross margin MTD", "Marża brutto MTD"],
+ "cíl 36 %":["target 36%", "cel 36%"],
+ "Otevřené tikety":["Open tickets", "Otwarte zgłoszenia"],
+ "5 starších než 24 h":["5 older than 24 h", "5 starszych niż 24 h"],
+ "Co hoří":["What is on fire", "Co się pali"],
+ "SKLAD":["STOCK", "MAGAZYN"],
+ "Avokádo Hass dojde do 1,5 dne. Nákupní agent připravil objednávku.":["Hass avocado runs out in 1.5 days. The purchasing agent prepared an order.", "Awokado Hass skończy się za 1,5 dnia. Agent zakupowy przygotował zamówienie."],
+ "FINANCE":["FINANCE", "FINANSE"],
+ "3 B2B faktury po splatnosti, celkem 86 400 Kč.":["3 overdue B2B invoices, 86,400 CZK in total.", "3 przeterminowane faktury B2B, razem 86 400 CZK."],
+ "SUPPORT":["SUPPORT", "WSPARCIE"],
+ "Rajčata cherry: 9 reklamací za 3 dny, stejný dodavatel.":["Cherry tomatoes: 9 complaints in 3 days, same supplier.", "Pomidory koktajlowe: 9 reklamacji w 3 dni, ten sam dostawca."],
+ "MARKETING":["MARKETING", "MARKETING"],
+ "Google Ads: cena za nového zákazníka +22 % za týden.":["Google Ads: cost per new customer +22% this week.", "Google Ads: koszt nowego klienta +22% w tygodniu."],
+ "Čeká na schválení":["Awaiting approval", "Czeka na zatwierdzenie"],
+ "Oblast":["Area", "Obszar"],
+ "Počet":["Count", "Liczba"],
+ "Co se dělo v noci":["What happened overnight", "Co działo się w nocy"],
+ "Přepočítal zásoby podle včerejších prodejů. Avokádo dojde do 1,5 dne, připravil objednávku.":["Recalculated stock from yesterday's sales. Avocado runs out in 1.5 days, prepared an order.", "Przeliczył zapasy według wczorajszej sprzedaży. Awokado skończy się za 1,5 dnia, przygotował zamówienie."],
+ "Kurátor mozku":["Brain curator", "Kurator mózgu"],
+ "Slack → Mozek":["Slack → Brain", "Slack → Mózg"],
+ "Zapsal do mozku 3 věci ze včerejška: nový ceník Farmy Sever, pravidlo pro reklamace rajčat a rozhodnutí o slotech v Brně.":["Wrote 3 things from yesterday into the brain: Farma Sever's new price list, a rule for tomato complaints and the decision on Brno slots.", "Zapisał w mózgu 3 rzeczy z wczoraj: nowy cennik Farmy Sever, zasadę reklamacji pomidorów i decyzję o slotach w Brnie."],
+ "Spároval 142 plateb s fakturami. 3 faktury jsou po splatnosti, připravil upomínky.":["Matched 142 payments to invoices. 3 invoices are overdue, prepared reminders.", "Sparował 142 płatności z fakturami. 3 faktury są po terminie, przygotował upomnienia."],
+ "Roztřídil 14 nových tiketů a k 9 připravil odpověď. U jednoho neví, nechal ho na člověku.":["Triaged 14 new tickets and drafted replies to 9. Unsure about one, left it to a person.", "Posortował 14 nowych zgłoszeń i do 9 przygotował odpowiedź. Jednego nie wie, zostawił człowiekowi."],
+ "Porovnal včerejší výdaje a tržby. Google Ads zdražil, navrhl přesun rozpočtu.":["Compared yesterday's spend and revenue. Google Ads got pricier, proposed a budget move.", "Porównał wczorajsze wydatki i przychody. Google Ads zdrożał, zaproponował przesunięcie budżetu."],
+ "Připravil ranní souhrn pro #vedeni. 19 návrhů v 7 oblastech čeká na schválení.":["Prepared the morning summary for #vedeni. 19 proposals in 7 areas await approval.", "Przygotował poranne podsumowanie dla #vedeni. 19 propozycji w 7 obszarach czeka na zatwierdzenie."],
+ "Tržby za 30 dní":["Revenue, last 30 days", "Przychód, ostatnie 30 dni"],
+ "Provozní agent":["Operations agent", "Agent operacyjny"],
+ "Ranní souhrn odeslat do #vedeni ve Slacku.":["Send the morning summary to #vedeni in Slack.", "Wysłać poranne podsumowanie do #vedeni na Slacku."],
+ "Asistent CEO":["CEO assistant", "Asystent CEO"],
+ "Přesunout páteční poradu na 9:30 – kolize s dodavatelem.":["Move Friday meeting to 9:30 – clash with a supplier.", "Przesunąć piątkowe spotkanie na 9:30 – kolizja z dostawcą."],
+ "Objednávky":["Orders", "Zamówienia"],
+ "Objednávky, rozvoz a expedice. Agent hlídá sloty a zpoždění.":["Orders, delivery and dispatch. The agent watches slots and delays.", "Zamówienia, dostawy i wysyłka. Agent pilnuje slotów i opóźnień."],
+ "Objednávky po dnech, kapacita rozvozu, zpoždění.":["Orders per day, delivery capacity, delays.", "Zamówienia dziennie, pojemność dostaw, opóźnienia."],
+ "Průměrný košík":["Average basket", "Średni koszyk"],
+ "30 dní: 1 104 Kč":["30 days: 1,104 CZK", "30 dni: 1 104 CZK"],
+ "Doručeno včas":["Delivered on time", "Dostarczono na czas"],
+ "cíl 97 %":["target 97%", "cel 97%"],
+ "Storna za 7 dní":["Cancellations, 7 days", "Anulacje, 7 dni"],
+ "12 objednávek":["12 orders", "12 zamówień"],
+ "Objednávky za 30 dní":["Orders, last 30 days", "Zamówienia, ostatnie 30 dni"],
+ "Kapacita rozvozu na zítra":["Delivery capacity tomorrow", "Pojemność dostaw na jutro"],
+ "Praha – vlastní rozvoz":["Prague – own delivery", "Praga – własne dostawy"],
+ "slotů":["slots", "slotów"],
+ "Brno – vlastní rozvoz":["Brno – own delivery", "Brno – własne dostawy"],
+ "Zásilkovna – výdej do 14:00":["Packeta – handover by 14:00", "Packeta – nadanie do 14:00"],
+ "balíků":["parcels", "paczek"],
+ "Problémové objednávky":["Problem orders", "Problematyczne zamówienia"],
+ "Zákazník":["Customer", "Klient"],
+ "Stav":["Status", "Status"],
+ "Částka":["Amount", "Kwota"],
+ "ZPOŽDĚNO":["DELAYED", "OPÓŹNIONE"],
+ "CHYBÍ POLOŽKA":["MISSING ITEM", "BRAK POZYCJI"],
+ "ZMĚNA ADRESY":["ADDRESS CHANGE", "ZMIANA ADRESU"],
+ "NEZAPLACENO":["UNPAID", "NIEOPŁACONE"],
+ "Otevřít 10 slotů navíc v Brně na čtvrtek – kapacita na 88 %.":["Open 10 extra slots in Brno for Thursday – capacity at 88%.", "Otworzyć 10 dodatkowych slotów w Brnie na czwartek – pojemność 88%."],
+ "Omluvný e-mail a sleva 100 Kč pro objednávku 48 211 (zpoždění 3 h).":["Apology e-mail and 100 CZK discount for order 48211 (3 h delay).", "E-mail z przeprosinami i rabat 100 CZK dla zamówienia 48211 (opóźnienie 3 h)."],
+ "Finance":["Finance", "Finanse"],
+ "Září":["September", "Wrzesień"],
+ "Říjen":["October", "Październik"],
+ "Listopad (do 18.)":["November (to 18th)", "Listopad (do 18.)"],
+ "Tržby, marže, cash a pohledávky. Finanční agent připravuje upomínky a měsíční uzávěrku.":["Revenue, margin, cash and receivables. The finance agent prepares reminders and the monthly close.", "Przychody, marża, gotówka i należności. Agent finansowy przygotowuje upomnienia i zamknięcie miesiąca."],
+ "P&L po měsících, cash, faktury po splatnosti.":["Monthly P&L, cash, overdue invoices.", "P&L miesięcznie, gotówka, przeterminowane faktury."],
+ "Tržby MTD":["Revenue MTD", "Przychód MTD"],
+ "říjen celkem 5 217 745 Kč":["October total 5,217,745 CZK", "październik razem 5 217 745 CZK"],
+ "říjen 35,8 %":["October 35.8%", "październik 35,8%"],
+ "EBITDA MTD":["EBITDA MTD", "EBITDA MTD"],
+ "září ve ztrátě, od října v plusu":["September at a loss, positive since October", "wrzesień na stracie, od października na plusie"],
+ "Po splatnosti":["Overdue", "Po terminie"],
+ "3 faktury, B2B":["3 invoices, B2B", "3 faktury, B2B"],
+ "Výsledovka po měsících":["P&L by month", "Rachunek wyników miesięcznie"],
+ "Měsíc":["Month", "Miesiąc"],
+ "Tržby":["Revenue", "Przychód"],
+ "Hrubý zisk":["Gross profit", "Zysk brutto"],
+ "Marže":["Margin", "Marża"],
+ "Provozní náklady":["Operating costs", "Koszty operacyjne"],
+ "Cash a závazky":["Cash and payables", "Gotówka i zobowiązania"],
+ "Splatné do 14 dní vs. na účtu":["Due within 14 days vs. in bank", "Płatne w 14 dni vs. na koncie"],
+ "Rozpočet marketingu – listopad":["Marketing budget – November", "Budżet marketingu – listopad"],
+ "Faktury po splatnosti":["Overdue invoices", "Przeterminowane faktury"],
+ "Odběratel":["Customer", "Odbiorca"],
+ "Dní":["Days", "Dni"],
+ "Finanční agent":["Finance agent", "Agent finansowy"],
+ "Upomínka Restauraci Na Rohu (21 dní, 31 200 Kč), druhá v pořadí.":["Reminder to Restaurace Na Rohu (21 days, 31,200 CZK), second one.", "Upomnienie do Restaurace Na Rohu (21 dni, 31 200 CZK), drugie."],
+ "Upomínka Bistru Kořen (12 dní, 18 400 Kč), první – vlídný tón, stálý klient.":["Reminder to Bistro Kořen (12 days, 18,400 CZK), first – friendly tone, regular client.", "Upomnienie do Bistro Kořen (12 dni, 18 400 CZK), pierwsze – uprzejmy ton, stały klient."],
+ "Zaplatit Farmě Jih 214 000 Kč – splatnost pátek, sporná dodávka rajčat odečtena.":["Pay Farma Jih 214,000 CZK – due Friday, disputed tomato delivery deducted.", "Zapłacić Farmie Jih 214 000 CZK – termin piątek, sporna dostawa pomidorów odliczona."],
+ "Banka":["Bank", "Bank"],
+ "Produkty":["Products", "Produkty"],
+ "Sortiment, zásoby a čerstvost. Nákupní agent hlídá, co dojde, a navrhuje objednávky u farem.":["Assortment, stock and freshness. The purchasing agent watches what runs out and proposes farm orders.", "Asortyment, zapasy i świeżość. Agent zakupowy pilnuje braków i proponuje zamówienia u farm."],
+ "Zásoby, odpis, nejprodávanější a nákupní návrhy.":["Stock, spoilage, best sellers and purchase proposals.", "Zapasy, straty, bestsellery i propozycje zakupów."],
+ "Aktivní produkty":["Active products", "Aktywne produkty"],
+ "42 sezónních":["42 seasonal", "42 sezonowe"],
+ "Dojde do 3 dnů":["Runs out within 3 days", "Skończy się w 3 dni"],
+ "3 kritické":["3 critical", "3 krytyczne"],
+ "Odpis za 30 dní":["Spoilage, 30 days", "Straty, 30 dni"],
+ "cíl 3 %":["target 3%", "cel 3%"],
+ "Průměrná marže":["Average margin", "Średnia marża"],
+ "bedýnky 41 %":["boxes 41%", "skrzynki 41%"],
+ "Nejprodávanější za 30 dní":["Best sellers, 30 days", "Bestsellery, 30 dni"],
+ "Produkt":["Product", "Produkt"],
+ "Prodáno":["Sold", "Sprzedano"],
+ "Dojde brzy":["Running out soon", "Wkrótce się skończy"],
+ "Zásoba":["Stock", "Zapas"],
+ "Vydrží":["Lasts", "Wystarczy"],
+ "1,5 DNE":["1.5 DAYS", "1,5 DNIA"],
+ "2 DNY":["2 DAYS", "2 DNI"],
+ "3 DNY":["3 DAYS", "3 DNI"],
+ "Odpis podle kategorie (cíl 3 %)":["Spoilage by category (target 3%)", "Straty wg kategorii (cel 3%)"],
+ "Bobuloviny a měkké ovoce":["Berries and soft fruit", "Jagody i owoce miękkie"],
+ "Listová zelenina":["Leafy vegetables", "Warzywa liściaste"],
+ "Kořenová zelenina":["Root vegetables", "Warzywa korzeniowe"],
+ "Jablka a hrušky":["Apples and pears", "Jabłka i gruszki"],
+ "Nákupní agent":["Purchasing agent", "Agent zakupowy"],
+ "Objednat 600 ks avokáda u Fruit Import CZ, dodání čtvrtek ráno.":["Order 600 avocados from Fruit Import CZ, delivery Thursday morning.", "Zamówić 600 szt. awokado w Fruit Import CZ, dostawa czwartek rano."],
+ "Rajčata cherry dočasně přepnout na Farmu Sever – 9 reklamací u Farmy Jih.":["Temporarily switch cherry tomatoes to Farma Sever – 9 complaints with Farma Jih.", "Pomidory koktajlowe tymczasowo przenieść do Farmy Sever – 9 reklamacji w Farmie Jih."],
+ "Zlevnit listový salát o 20 % – zásoba na 4 dny, trvanlivost 3 dny.":["Discount leaf lettuce by 20% – 4 days of stock, 3-day shelf life.", "Obniżyć cenę sałaty o 20% – zapas na 4 dni, trwałość 3 dni."],
+ "Support":["Support", "Wsparcie"],
+ "Tikety a reklamace. Agent třídí, navrhuje odpovědi a hledá opakované problémy.":["Tickets and complaints. The agent triages, drafts replies and spots recurring problems.", "Zgłoszenia i reklamacje. Agent sortuje, proponuje odpowiedzi i wyszukuje powtarzające się problemy."],
+ "Tikety, reklamace, návrhy odpovědí ke schválení.":["Tickets, complaints, reply drafts for approval.", "Zgłoszenia, reklamacje, projekty odpowiedzi do zatwierdzenia."],
+ "První odpověď":["First response", "Pierwsza odpowiedź"],
+ "v pracovní době":["during working hours", "w godzinach pracy"],
+ "Spokojenost":["Satisfaction", "Zadowolenie"],
+ "312 hodnocení":["312 ratings", "312 ocen"],
+ "Reklamace":["Complaints", "Reklamacje"],
+ "z objednávek za 30 dní":["of orders, 30 days", "zamówień, 30 dni"],
+ "Témata tiketů za 30 dní":["Ticket topics, 30 days", "Tematy zgłoszeń, 30 dni"],
+ "Poškozené nebo zkažené zboží":["Damaged or spoiled goods", "Uszkodzony lub zepsuty towar"],
+ "Zpožděný rozvoz":["Delayed delivery", "Opóźniona dostawa"],
+ "Chybějící položka":["Missing item", "Brakująca pozycja"],
+ "Změna objednávky":["Order change", "Zmiana zamówienia"],
+ "Fakturace":["Invoicing", "Fakturowanie"],
+ "Nejstarší otevřené":["Oldest open", "Najstarsze otwarte"],
+ "Tiket":["Ticket", "Zgłoszenie"],
+ "Téma":["Topic", "Temat"],
+ "Čeká":["Waiting", "Czeka"],
+ "Rajčata cherry plesnivá":["Mouldy cherry tomatoes", "Spleśniałe pomidory koktajlowe"],
+ "Bedýnka bez mrkve":["Box without carrots", "Skrzynka bez marchwi"],
+ "Faktura na firmu":["Company invoice", "Faktura na firmę"],
+ "Kurýr nepřijel":["Courier did not come", "Kurier nie przyjechał"],
+ "Support agent":["Support agent", "Agent wsparcia"],
+ "Odpověď na #9 214: omluva, vrácení 89 Kč, náhrada v příští bedýnce.":["Reply to #9214: apology, 89 CZK refund, replacement in next box.", "Odpowiedź na #9214: przeprosiny, zwrot 89 CZK, zamiennik w kolejnej skrzynce."],
+ "Odpověď na #9 220: doplnit mrkev zítra s rozvozem zdarma.":["Reply to #9220: send carrots tomorrow, free delivery.", "Odpowiedź na #9220: dosłać marchew jutro, dostawa gratis."],
+ "Nový článek do FAQ: jak skladovat avokádo, aby dozrálo. Šetří ~6 tiketů týdně.":["New FAQ article: how to store avocados so they ripen. Saves ~6 tickets a week.", "Nowy artykuł FAQ: jak przechowywać awokado, aby dojrzało. Oszczędza ~6 zgłoszeń tygodniowo."],
+ "Mozek":["Brain", "Mózg"],
+ "Klienti":["Customers", "Klienci"],
+ "Zákazníci, předplatitelé bedýnek a B2B restaurace. Agent hlídá, kdo odchází.":["Customers, box subscribers and B2B restaurants. The agent watches who is leaving.", "Klienci, subskrybenci skrzynek i restauracje B2B. Agent pilnuje, kto odchodzi."],
+ "Segmenty, odchody předplatitelů, B2B obchod.":["Segments, subscriber churn, B2B pipeline.", "Segmenty, odejścia subskrybentów, sprzedaż B2B."],
+ "Aktivní zákazníci":["Active customers", "Aktywni klienci"],
+ "nákup za 90 dní":["purchase in 90 days", "zakup w 90 dni"],
+ "Předplatitelé bedýnek":["Box subscribers", "Subskrybenci skrzynek"],
+ "+64 za měsíc":["+64 this month", "+64 w miesiącu"],
+ "Opakovaný nákup":["Repeat purchase", "Ponowny zakup"],
+ "do 60 dní":["within 60 days", "w 60 dni"],
+ "Ohrožení předplatitelé":["At-risk subscribers", "Zagrożeni subskrybenci"],
+ "2× vynechali bedýnku":["skipped a box twice", "2× pominęli skrzynkę"],
+ "Segmenty":["Segments", "Segmenty"],
+ "Segment":["Segment", "Segment"],
+ "Zákazníků":["Customers", "Klientów"],
+ "Podíl na tržbách":["Share of revenue", "Udział w przychodach"],
+ "Rodiny (košík nad 1 500 Kč)":["Families (basket over 1,500 CZK)", "Rodziny (koszyk ponad 1 500 CZK)"],
+ "Jednorázoví":["One-off", "Jednorazowi"],
+ "B2B restaurace a kanceláře":["B2B restaurants and offices", "Restauracje i biura B2B"],
+ "B2B obchod":["B2B pipeline", "Sprzedaż B2B"],
+ "Firma":["Company", "Firma"],
+ "Fáze":["Stage", "Etap"],
+ "Měsíčně":["Monthly", "Miesięcznie"],
+ "VYHRÁNO":["WON", "WYGRANE"],
+ "NÁVRH":["PROPOSAL", "PROPOZYCJA"],
+ "OCHUTNÁVKA":["TASTING", "DEGUSTACJA"],
+ "POPTÁVKA":["INQUIRY", "ZAPYTANIE"],
+ "Obchodní agent":["Sales agent", "Agent sprzedaży"],
+ "Poslat 74 ohroženým předplatitelům nabídku pauzy místo zrušení.":["Offer 74 at-risk subscribers a pause instead of cancelling.", "Zaproponować 74 zagrożonym subskrybentom pauzę zamiast rezygnacji."],
+ "Follow-up Bistru U Dvou lip: ceník pro 3 provozovny, schůzka příští úterý.":["Follow-up to Bistro U Dvou lip: pricing for 3 locations, meeting next Tuesday.", "Follow-up do Bistro U Dvou lip: cennik dla 3 lokali, spotkanie w przyszły wtorek."],
+ "Marketing":["Marketing", "Marketing"],
+ "Kampaně, kanály a e-maily. Agent porovnává výdaje s tržbami a navrhuje přesuny rozpočtu.":["Campaigns, channels and e-mails. The agent compares spend with revenue and proposes budget moves.", "Kampanie, kanały i e-maile. Agent porównuje wydatki z przychodami i proponuje przesunięcia budżetu."],
+ "Výkon kanálů, kampaně, návrhy na rozpočet.":["Channel performance, campaigns, budget proposals.", "Wyniki kanałów, kampanie, propozycje budżetu."],
+ "Výdaje MTD":["Spend MTD", "Wydatki MTD"],
+ "rozpočet 380 000 Kč":["budget 380,000 CZK", "budżet 380 000 CZK"],
+ "tržby / výdaje":["revenue / spend", "przychód / wydatki"],
+ "Cena nového zákazníka":["Cost per new customer", "Koszt nowego klienta"],
+ "+22 % za týden":["+22% this week", "+22% w tygodniu"],
+ "Otevřenost e-mailů":["E-mail open rate", "Otwieralność e-maili"],
+ "posledních 5 kampaní":["last 5 campaigns", "ostatnie 5 kampanii"],
+ "Kanály – listopad":["Channels – November", "Kanały – listopad"],
+ "Kanál":["Channel", "Kanał"],
+ "Výdaje":["Spend", "Wydatki"],
+ "Noví zákazníci":["New customers", "Nowi klienci"],
+ "Influenceři":["Influencers", "Influencerzy"],
+ "E-mailové kampaně":["E-mail campaigns", "Kampanie e-mailowe"],
+ "Kampaň":["Campaign", "Kampania"],
+ "Otevřeno":["Opened", "Otwarte"],
+ "Podzimní bedýnka":["Autumn box", "Jesienna skrzynka"],
+ "ODESLÁNO":["SENT", "WYSŁANO"],
+ "Dýňový týden":["Pumpkin week", "Tydzień dyni"],
+ "Vánoční ovoce – předobjednávky":["Christmas fruit – pre-orders", "Owoce świąteczne – przedsprzedaż"],
+ "KE SCHVÁLENÍ":["FOR APPROVAL", "DO ZATWIERDZENIA"],
+ "Co agent vidí":["What the agent sees", "Co widzi agent"],
+ "Kampaň „zelenina rozvoz“ dráží: CPC +31 %, konverze beze změny.":["Campaign “vegetable delivery” is getting pricey: CPC +31%, conversions flat.", "Kampania „dostawa warzyw” drożeje: CPC +31%, konwersje bez zmian."],
+ "Video s farmářem má 2× lepší cenu za nákup než statické reklamy.":["Farmer video has 2× better cost per purchase than static ads.", "Wideo z rolnikiem ma 2× lepszy koszt zakupu niż reklamy statyczne."],
+ "Marketingový agent":["Marketing agent", "Agent marketingu"],
+ "Přesunout 15 000 Kč z Google „zelenina rozvoz“ do Meta videa s farmářem.":["Move 15,000 CZK from Google “vegetable delivery” to the Meta farmer video.", "Przesunąć 15 000 CZK z Google „dostawa warzyw” do wideo z rolnikiem na Meta."],
+ "Odeslat kampaň „Vánoční ovoce – předobjednávky“ ve čtvrtek v 18:00 na 9 200 kontaktů.":["Send “Christmas fruit – pre-orders” on Thursday at 18:00 to 9,200 contacts.", "Wysłać kampanię „Owoce świąteczne – przedsprzedaż” w czwartek o 18:00 do 9 200 kontaktów."],
+ "3 příspěvky na Instagram k Dýňovému týdnu – texty a fotky připravené.":["3 Instagram posts for Pumpkin week – copy and photos ready.", "3 posty na Instagram na Tydzień dyni – teksty i zdjęcia gotowe."],
+ "CEO":["CEO", "CEO"],
+ "Jen pro vedení. Týden v kostce, cíle kvartálu a rozhodnutí, která za vás nikdo jiný neudělá.":["For management only. The week at a glance, quarterly goals and decisions nobody else can make for you.", "Tylko dla zarządu. Tydzień w skrócie, cele kwartału i decyzje, których nikt inny za Ciebie nie podejmie."],
+ "Pro majitele: týden v kostce, cíle Q4, rozhodnutí jen pro vedení.":["For the owner: the week at a glance, Q4 goals, management-only decisions.", "Dla właściciela: tydzień w skrócie, cele Q4, decyzje tylko dla zarządu."],
+ "Týden v kostce":["The week at a glance", "Tydzień w skrócie"],
+ "Tržby za listopad drží tempo na 5,2 mil. Kč, marže 36,4 % je nejvyšší za kvartál. Od října jsme v provozním plusu.":["November revenue is on pace for 5.2M CZK, the 36.4% margin is the best this quarter. We have been operationally positive since October.", "Przychody za listopad zmierzają do 5,2 mln CZK, marża 36,4% jest najwyższa w kwartale. Od października jesteśmy na plusie operacyjnym."],
+ "Dva problémy: rajčata cherry od Farmy Jih (9 reklamací) a dražší Google Ads. Na obojí je návrh ke schválení.":["Two problems: cherry tomatoes from Farma Jih (9 complaints) and pricier Google Ads. Both have a proposal awaiting approval.", "Dwa problemy: pomidory koktajlowe z Farmy Jih (9 reklamacji) i droższe Google Ads. Na oba jest propozycja do zatwierdzenia."],
+ "Příležitost: jídelna ZŠ Lesní poptává 65 000 Kč měsíčně. Rozhodnout, jestli na to máme kapacitu rozvozu.":["Opportunity: the ZŠ Lesní canteen asks for 65,000 CZK a month. Decide whether we have the delivery capacity.", "Szansa: stołówka ZŠ Lesní pyta o 65 000 CZK miesięcznie. Zdecydować, czy mamy pojemność dostaw."],
+ "Agenti tento týden":["Agents this week", "Agenci w tym tygodniu"],
+ "Ilustrativní příklad: počítáme 30 minut práce na jeden návrh. Na workshopu si úsporu přepočítáme ve vašich číslech.":["Illustrative example: we assume 30 minutes of work per proposal. At the workshop we recalculate the saving with your numbers.", "Przykład ilustracyjny: liczymy 30 minut pracy na jedną propozycję. Na warsztacie przeliczymy oszczędność na waszych liczbach."],
+ "Návrhů od agentů":["Proposals from agents", "Propozycji od agentów"],
+ "za 7 dní":["in 7 days", "w 7 dni"],
+ "Schváleno beze změny":["Approved unchanged", "Zatwierdzono bez zmian"],
+ "Upraveno nebo zamítnuto":["Edited or rejected", "Zmieniono lub odrzucono"],
+ "člověk má poslední slovo":["a person has the final say", "człowiek ma ostatnie słowo"],
+ "Ušetřený čas":["Time saved", "Zaoszczędzony czas"],
+ "odhad":["estimate", "szacunek"],
+ "Cíle Q4":["Q4 goals", "Cele Q4"],
+ "Tržby Q4 (cíl 16 mil. Kč)":["Q4 revenue (target 16M CZK)", "Przychody Q4 (cel 16 mln CZK)"],
+ "Předplatitelé bedýnek (cíl 2 000)":["Box subscribers (target 2,000)", "Subskrybenci skrzynek (cel 2 000)"],
+ "B2B klienti (cíl 50)":["B2B clients (target 50)", "Klienci B2B (cel 50)"],
+ "Tým a agenti":["Team and agents", "Zespół i agenci"],
+ "Lidé":["People", "Ludzie"],
+ "Agent dělá":["Agent does", "Agent robi"],
+ "Nákup":["Purchasing", "Zakupy"],
+ "zásoby, objednávky u farem":["stock, farm orders", "zapasy, zamówienia u farm"],
+ "Sklad a rozvoz":["Warehouse and delivery", "Magazyn i dostawy"],
+ "sloty, zpoždění":["slots, delays", "sloty, opóźnienia"],
+ "třídění, návrhy odpovědí":["triage, reply drafts", "sortowanie, projekty odpowiedzi"],
+ "výkon kanálů, kampaně":["channel performance, campaigns", "wyniki kanałów, kampanie"],
+ "upomínky, uzávěrka":["reminders, monthly close", "upomnienia, zamknięcie"],
+ "Vzít jídelnu ZŠ Lesní: vyžaduje 2. dodávku v Praze od ledna (+48 000 Kč měsíčně).":["Take on the ZŠ Lesní canteen: needs a 2nd van in Prague from January (+48,000 CZK a month).", "Przyjąć stołówkę ZŠ Lesní: wymaga 2. auta w Pradze od stycznia (+48 000 CZK miesięcznie)."],
+ "Zvýšit cenu Bedýnky Rodinné o 20 Kč od 1. 12. – marže pod cílem u 3 položek.":["Raise Bedýnka Rodinná price by 20 CZK from 1 Dec – margin below target on 3 items.", "Podnieść cenę Bedýnki Rodinnej o 20 CZK od 1.12. – marża poniżej celu na 3 pozycjach."],
+ "Schválit vánoční směny: 4 brigádníci na sklad 14.–23. 12.":["Approve Christmas shifts: 4 temps in the warehouse 14–23 Dec.", "Zatwierdzić zmiany świąteczne: 4 pracowników tymczasowych w magazynie 14–23.12."],
+ "Vedení":["Management", "Zarząd"],
+ "Provoz":["Operations", "Operacje"],
+ "Obchod":["Sales", "Sprzedaż"],
+ "Celá firma na jednom místě. Přehledy, které čtou lidé i agenti.":["The whole company in one place. Overviews read by people and agents.", "Cała firma w jednym miejscu. Przeglądy czytane przez ludzi i agentów."]
+};
+const t=s=>{if(LANG==='cs')return s;const r=D[s];return r?(r[LANG==='en'?0:1]||s):s};
+function applyLang(){document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-t]').forEach(n=>n.textContent=t(n.dataset.t));
+  document.querySelectorAll('#lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===LANG)));
+  if(LANG!=='cs')document.title=t('Finance');else document.title="Finance — ukázkový přehled e-shopu | Fundament 22";applyTheme();render()}
+document.querySelectorAll('#lang button').forEach(b=>b.addEventListener('click',()=>{LANG=b.dataset.lang;try{localStorage.setItem('board-lang',LANG)}catch(e){}applyLang()}));
+
+/* ---------- barevný režim ---------- */
+const ICON={sun:'<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'};
+let THEME=document.documentElement.dataset.theme||'light';
+function applyTheme(){document.documentElement.dataset.theme=THEME;const b=$('#theme');
+  b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICON[THEME==='dark'?'sun':'moon']+'</svg>';
+  const l=t(THEME==='dark'?'Přepnout na světlý režim':'Přepnout na tmavý režim');b.title=l;b.setAttribute('aria-label',l)}
+$('#theme').addEventListener('click',()=>{THEME=THEME==='dark'?'light':'dark';try{localStorage.setItem('board-theme',THEME)}catch(e){}applyTheme();render()});
+
+/* ---------- stav, capabilities ---------- */
+const S={view:'home',settingsPage:'traffic',visits:[],names:{}};
+let db=null,user=null,assets=null,ME=null,IS_ADMIN=false;
+const DOC_CAP=25000; /* orientační limit dokumentů na artefakt */
+const COLLECTIONS=['visits']; /* + všechny kolekce, které artefakt používá */
+const DOC_COUNTS={};
+const dayKey=d=>{d=new Date(d);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+function toast(m){const n=el('div',{class:'toast',text:m});document.body.append(n);setTimeout(()=>n.remove(),3500)}
+
+async function trackVisit(){ /* 1 dokument na uživatele: visits/{uid} = {days:{YYYY-MM-DD:n}, last} */
+  if(!db||!ME)return;
+  try{const ref=db.doc('visits/'+ME);const snap=await ref.get();const cur=snap.exists?snap.data():{days:{}};
+    const k=dayKey(Date.now());const days=Object.assign({},cur.days||{});days[k]=(days[k]||0)+1;
+    const cutoff=dayKey(Date.now()-90*864e5);for(const d of Object.keys(days))if(d<cutoff)delete days[d];
+    await ref.set({days,last:Date.now()});}catch(e){/* viewer bez práva zápisu – ignorovat */}
+}
+
+/* ---------- navigace ---------- */
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>{S.view=b.dataset.view;
+  document.querySelectorAll('#nav button').forEach(x=>x.setAttribute('aria-current',x===b?'page':'false'));render()}));
+const SETTINGS_MENU=[
+  /* sem přidej vlastní sekce: ['Data',[['import','Import dat']]], ... */
+  ['Statistiky',[['traffic','Návštěvnost'],['usage','Využití databáze a úložiště']]]
+];
+
+const SPEC={"home": [{"type": "kpis", "items": [{"l": "Tržby MTD", "v": "3 130 554 Kč", "s": "říjen celkem 5 217 745 Kč", "src": "Shoptet"}, {"l": "Hrubá marže MTD", "v": "36,4 %", "s": "říjen 35,8 %", "src": "Shoptet + Fakturoid"}, {"l": "EBITDA MTD", "v": "63 681 Kč", "s": "září ve ztrátě, od října v plusu", "src": "Fakturoid"}, {"l": "Po splatnosti", "v": "86 400 Kč", "s": "3 faktury, B2B", "src": "Fakturoid"}]}, {"type": "table", "title": "Výsledovka po měsících", "cols": ["Měsíc", "Tržby", "Hrubý zisk", "Marže", "Provozní náklady", "EBITDA"], "num": [1, 2, 3, 4, 5], "rows": [["Září", "4 899 599 Kč", "1 724 659 Kč", "35,2 %", "1 752 049 Kč", "−27 390 Kč"], ["Říjen", "5 217 745 Kč", "1 867 953 Kč", "35,8 %", "1 793 089 Kč", "74 864 Kč"], ["Listopad (do 18.)", "3 130 554 Kč", "1 139 522 Kč", "36,4 %", "1 075 841 Kč", "63 681 Kč"]]}, {"type": "cols", "items": [{"type": "meters", "title": "Cash a závazky", "items": [{"l": "Splatné do 14 dní vs. na účtu", "used": 742000, "max": 1284000, "unit": "Kč"}, {"l": "Rozpočet marketingu – listopad", "used": 222269, "max": 380000, "unit": "Kč"}]}, {"type": "table", "title": "Faktury po splatnosti", "cols": ["Odběratel", "Dní", "Částka"], "num": [1, 2], "rows": [["Restaurace Na Rohu", 21, "31 200 Kč"], ["Bistro Kořen", 12, "18 400 Kč"], ["Kantýna Technopark", 5, "36 800 Kč"]]}]}], "approvals": [{"agent": "Finanční agent", "text": "Upomínka Restauraci Na Rohu (21 dní, 31 200 Kč), druhá v pořadí.", "src": "Fakturoid"}, {"agent": "Finanční agent", "text": "Upomínka Bistru Kořen (12 dní, 18 400 Kč), první – vlídný tón, stálý klient.", "src": "Fakturoid"}, {"agent": "Finanční agent", "text": "Zaplatit Farmě Jih 214 000 Kč – splatnost pátek, sporná dodávka rajčat odečtena.", "src": "Banka"}], "related": ["cockpit", "ceo", "klienti"], "channel": "#finance"};const LINKS={"board": "https://adamku8.github.io/fundament22/demo/", "cockpit": "https://adamku8.github.io/fundament22/demo/prehled-firmy/", "objednavky": "https://adamku8.github.io/fundament22/demo/objednavky/", "finance": "https://adamku8.github.io/fundament22/demo/finance/", "produkty": "https://adamku8.github.io/fundament22/demo/produkty/", "support": "https://adamku8.github.io/fundament22/demo/support/", "klienti": "https://adamku8.github.io/fundament22/demo/klienti/", "marketing": "https://adamku8.github.io/fundament22/demo/marketing/", "ceo": "https://adamku8.github.io/fundament22/demo/ceo/"};const NAMES={"cockpit": "Přehled firmy", "objednavky": "Objednávky", "finance": "Finance", "produkty": "Produkty", "support": "Support", "klienti": "Klienti", "marketing": "Marketing", "ceo": "CEO"};
+const fmtN=n=>Number(n).toLocaleString(LANG==='cs'?'cs-CZ':LANG==='pl'?'pl-PL':'en-US');
+const doneSet=new Set();
+function linkEl(sec,label){const u=LINKS[sec];return u?el('a',{class:'lnk',href:u,target:'_top',rel:'noopener'},label):el('span',null,label)}
+function cell(c){if(c&&typeof c==='object'){if(c.b)return el('span',{class:'badge '+(c.tone||''),text:t(c.b)});if(c.link)return linkEl(c.link,t(c.text))}return typeof c==='number'?fmtN(c):t(String(c))}
+function block(b){
+  if(b.type==='cols')return el('div',{class:'cols'},b.items.map(block));
+  if(b.type==='kpis'){const g=el('div',{class:'kpis'},b.items.map((k,i)=>el('div',{class:'kpi'+(i===0?' accent':'')},el('div',{class:'kpi-l',text:t(k.l)}),el('div',{class:'kpi-v',text:t(k.v)}),k.s?el('div',{class:'kpi-s',text:t(k.s)}):null,k.src?el('div',{class:'kpi-src',text:t('zdroj')+': '+k.src}):null)));
+    return b.title?el('div',{class:'card'},el('h2',{text:t(b.title)}),g,b.note?el('p',{class:'note',text:t(b.note)}):null):g}
+  if(b.type==='timeline')return el('div',{class:'card'},el('h2',{text:t(b.title)}),el('div',{class:'tl'},b.items.map(r=>el('div',{class:'tl-row'},el('span',{class:'tl-time',text:r.time}),el('span',null,el('span',{class:'badge',text:t(r.agent)})),el('span',{class:'tl-txt',text:t(r.text)}),el('span',{class:'tl-src',text:t(r.src)})))));
+  if(b.type==='bars'){const max=Math.max(...b.vals);
+    return el('div',{class:'card'},el('h2',{text:t(b.title)}),el('div',{class:'bars'},b.vals.map((v,i)=>el('div',{title:b.labels[i]+': '+fmtN(v)+(b.unit||''),style:'height:'+(v/max*100)+'%'}))),
+      el('div',{class:'axis'},el('span',{text:b.labels[0]}),el('span',{text:b.labels[b.labels.length-1]})))}
+  if(b.type==='table')return el('div',{class:'card'},el('h2',{text:t(b.title)}),el('div',{class:'tbl-wrap'},el('table',null,
+    el('thead',null,el('tr',null,b.cols.map((h,i)=>el('th',{class:(b.num||[]).includes(i)?'num':null,text:t(h)})))),
+    el('tbody',null,b.rows.map(r=>el('tr',null,r.map((c,i)=>el('td',{class:(b.num||[]).includes(i)?'num':null},cell(c)))))))));
+  if(b.type==='meters')return el('div',{class:'card'},el('h2',{text:t(b.title)}),b.items.map(m=>{const p=Math.min(100,m.used/m.max*100);
+    const val=m.unit==='%'?String(m.used).replace('.',LANG==='en'?'.':',')+' %':fmtN(m.used)+(m.unit?' '+t(m.unit):'');
+    const right=m.unit==='%'?'':(m.unit===''?'':Math.round(p)+' %');
+    return el('div',{class:'meter'},el('div',{class:'meter-h'},el('span',null,el('b',{text:t(m.l)}),' · '+val+(m.unit&&m.unit!=='%'?' / '+fmtN(m.max)+' '+t(m.unit):'')),el('span',{text:right})),
+      el('div',{class:'track'},el('div',{class:'fill'+((m.warn||(!b.pctmode&&p>80&&m.unit!==''))?' warn':''),style:'width:'+p+'%'})))}));
+  if(b.type==='alerts')return el('div',{class:'card'},el('h2',{text:t(b.title)}),el('div',{class:'alist'},b.items.map(a=>el('div',{class:'arow'},
+    el('span',{class:'badge '+(a.tone||''),text:t(a.tag)}),el('span',{class:'txt',text:t(a.text)}),a.sec&&LINKS[a.sec]?linkEl(a.sec,t('Otevřít')+' →'):null))));
+  if(b.type==='text')return el('div',{class:'card text'},el('h2',{text:t(b.title)}),b.paras.map(p=>el('p',{text:t(p)})));
+  return el('div');
+}
+function pending(){return SPEC.approvals.filter((a,i)=>!doneSet.has(i)).length}
+function updateCount(){const c=$('#apCount');if(c){const n=pending();c.textContent=n;c.hidden=!n}}
+function approvalsView(){const n=pending();
+  return el('div',{class:'card'},el('h2',{text:t('Ke schválení')}),n?null:el('p',{class:'muted',text:t('Všechno je vyřízené.')}),
+    SPEC.approvals.map((a,i)=>el('div',{class:'appr'+(doneSet.has(i)?' done':'')},
+      el('div',{class:'body'},el('span',{class:'badge',text:t(a.agent)}),el('div',{class:'txt',text:t(a.text)}),el('div',{class:'src',text:t('Zdroj')+': '+t(a.src)}),doneSet.has(i)?el('div',{class:'res',text:t('Zapsáno do mozku → rozhodnuti.md')+' · '+t('Oznámeno ve Slacku v')+' '+SPEC.channel+' · '+t('Další krok provede agent v nástroji')+': '+t(a.src)}):null),
+      doneSet.has(i)?el('span',{class:'badge ok',text:t('Schváleno')}):null,
+      el('div',{class:'acts'},el('button',{class:'btn ghost sm',type:'button',onclick:()=>toast(t('Demo: tady byste návrh upravili v chatu s Claude.'))},t('Upravit')),
+        el('button',{class:'btn secondary sm',type:'button',onclick:()=>{doneSet.add(i);updateCount();render()}},t('Schválit'))))))}
+function relatedCard(){const r=(SPEC.related||[]).filter(s=>LINKS[s]);if(!r.length)return null;
+  return el('div',{class:'card'},el('h2',{text:t('Souvisí s')}),el('div',{class:'rel'},r.map(s=>el('a',{class:'btn outline sm',href:LINKS[s],target:'_top',rel:'noopener'},t(NAMES[s])+' →'))))}
+function helpView(){return el('div',null,
+  el('div',{class:'card text'},el('h2',{text:t('Jak to funguje')}),el('p',{text:t('Tohle je demo s fiktivními daty e-shopu Zelená bedýnka. Stejný systém provozujeme u sebe a nasadíme ho i u vás.')}),
+    el('p',{text:t('Agenti každé ráno načtou data z napojených nástrojů, zapíšou je do firemního mozku a připraví návrhy. Člověk je schválí – tady, ve Slacku nebo v chatu s Claude.')}),
+    el('p',{class:'muted',text:t('Data: Shoptet, Fakturoid, Pipedrive, Freshdesk, Ecomail, Google Ads, Meta, Slack. Stav k 18. 11. 2026.')})),
+  el('div',{class:'card text'},el('h2',{text:t('Omezení')}),el('p',{class:'muted',text:t('Kapacita databáze je odhad. Návštěvnost zachytí jen úroveň Contributor a výš. Statistiky vidí jen admini. Plné úložiště se hlásí „Úložiště je plné.“')})))}
+function render(){const v=$('#view');v.textContent='';updateCount();
+  if(S.view==='settings')return renderSettings(v);
+  if(S.view==='help')return v.append(helpView());
+  if(S.view==='approvals')return v.append(approvalsView());
+  v.append(...SPEC.home.map(block));const r=relatedCard();if(r)v.append(r);
+}
+function renderSettings(v){
+  const page=S.settingsPage;
+  const menu=el('nav',{class:'smenu','aria-label':t('Nastavení')},SETTINGS_MENU.map(([sec,items])=>el('div',{class:'smenu-sec'},
+    el('div',{class:'smenu-h',text:t(sec)}),
+    items.map(([id,label])=>el('button',{type:'button','aria-current':id===page?'page':null,onclick:()=>{S.settingsPage=id;render()}},t(label))))));
+  let content;
+  if(!IS_ADMIN&&(page==='traffic'||page==='usage'))content=el('div',{class:'card'},el('p',{class:'muted',text:t('Statistiky vidí jen admini.')}));
+  else if(page==='traffic')content=trafficCard();
+  else if(page==='usage'){content=el('div',{class:'card'},el('p',{class:'muted',text:t('Načítám…')}));usageCard().then(c=>content.replaceWith(c))}
+  else content=el('div',{class:'card'},'…');
+  v.append(el('div',{class:'settings'},menu,el('div',{class:'scontent'},content)));
+}
+function trafficCard(){
+  const today=dayKey(Date.now());const days=[];for(let i=29;i>=0;i--)days.push(dayKey(Date.now()-i*864e5));
+  const per=Object.fromEntries(days.map(d=>[d,0]));let total=0,todayN=0;const users=[];
+  for(const r of S.visits){let n=0;for(const[d,c]of Object.entries(r.days||{}))if(d in per){per[d]+=c;n+=c;total+=c;if(d===today)todayN+=c}
+    if(n)users.push({id:r.id,n,last:r.last})}
+  users.sort((a,b)=>b.n-a.n);const max=Math.max(1,...Object.values(per));
+  return el('div',null,
+    el('div',{class:'kpis'},
+      el('div',{class:'kpi accent'},el('div',{class:'kpi-l',text:t('Návštěv za 30 dní')}),el('div',{class:'kpi-v',text:total.toLocaleString(LANG)})),
+      el('div',{class:'kpi'},el('div',{class:'kpi-l',text:t('Unikátních uživatelů')}),el('div',{class:'kpi-v',text:users.length})),
+      el('div',{class:'kpi'},el('div',{class:'kpi-l',text:t('Dnes')}),el('div',{class:'kpi-v',text:todayN}))),
+    el('div',{class:'card'},el('h2',{text:t('Návštěvy po dnech')}),
+      el('div',{class:'bars'},days.map(d=>el('div',{title:d+': '+per[d],style:'height:'+(per[d]/max*100)+'%'})))),
+    el('div',{class:'card'},el('h2',{text:t('Nejaktivnější uživatelé')}),users.length?el('div',{class:'tbl-wrap'},el('table',null,
+      el('thead',null,el('tr',null,el('th',{text:t('Uživatel')}),el('th',{class:'num',text:t('Návštěv')}),el('th',{class:'num',text:t('Naposledy')}))),
+      el('tbody',null,users.slice(0,20).map(u=>el('tr',null,el('td',{text:S.names[u.id]||t('Neznámý')}),el('td',{class:'num',text:u.n}),el('td',{class:'num',text:u.last?new Date(u.last).toLocaleString(LANG):'–'}))))))
+      :el('p',{class:'muted',text:t('Žádná data.')})));
+}
+function meter(label,used,max,unit){const p=max?Math.min(100,used/max*100):0;
+  return el('div',{class:'meter'},el('div',{class:'meter-h'},el('span',null,el('b',{text:t(label)}),' · '+used.toLocaleString(LANG)+' / '+max.toLocaleString(LANG)+' '+unit),el('span',{text:Math.round(p)+' %'})),
+    el('div',{class:'track'},el('div',{class:'fill'+(p>80?' warn':''),style:'width:'+p+'%'})))}
+const fmtB=b=>b>=1048576?(b/1048576).toFixed(1)+' MB':Math.round(b/1024)+' kB';
+async function usageCard(){
+  let docs=0;for(const c of COLLECTIONS){try{const q=await db.collection(c).get();DOC_COUNTS[c]=q.size??q.docs.length;docs+=DOC_COUNTS[c]}catch(e){}}
+  const card=el('div',{class:'card'},el('h2',{text:t('Využití databáze a úložiště')}),meter('Databáze',docs,DOC_CAP,t('dokumentů')));
+  if(assets){try{const{usage:u}=await assets.list();
+    card.append(meter('Úložiště souborů',u.files,u.maxFiles,t('souborů')),
+      el('p',{class:'muted',style:'margin:0;font-size:13px',text:fmtB(u.bytes)+' / '+fmtB(u.maxBytes)}))}catch(e){}}
+  card.append(el('div',{class:'tbl-wrap',style:'margin-top:12px'},el('table',null,el('tbody',null,
+    Object.entries(DOC_COUNTS).map(([c,n])=>el('tr',null,el('td',{text:c}),el('td',{class:'num',text:n})))))));
+  return card;
+}
+
+/* ---------- start ---------- */
+applyLang();
+$('#ctaMain').addEventListener('click',()=>{S.view='approvals';document.querySelectorAll('#nav button').forEach(x=>x.setAttribute('aria-current',x.dataset.view==='approvals'?'page':'false'));render()});
+(async()=>{
+  const use=n=>window.claude?window.claude.use(n):Promise.resolve(null);
+  [db,user,assets]=await Promise.all([use('db'),use('user'),use('assets')]);
+  if(user){ME=await user.id();IS_ADMIN=await user.canEdit()}
+  await trackVisit();
+  if(db&&IS_ADMIN)db.collection('visits').onSnapshot(q=>{S.visits=q.docs.map(d=>({id:d.id,...d.data()}));
+    user&&user.profiles(S.visits.map(v=>v.id)).then(ps=>{for(const[id,p]of Object.entries(ps||{}))S.names[id]=p&&p.name||'';if(S.view==='settings')render()});
+    if(S.view==='settings')render()});
+  render();
+})();
+})();
+</script>
+</body>
+</html>

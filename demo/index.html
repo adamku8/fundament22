@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demo: Zelená bedýnka — firma na jednom místě | Fundament 22</title>
+<meta name="description" content="Ukázka firemního systému s AI agenty na fiktivním e-shopu Zelená bedýnka: 8 přehledů (firma, objednávky, finance, produkty, support, klienti, marketing, vedení), každý s frontou návrhů ke schválení.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://adamku8.github.io/fundament22/demo/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:site_name" content="Fundament 22">
+<meta property="og:title" content="Demo: Zelená bedýnka — firma na jednom místě | Fundament 22">
+<meta property="og:description" content="Ukázka firemního systému s AI agenty na fiktivním e-shopu Zelená bedýnka: 8 přehledů (firma, objednávky, finance, produkty, support, klienti, marketing, vedení), každý s frontou návrhů ke schválení.">
+<meta property="og:url" content="https://adamku8.github.io/fundament22/demo/">
+<meta property="og:image" content="https://adamku8.github.io/fundament22/assets/og-demo.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/fonts.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "name": "Demo: Zelená bedýnka — firma na jednom místě | Fundament 22", "description": "Ukázka firemního systému s AI agenty na fiktivním e-shopu Zelená bedýnka: 8 přehledů (firma, objednávky, finance, produkty, support, klienti, marketing, vedení), každý s frontou návrhů ke schválení.", "url": "https://adamku8.github.io/fundament22/demo/", "inLanguage": "cs", "isPartOf": {"@type": "WebSite", "name": "Fundament 22", "url": "https://adamku8.github.io/fundament22/"}}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Fundament 22", "item": "https://adamku8.github.io/fundament22/"}, {"@type": "ListItem", "position": 2, "name": "Demo", "item": "https://adamku8.github.io/fundament22/demo/"}]}, {"@type": "ItemList", "name": "Přehledy v demu", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Přehled firmy", "url": "https://adamku8.github.io/fundament22/demo/prehled-firmy/"}, {"@type": "ListItem", "position": 2, "name": "Objednávky", "url": "https://adamku8.github.io/fundament22/demo/objednavky/"}, {"@type": "ListItem", "position": 3, "name": "Finance", "url": "https://adamku8.github.io/fundament22/demo/finance/"}, {"@type": "ListItem", "position": 4, "name": "Produkty", "url": "https://adamku8.github.io/fundament22/demo/produkty/"}, {"@type": "ListItem", "position": 5, "name": "Support", "url": "https://adamku8.github.io/fundament22/demo/support/"}, {"@type": "ListItem", "position": 6, "name": "Klienti", "url": "https://adamku8.github.io/fundament22/demo/klienti/"}, {"@type": "ListItem", "position": 7, "name": "Marketing", "url": "https://adamku8.github.io/fundament22/demo/marketing/"}, {"@type": "ListItem", "position": 8, "name": "CEO", "url": "https://adamku8.github.io/fundament22/demo/ceo/"}]}]}</script>
+<script>(function(){try{var t=localStorage.getItem("board-theme");
+if(t!=="light"&&t!=="dark")t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+document.documentElement.dataset.theme=t;}catch(e){}})();</script>
+<style>
+:root{--font:"DM Sans",system-ui,-apple-system,sans-serif;--font-display:"Plus Jakarta Sans","DM Sans",system-ui,sans-serif;--font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --bg:#f7f5f0;--surface:#fff;--surface-2:#f3f1fa;--ink:#15183a;--ink-2:#4a4e6e;--ink-3:#64688a;--line:#e4e2e6;--field-line:#8a8fae;--link:#c2410c;--accent:#e8541a;--accent-hover:#c2410c;--accent-ink:#fff;--accent-soft:#fff0e6;--accent-line:#ffc9a3;--accent-tint:#e8541a1f;--violet-soft:#efeafd;--success-soft:#e6f8f0;--blue-soft:#e8f0fe;--magenta-soft:#fbe9f2;--tile-shadow:0 18px 50px rgba(21,24,58,.10);--hover:#15183a0f;--count-ink:#1a0e05;--inverse:#15183a;--on-inverse:#fff;--magenta:#c8327e;--violet:#6d3bd6;--blue:#2f7bf0;--success:#127552;--danger:#d32f2f;--danger-ink:#fff;--danger-bg:#fdecec;--soft:#fff0e6;--seg-shadow:0 1px 3px rgba(21,24,58,.14);--cta-shadow:0 10px 36px rgba(232,84,26,.3);--modal-shadow:0 30px 80px rgba(21,24,58,.2);color-scheme:light;--r-btn:10px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10143a;--surface:#15183a;--surface-2:#232646;--ink:#f3f1fa;--ink-2:#c9cce6;--ink-3:#8e93ba;--line:#313452;--field-line:#6b6f9a;--link:#ffb25c;--accent:#ff6a2a;--accent-hover:#ff9a3d;--accent-ink:#1a0e05;--accent-soft:#3a2d3a;--accent-line:#6b3b2c;--accent-tint:#ff7a2f24;--violet-soft:#2a2556;--success-soft:#173a3a;--blue-soft:#1d2a55;--magenta-soft:#3a1c34;--tile-shadow:0 18px 50px rgba(0,0,0,.35);--hover:#ffffff0f;--count-ink:#1a0e05;--inverse:#f3f1fa;--on-inverse:#15183a;--magenta:#e0407e;--violet:#a98bfa;--blue:#659df2;--success:#3ddc97;--danger:#f87171;--danger-ink:#15183a;--danger-bg:#3a1c2a;--soft:#3a2d3a;--seg-shadow:0 1px 3px #0007;--cta-shadow:0 10px 40px rgba(255,106,42,.35);--modal-shadow:0 30px 80px #0008;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10143a;--surface:#15183a;--surface-2:#232646;--ink:#f3f1fa;--ink-2:#c9cce6;--ink-3:#8e93ba;--line:#313452;--field-line:#6b6f9a;--link:#ffb25c;--accent:#ff6a2a;--accent-hover:#ff9a3d;--accent-ink:#1a0e05;--accent-soft:#3a2d3a;--accent-line:#6b3b2c;--accent-tint:#ff7a2f24;--violet-soft:#2a2556;--success-soft:#173a3a;--blue-soft:#1d2a55;--magenta-soft:#3a1c34;--tile-shadow:0 18px 50px rgba(0,0,0,.35);--hover:#ffffff0f;--count-ink:#1a0e05;--inverse:#f3f1fa;--on-inverse:#15183a;--magenta:#e0407e;--violet:#a98bfa;--blue:#659df2;--success:#3ddc97;--danger:#f87171;--danger-ink:#15183a;--danger-bg:#3a1c2a;--soft:#3a2d3a;--seg-shadow:0 1px 3px #0007;--cta-shadow:0 10px 40px rgba(255,106,42,.35);--modal-shadow:0 30px 80px #0008;color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font);font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}[hidden]{display:none!important}
+/* HLAVIČKA (neměnit) – značkový proužek, logo AI Firma, Zpět, CZ/EN/PL, režim */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.strip{height:3px;background:linear-gradient(90deg,#ff9a3d,var(--accent) 40%,var(--magenta) 75%,var(--violet))}
+.logo-word{font-family:var(--font-display);font-weight:800;font-size:18px;letter-spacing:-.02em;margin-left:10px;white-space:nowrap}
+.mark-a{fill:var(--accent)}.mark-b{fill:var(--inverse)}.mark-c{fill:var(--surface)}
+.top-in{max-width:1440px;margin:0 auto;padding:10px 32px;display:flex;align-items:center;gap:12px;min-height:68px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;flex:none;color:var(--ink)}.logo svg{height:28px;width:28px;display:block}
+.sep{width:1px;height:22px;background:var(--line);flex:none}
+.back{display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
+.back:hover{color:var(--link)}.back svg{width:16px;height:16px}
+.spacer{flex:1}
+.lang-seg{display:flex;gap:2px}
+.lang-seg button{border:none;background:transparent;font-family:var(--font-mono);font-size:11.5px;font-weight:500;letter-spacing:.08em;color:var(--ink-3);padding:6px 8px;border-radius:8px}
+.lang-seg button:hover{background:var(--hover);color:var(--ink)}
+.lang-seg button[aria-pressed="true"]{background:var(--accent-tint);color:var(--ink)}
+.icon-btn{width:36px;height:36px;display:grid;place-items:center;border-radius:var(--r-btn);border:1px solid var(--field-line);background:var(--surface);color:var(--ink-2);flex:none}
+.icon-btn:hover{color:var(--ink);border-color:var(--ink-2)}.icon-btn svg{width:18px;height:18px}
+/* TITULEK + CTA */
+.wrap{max-width:1440px;margin:0 auto;padding:0 32px 64px}
+.head{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:44px 0 32px}
+.titles{min-width:0;flex:1 1 420px}
+h1{font-family:var(--font-display);font-size:36px;line-height:1.22;font-weight:700;letter-spacing:-.02em;margin:0}
+.subtitle{margin:10px 0 0;font-size:17px;line-height:1.55;color:var(--ink-2)}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:var(--r-btn);border:1px solid transparent;font-weight:700;font-size:15px;padding:10px 18px;min-height:44px;background:none;transition:background-color .15s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.sm{min-height:36px;padding:6px 12px;font-size:14px}.btn.lg{min-height:52px;padding:12px 24px;font-size:16px}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}.btn.primary.lg{box-shadow:var(--cta-shadow)}.btn.primary:hover{background:var(--accent-hover)}
+.btn.secondary{background:var(--inverse);color:var(--on-inverse)}.btn.secondary:hover{opacity:.88}
+.btn.outline{border-color:var(--field-line);color:var(--ink);background:var(--surface)}.btn.outline:hover{background:var(--surface-2)}
+.btn.ghost{color:var(--ink-2)}.btn.ghost:hover{background:var(--surface-2);color:var(--ink)}
+.btn.danger{background:var(--danger);color:var(--danger-ink)}.btn:disabled{opacity:.5;cursor:not-allowed}
+/* MENU – lišta odkazů na vlasové lince, 48 px, položky vlevo, .nav-right doprava, aktivní = oranžový nádech */
+.nav{display:flex;width:100%;height:48px;align-items:center;justify-content:flex-start;gap:4px;margin-bottom:28px;border-bottom:1px solid var(--line);overflow-x:auto}
+.nav button{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 12px;border:none;background:transparent;font-size:14px;font-weight:500;color:var(--ink-2);border-radius:8px;white-space:nowrap;transition:background-color .15s,color .15s}
+.nav button:hover{background:var(--hover);color:var(--ink)}
+.nav button[aria-current="page"]{background:var(--accent-tint);color:var(--ink);font-weight:600}
+.nav .nav-right{margin-left:auto}
+.count{font-size:11px;font-weight:700;line-height:1.5;background:var(--accent);color:var(--count-ink);border-radius:999px;padding:0 7px;min-width:20px;text-align:center}
+/* KARTY, KPI, TABULKY */
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.card h2{font-family:var(--font-display);font-size:16px;font-weight:700;margin:0 0 14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:16px;margin-bottom:16px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.kpi.accent{background:var(--accent-soft);border-color:var(--accent-line)}
+.kpi-l{font-size:13px;font-weight:600;color:var(--ink-2)}.kpi.accent .kpi-l{color:var(--ink)}
+.kpi-v{font-family:var(--font-display);font-size:34px;line-height:1.15;font-weight:800;letter-spacing:-.03em;margin:6px 0 4px}
+.kpi-s{font-size:12.5px;color:var(--ink-2)}
+.tbl-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{text-align:left;font-family:var(--font-mono);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-size:10.5px;padding:8px 10px;background:var(--surface-2);white-space:nowrap}
+th:first-child{border-radius:6px 0 0 6px}th:last-child{border-radius:0 6px 6px 0}
+td{padding:10px;border-bottom:1px solid var(--line)}td.num,th.num{text-align:right;white-space:nowrap}
+.muted{color:var(--ink-2)}
+.meter{margin-bottom:14px}.meter-h{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px}
+.meter-h b{font-weight:700}.track{height:8px;background:var(--surface-2);border-radius:4px;overflow:hidden}
+.fill{height:100%;border-radius:4px;background:var(--accent)}.fill.warn{background:var(--danger)}
+.bars{display:flex;align-items:flex-end;gap:4px;height:140px;padding-top:8px}
+.bars div{flex:1;background:var(--accent);border-radius:3px 3px 0 0;min-height:2px}
+/* NASTAVENÍ – svislý seznam jako postranní panel chatu: mono nadpisy skupin, aktivní řádek s oranžovým nádechem */
+.settings{display:grid;grid-template-columns:232px minmax(0,1fr);gap:24px;align-items:start}
+.smenu{position:sticky;top:84px;display:flex;flex-direction:column;gap:4px;padding-right:16px;border-right:1px solid var(--line)}
+.smenu-sec{display:flex;flex-direction:column;gap:2px}.smenu-sec+.smenu-sec{margin-top:12px}
+.smenu-h{font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:0 10px 8px}
+.smenu button{display:flex;align-items:center;justify-content:space-between;gap:8px;width:100%;text-align:left;border:0;background:none;padding:8px 10px;border-radius:8px;font-size:14px;font-weight:500;color:var(--ink-2);transition:background-color .15s,color .15s}
+.smenu button:hover{background:var(--hover);color:var(--ink)}
+.smenu button[aria-current="page"]{background:var(--accent-tint);color:var(--ink);font-weight:600}
+/* BOARD – filtr kategorií, mřížka dlaždic artefaktů, formuláře v Nastavení */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 20px}
+.chips button{border:1px solid var(--line);background:var(--surface);color:var(--ink-2);font-size:13px;font-weight:500;padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.chips button:hover{background:var(--hover);color:var(--ink)}
+.chips button[aria-pressed="true"]{background:var(--accent-tint);border-color:transparent;color:var(--ink);font-weight:600}
+.chips .n{font-family:var(--font-mono);font-size:11px;color:var(--ink-3)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.tile{position:relative;display:flex;flex-direction:column;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--ink);text-decoration:none;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.tile:hover{transform:translateY(-3px);box-shadow:var(--tile-shadow);border-color:var(--accent-line)}
+.tile-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.tile-ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:15px;letter-spacing:-.02em;flex:none}
+.tile h3{font-family:var(--font-display);font-size:17px;line-height:1.3;font-weight:700;margin:0}
+.tile p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2);flex:1}
+.tile-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px;font-weight:600;color:var(--link)}
+.badge{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;border-radius:4px;background:var(--surface-2);color:var(--ink-2);white-space:nowrap}
+.tile-viz{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+.tile-kv{min-width:0}.tile-kv .l{font-family:var(--font-mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tile-kv .v{font-family:var(--font-display);font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-top:2px;white-space:nowrap}
+.spark{flex:none;display:block}.spark svg{display:block}
+.star{width:34px;height:34px;display:grid;place-items:center;border:0;border-radius:8px;background:transparent;color:var(--ink-3)}
+.star:hover{background:var(--hover);color:var(--ink)}.star svg{width:18px;height:18px}
+.star[aria-pressed="true"]{color:var(--accent)}
+.empty{text-align:center;padding:48px 20px}.empty p{margin:0 0 16px;color:var(--ink-2)}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;align-items:end;margin-bottom:8px}
+.field{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:var(--ink-2)}
+.field input,.field select{height:42px;padding:0 12px;border-radius:8px;border:1px solid var(--field-line);background:var(--surface);color:var(--ink);font-size:15px;font-weight:400}
+.field input:focus,.field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.rows td .btn{margin-left:4px}
+.rows input,.rows select{height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--field-line);background:var(--surface);color:var(--ink);font-size:14px;width:100%;min-width:120px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--inverse);color:var(--on-inverse);box-shadow:var(--modal-shadow);padding:12px 18px;border-radius:var(--r-btn);font-size:14px;font-weight:500;z-index:60;max-width:90vw}
+@media (max-width:900px){.top-in,.wrap{padding-left:16px;padding-right:16px}}
+@media (max-width:760px){.settings{grid-template-columns:1fr}.smenu{position:static;flex-direction:row;flex-wrap:wrap;gap:8px;padding:0 0 12px;border-right:0;border-bottom:1px solid var(--line)}.smenu-sec{flex-direction:row;flex-wrap:wrap}.smenu-sec+.smenu-sec{margin-top:0}.smenu-h{display:none}.smenu button{width:auto}}
+@media (max-width:640px){h1{font-size:28px}.ctas{width:100%}.ctas .btn{flex:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.eyebrow{display:inline-block;font-family:var(--font-mono);font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px}
+
+/* --- web Fundament 22: úpravy proti verzi v Claude --- */
+#nav button[data-view="settings"],#nav button[data-view="favs"]{display:none}
+.f22-bar{margin:40px auto 0;max-width:1200px;padding:20px 24px 32px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.f22-bar a{color:var(--link);font-weight:600;text-decoration:none}.f22-bar a:hover{text-decoration:underline}
+.f22-bar .f22-cta{background:var(--accent);color:var(--accent-ink);padding:10px 16px;border-radius:10px}
+.f22-bar nav{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="strip"></div><div class="top-in">
+  <span class="logo" role="img" aria-label="Zelená bedýnka"><svg viewBox="0 0 28 28" aria-hidden="true"><rect class="mark-a" width="28" height="28" rx="8"/><path d="M9.5 18.5L18.5 9.5" stroke="var(--surface)" stroke-width="2.6" stroke-linecap="round"/><circle class="mark-c" cx="9.5" cy="18.5" r="3.6"/><circle class="mark-b" cx="18.5" cy="9.5" r="3.6"/></svg><span class="logo-word">Zelená bedýnka</span></span>
+  <span class="spacer"></span>
+  <div class="lang-seg" id="lang" role="group" aria-label="Jazyk">
+    <button type="button" data-lang="cs">CZ</button><button type="button" data-lang="en">EN</button><button type="button" data-lang="pl">PL</button></div>
+  <button class="icon-btn" id="theme" type="button"></button>
+</div></header>
+
+<div class="wrap">
+  <div class="head">
+    <div class="titles"><span class="eyebrow" data-t="DEMO · FIKTIVNÍ DATA">DEMO · FIKTIVNÍ DATA</span>
+    <h1 data-t="Zelená bedýnka">Zelená bedýnka</h1>
+      <p class="subtitle" data-t="Celá firma na jednom místě. Přehledy, které čtou lidé i agenti.">Celá firma na jednom místě. Přehledy, které čtou lidé i agenti.</p></div>
+    <div class="ctas" id="ctas" hidden>
+      <button class="btn primary lg" id="ctaAdd"><span data-t="Přidat artefakt">Přidat artefakt</span></button>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Sekce">
+    <button data-view="all" aria-current="page" data-t="Všechny artefakty">Všechny artefakty</button>
+    <button data-view="favs" data-t="Oblíbené">Oblíbené</button>
+    <button data-view="settings" data-t="Nastavení">Nastavení</button>
+    <button data-view="help" class="nav-right" data-t="Nápověda">Nápověda</button>
+  </nav>
+  <main id="view"><div class="chips" role="group"><button type="button" aria-pressed="true">Vše<span class="n">8</span></button><button type="button" aria-pressed="false">Vedení<span class="n">3</span></button><button type="button" aria-pressed="false">Provoz<span class="n">3</span></button><button type="button" aria-pressed="false">Obchod<span class="n">2</span></button></div><div class="grid"><a class="tile" href="prehled-firmy/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--success-soft); color: var(--success);">PF</div></div><h3>Přehled firmy</h3><p>Dnešní stav celé firmy pro celý tým: čísla, co hoří, co čeká na schválení.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Tržby včera</div><div class="v">174 116 Kč</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><polyline points="3.0,11.1 11.8,23.2 20.5,32.0 29.3,17.7 38.1,10.0 46.8,11.7 55.6,10.6 64.4,9.5 73.2,18.8 81.9,23.8 90.7,13.3 99.5,4.0 108.2,12.2 117.0,10.6" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></polyline><circle cx="117.0" cy="10.6" r="3" fill="var(--accent)"></circle></svg></span></div><div class="tile-foot"><span class="badge">Vedení</span><span>Otevřít →</span></div></a><a class="tile" href="objednavky/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--violet-soft); color: var(--violet);">OB</div></div><h3>Objednávky</h3><p>Objednávky po dnech, kapacita rozvozu, zpoždění.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Objednávky včera</div><div class="v">158</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="1.3" y="5.3" width="5.4" height="30.7" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="9.3" y="11.8" width="5.4" height="24.2" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="17.3" y="15.9" width="5.4" height="20.1" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="25.3" y="8.6" width="5.4" height="27.4" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="33.3" y="5.7" width="5.4" height="30.3" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="41.3" y="3.2" width="5.4" height="32.8" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="49.3" y="4.3" width="5.4" height="31.7" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="57.3" y="3.6" width="5.4" height="32.4" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="65.3" y="5.3" width="5.4" height="30.7" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="73.3" y="7.7" width="5.4" height="28.3" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="81.3" y="9.0" width="5.4" height="27.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="89.3" y="5.3" width="5.4" height="30.7" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="97.3" y="2.0" width="5.4" height="34.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="105.3" y="6.1" width="5.4" height="29.9" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="113.3" y="3.6" width="5.4" height="32.4" rx="1.5" fill="var(--accent)" opacity="1"></rect></svg></span></div><div class="tile-foot"><span class="badge">Provoz</span><span>Otevřít →</span></div></a><a class="tile" href="finance/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--success-soft); color: var(--success);">FI</div></div><h3>Finance</h3><p>P&amp;L po měsících, cash, faktury po splatnosti.</p><div class="tile-viz"><div class="tile-kv"><div class="l">EBITDA po měsících</div><div class="v">63 681 Kč</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="6.4" y="18.0" width="27.2" height="4.7" rx="1.5" fill="var(--danger)" opacity="1"></rect><rect x="46.4" y="2.0" width="27.2" height="16.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="86.4" y="3.8" width="27.2" height="14.2" rx="1.5" fill="var(--accent)" opacity="1"></rect><line x1="0" x2="120" y1="18" y2="18" stroke="var(--line)"></line></svg></span></div><div class="tile-foot"><span class="badge">Vedení</span><span>Otevřít →</span></div></a><a class="tile" href="produkty/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--violet-soft); color: var(--violet);">PR</div></div><h3>Produkty</h3><p>Zásoby, odpis, nejprodávanější a nákupní návrhy.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Odpis · cíl 3 %</div><div class="v">3,8 %</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="0" y="14" width="120" height="8" rx="4" fill="var(--surface-2)"></rect><rect x="0" y="14" width="76.0" height="8" rx="4" fill="var(--danger)"></rect><line x1="60.0" x2="60.0" y1="9" y2="27" stroke="var(--ink)" stroke-width="1.5"></line></svg></span></div><div class="tile-foot"><span class="badge">Provoz</span><span>Otevřít →</span></div></a><a class="tile" href="support/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--violet-soft); color: var(--violet);">SU</div></div><h3>Support</h3><p>Tikety, reklamace, návrhy odpovědí ke schválení.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Otevřené tikety</div><div class="v">23</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="2.7" y="12.5" width="11.7" height="23.5" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="19.9" y="7.2" width="11.7" height="28.8" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="37.0" y="13.8" width="11.7" height="22.2" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="54.2" y="3.3" width="11.7" height="32.7" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="71.3" y="8.5" width="11.7" height="27.5" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="88.5" y="2.0" width="11.7" height="34.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="105.6" y="5.9" width="11.7" height="30.1" rx="1.5" fill="var(--accent)" opacity="1"></rect></svg></span></div><div class="tile-foot"><span class="badge">Provoz</span><span>Otevřít →</span></div></a><a class="tile" href="klienti/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--accent-soft); color: var(--link);">KL</div></div><h3>Klienti</h3><p>Segmenty, odchody předplatitelů, B2B obchod.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Předplatitelé</div><div class="v">1 860</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="0" y="14" width="120" height="8" rx="4" fill="var(--surface-2)"></rect><rect x="0" y="14" width="111.6" height="8" rx="4" fill="var(--accent)"></rect></svg></span></div><div class="tile-foot"><span class="badge">Obchod</span><span>Otevřít →</span></div></a><a class="tile" href="marketing/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--accent-soft); color: var(--link);">MA</div></div><h3>Marketing</h3><p>Výkon kanálů, kampaně, návrhy na rozpočet.</p><div class="tile-viz"><div class="tile-kv"><div class="l">ROAS · Meta nejlepší</div><div class="v">6,1</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="6.4" y="7.0" width="27.2" height="29.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect><rect x="46.4" y="2.0" width="27.2" height="34.0" rx="1.5" fill="var(--accent)" opacity="1"></rect><rect x="86.4" y="17.0" width="27.2" height="19.0" rx="1.5" fill="var(--ink-3)" opacity="0.45"></rect></svg></span></div><div class="tile-foot"><span class="badge">Obchod</span><span>Otevřít →</span></div></a><a class="tile" href="ceo/" target="_top" rel="noopener"><div class="tile-top"><div class="tile-ico" style="background: var(--success-soft); color: var(--success);">CE</div></div><h3>CEO</h3><p>Pro majitele: týden v kostce, cíle Q4, rozhodnutí jen pro vedení.</p><div class="tile-viz"><div class="tile-kv"><div class="l">Tržby Q4 z cíle</div><div class="v">52 %</div></div><span class="spark"><svg viewBox="0 0 120 36" width="120" height="36" aria-hidden="true"><rect x="0" y="14" width="120" height="8" rx="4" fill="var(--surface-2)"></rect><rect x="0" y="14" width="62.4" height="8" rx="4" fill="var(--accent)"></rect></svg></span></div><div class="tile-foot"><span class="badge">Vedení</span><span>Otevřít →</span></div></a></div></main>
+</div>
+
+<footer class="f22-bar"><span>Ukázka systému <a href="../">Fundament 22</a>. Data jsou fiktivní.</span><nav aria-label="Fundament 22"><a href="../#cena">Nabídka a cena</a><a class="f22-cta" href="https://calendar.app.google/v39ka3uchSRSSG2AA" rel="noopener">Domluvit workshop</a></nav></footer>
+<script>
+/* Web běží mimo Claude: board čte seznam přehledů z této statické náhrady databáze. */
+(function(){var D={artifacts:[{"id": "a1", "order": 1, "title": "Přehled firmy", "icon": "PF", "category": "vedeni", "description": "Dnešní stav celé firmy pro celý tým: čísla, co hoří, co čeká na schválení.", "url": "prehled-firmy/", "viz": {"type": "line", "l": "Tržby včera", "v": "174 116 Kč", "vals": [150, 128, 112, 138, 152, 149, 151, 153, 136, 127, 146, 163, 148, 151]}}, {"id": "a2", "order": 2, "title": "Objednávky", "icon": "OB", "category": "provoz", "description": "Objednávky po dnech, kapacita rozvozu, zpoždění.", "url": "objednavky/", "viz": {"type": "bars", "l": "Objednávky včera", "v": "158", "vals": [150, 118, 98, 134, 148, 160, 155, 158, 150, 138, 132, 150, 166, 146, 158]}}, {"id": "a3", "order": 3, "title": "Finance", "icon": "FI", "category": "vedeni", "description": "P&L po měsících, cash, faktury po splatnosti.", "url": "finance/", "viz": {"type": "bars", "l": "EBITDA po měsících", "v": "63 681 Kč", "vals": [-21000, 72000, 63681]}}, {"id": "a4", "order": 4, "title": "Produkty", "icon": "PR", "category": "provoz", "description": "Zásoby, odpis, nejprodávanější a nákupní návrhy.", "url": "produkty/", "viz": {"type": "meter", "l": "Odpis · cíl 3 %", "v": "3,8 %", "used": 3.8, "max": 6, "target": 3, "warn": true}}, {"id": "a5", "order": 5, "title": "Support", "icon": "SU", "category": "provoz", "description": "Tikety, reklamace, návrhy odpovědí ke schválení.", "url": "support/", "viz": {"type": "bars", "l": "Otevřené tikety", "v": "23", "vals": [18, 22, 17, 25, 21, 26, 23]}}, {"id": "a6", "order": 6, "title": "Klienti", "icon": "KL", "category": "obchod", "description": "Segmenty, odchody předplatitelů, B2B obchod.", "url": "klienti/", "viz": {"type": "meter", "l": "Předplatitelé", "v": "1 860", "used": 1860, "max": 2000}}, {"id": "a7", "order": 7, "title": "Marketing", "icon": "MA", "category": "obchod", "description": "Výkon kanálů, kampaně, návrhy na rozpočet.", "url": "marketing/", "viz": {"type": "bars", "l": "ROAS · Meta nejlepší", "v": "6,1", "vals": [5.2, 6.1, 3.4], "hl": 1}}, {"id": "a8", "order": 8, "title": "CEO", "icon": "CE", "category": "vedeni", "description": "Pro majitele: týden v kostce, cíle Q4, rozhodnutí jen pro vedení.", "url": "ceo/", "viz": {"type": "meter", "l": "Tržby Q4 z cíle", "v": "52 %", "used": 52, "max": 100}}],categories:[{"id": "obchod", "name": "Obchod", "order": 3}, {"id": "provoz", "name": "Provoz", "order": 2}, {"id": "vedeni", "name": "Vedení", "order": 1}]};
+function snap(n){var a=D[n]||[];return{size:a.length,docs:a.map(function(x){return{id:x.id,data:function(){return x}}})}}
+function col(n){return{onSnapshot:function(cb){setTimeout(function(){cb(snap(n))},0);return function(){}},get:function(){return Promise.resolve(snap(n))},doc:function(){return docRef()}}}
+function docRef(){return{get:function(){return Promise.resolve({exists:false,data:function(){return{}}})},set:function(){return Promise.resolve()}}}
+window.claude={use:function(n){return Promise.resolve(n==='db'?{collection:col,doc:docRef}:null)}};})();
+</script>
+<script>
+(function(){"use strict";
+const $=s=>document.querySelector(s);
+const el=(tag,attrs,...kids)=>{const e=document.createElement(tag);if(attrs)for(const[k,v]of Object.entries(attrs)){if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='text')e.textContent=v;else if(k==='style')e.style.cssText=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else e.setAttribute(k,v===true?'':v)}for(const c of kids.flat()){if(c==null||c===false)continue;e.append(c.nodeType?c:document.createTextNode(String(c)))}return e};
+
+/* ---------- i18n: klíč = český text, hodnota = [EN, PL] ---------- */
+const LANGS=['cs','en','pl'];
+let LANG=(()=>{try{const l=localStorage.getItem('board-lang');return LANGS.includes(l)?l:'cs'}catch(e){return 'cs'}})();
+const D={
+ 'Zpět na board':['Back to board','Powrót do tablicy'],'Přehled':['Overview','Przegląd'],'Nastavení':['Settings','Ustawienia'],'Nápověda':['Help','Pomoc'],
+ 'Přepnout na světlý režim':['Switch to light mode','Przełącz na tryb jasny'],'Přepnout na tmavý režim':['Switch to dark mode','Przełącz na tryb ciemny'],
+ 'Statistiky':['Statistics','Statystyki'],'Návštěvnost':['Traffic','Odwiedziny'],'Využití databáze a úložiště':['Database & storage usage','Wykorzystanie bazy i magazynu'],
+ 'Návštěv za 30 dní':['Visits in 30 days','Wizyty w 30 dni'],'Unikátních uživatelů':['Unique users','Unikalni użytkownicy'],'Dnes':['Today','Dziś'],
+ 'Návštěvy po dnech':['Visits per day','Wizyty dziennie'],'Nejaktivnější uživatelé':['Most active users','Najaktywniejsi użytkownicy'],'Uživatel':['User','Użytkownik'],'Návštěv':['Visits','Wizyt'],'Naposledy':['Last seen','Ostatnio'],
+ 'Databáze':['Database','Baza danych'],'dokumentů':['documents','dokumentów'],'Úložiště souborů':['File storage','Magazyn plików'],'souborů':['files','plików'],
+ 'Statistiky vidí jen admini.':['Only admins can see statistics.','Statystyki widzą tylko administratorzy.'],'Žádná data.':['No data.','Brak danych.'],'Načítám…':['Loading…','Wczytywanie…'],
+ 'Úložiště je plné.':['Storage is full.','Magazyn jest pełny.'],'Neznámý':['Unknown','Nieznany'],
+ 'Celá firma na jednom místě. Přehledy, které čtou lidé i agenti.':['What you can build – all artifacts in one place.','Co można zbudować – wszystkie artefakty w jednym miejscu.'],
+ 'Přidat artefakt':['Add artifact','Dodaj artefakt'],'Všechny artefakty':['All artifacts','Wszystkie artefakty'],'Oblíbené':['Favorites','Ulubione'],'Vše':['All','Wszystko'],
+ 'Bez kategorie':['Uncategorized','Bez kategorii'],'Otevřít':['Open','Otwórz'],'Přidat do oblíbených':['Add to favorites','Dodaj do ulubionych'],'Odebrat z oblíbených':['Remove from favorites','Usuń z ulubionych'],
+ 'Zatím tu nejsou žádné artefakty.':['No artifacts yet.','Brak artefaktów.'],'Zatím nemáte oblíbené. Označte artefakt hvězdičkou.':['No favorites yet. Star an artifact.','Brak ulubionych. Oznacz artefakt gwiazdką.'],
+ 'Board':['Board','Tablica'],'Kategorie':['Categories','Kategorie'],'Artefakty':['Artifacts','Artefakty'],'Název':['Name','Nazwa'],'Odkaz':['Link','Link'],'Popis':['Description','Opis'],
+ 'Kategorie artefaktu':['Category','Kategoria'],'Zkratka ikony':['Icon letters','Skrót ikony'],'Přidat':['Add','Dodaj'],'Uložit':['Save','Zapisz'],'Smazat':['Delete','Usuń'],'Nahoru':['Up','W górę'],'Dolů':['Down','W dół'],
+ 'Nová kategorie':['New category','Nowa kategoria'],'Kategorie a artefakty spravují jen admini.':['Only admins manage categories and artifacts.','Kategoriami i artefaktami zarządzają tylko administratorzy.'],
+ 'Uloženo.':['Saved.','Zapisano.'],'Smazáno.':['Deleted.','Usunięto.'],'Vyplňte název a odkaz.':['Fill in the name and link.','Uzupełnij nazwę i link.'],'Akce':['Actions','Akcje'],'Pořadí':['Order','Kolejność'],
+ 'Board se nepodařilo načíst.':['Could not load the board.','Nie udało się wczytać tablicy.'],
+ "Jak to funguje":["How it works", "Jak to działa"],
+ "Tohle je demo s fiktivními daty e-shopu Zelená bedýnka. Stejný systém provozujeme u sebe a nasadíme ho i u vás.":["This is a demo with fictional data of the Zelená bedýnka e-shop. We run the same system ourselves and can deploy it for you.", "To demo z fikcyjnymi danymi e-sklepu Zelená bedýnka. Ten sam system prowadzimy u siebie i wdrożymy go u was."],
+ "Agenti každé ráno načtou data z napojených nástrojů, zapíšou je do firemního mozku a připraví návrhy. Člověk je schválí – tady, ve Slacku nebo v chatu s Claude.":["Every morning the agents read data from connected tools, write it into the company brain and prepare proposals. A person approves them – here, in Slack or in a Claude chat.", "Każdego ranka agenci czytają dane z podłączonych narzędzi, zapisują je w mózgu firmy i przygotowują propozycje. Człowiek je zatwierdza – tutaj, na Slacku lub w czacie z Claude."],
+ "Kapacita databáze je odhad. Návštěvnost zachytí jen úroveň Contributor a výš. Statistiky vidí jen admini. Plné úložiště se hlásí „Úložiště je plné.“":["Database capacity is an estimate. Traffic only captures Contributor level and up. Only admins see statistics. A full storage reports “Storage is full.”", "Pojemność bazy to szacunek. Ruch rejestruje tylko poziom Contributor i wyżej. Statystyki widzą tylko administratorzy. Pełny magazyn zgłasza „Magazyn jest pełny.”"],
+ "DEMO · FIKTIVNÍ DATA":["DEMO · FICTIONAL DATA", "DEMO · DANE FIKCYJNE"],
+ "Celá firma na jednom místě. Přehledy, které čtou lidé i agenti.":["The whole company in one place. Overviews read by people and agents.", "Cała firma w jednym miejscu. Przeglądy czytane przez ludzi i agentów."],
+ "Tržby včera":["Revenue yesterday", "Przychód wczoraj"],
+ "Objednávky včera":["Orders yesterday", "Zamówienia wczoraj"],
+ "EBITDA po měsících":["EBITDA by month", "EBITDA miesięcznie"],
+ "Odpis · cíl 3 %":["Spoilage · target 3%", "Straty · cel 3%"],
+ "Otevřené tikety":["Open tickets", "Otwarte zgłoszenia"],
+ "Předplatitelé":["Subscribers", "Subskrybenci"],
+ "ROAS · Meta nejlepší":["ROAS · Meta best", "ROAS · Meta najlepsza"],
+ "Tržby Q4 z cíle":["Q4 revenue vs. target", "Przychody Q4 z celu"]
+};
+const t=s=>{if(LANG==='cs')return s;const r=D[s];return r?(r[LANG==='en'?0:1]||s):s};
+function applyLang(){document.documentElement.lang=LANG;
+  document.querySelectorAll('[data-t]').forEach(n=>n.textContent=t(n.dataset.t));
+  document.querySelectorAll('#lang button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===LANG)));
+  if(LANG!=='cs')document.title=t('Zelená bedýnka');else document.title="Demo: Zelená bedýnka — firma na jednom místě | Fundament 22";applyTheme();render()}
+document.querySelectorAll('#lang button').forEach(b=>b.addEventListener('click',()=>{LANG=b.dataset.lang;try{localStorage.setItem('board-lang',LANG)}catch(e){}applyLang()}));
+
+/* ---------- barevný režim ---------- */
+const ICON={sun:'<circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+  moon:'<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'};
+let THEME=document.documentElement.dataset.theme||'light';
+function applyTheme(){document.documentElement.dataset.theme=THEME;const b=$('#theme');
+  b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICON[THEME==='dark'?'sun':'moon']+'</svg>';
+  const l=t(THEME==='dark'?'Přepnout na světlý režim':'Přepnout na tmavý režim');b.title=l;b.setAttribute('aria-label',l)}
+$('#theme').addEventListener('click',()=>{THEME=THEME==='dark'?'light':'dark';try{localStorage.setItem('board-theme',THEME)}catch(e){}applyTheme();render()});
+
+/* ---------- stav, capabilities ---------- */
+const S={view:'all',cat:'all',settingsPage:'categories',visits:[],names:{},items:[],cats:[],favs:[],loaded:false};
+let db=null,user=null,assets=null,ME=null,IS_ADMIN=false;
+const DOC_CAP=25000; /* orientační limit dokumentů na artefakt */
+const COLLECTIONS=['visits','artifacts','categories']; /* + všechny další kolekce boardu */
+const DOC_COUNTS={};
+const dayKey=d=>{d=new Date(d);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+function toast(m){const n=el('div',{class:'toast',text:m});document.body.append(n);setTimeout(()=>n.remove(),3500)}
+
+async function trackVisit(){ /* 1 dokument na uživatele: visits/{uid} = {days:{YYYY-MM-DD:n}, last} */
+  if(!db||!ME)return;
+  try{const ref=db.doc('visits/'+ME);const snap=await ref.get();const cur=snap.exists?snap.data():{days:{}};
+    const k=dayKey(Date.now());const days=Object.assign({},cur.days||{});days[k]=(days[k]||0)+1;
+    const cutoff=dayKey(Date.now()-90*864e5);for(const d of Object.keys(days))if(d<cutoff)delete days[d];
+    await ref.set({days,last:Date.now()});}catch(e){/* viewer bez práva zápisu – ignorovat */}
+}
+
+/* ---------- navigace ---------- */
+document.querySelectorAll('#nav button').forEach(b=>b.addEventListener('click',()=>{S.view=b.dataset.view;
+  document.querySelectorAll('#nav button').forEach(x=>x.setAttribute('aria-current',x===b?'page':'false'));render()}));
+const SETTINGS_MENU=[
+  ['Board',[['categories','Kategorie'],['artifacts','Artefakty']]],
+  ['Statistiky',[['traffic','Návštěvnost'],['usage','Využití databáze a úložiště']]]
+];
+const TONES=[['--accent-soft','--link'],['--violet-soft','--violet'],['--success-soft','--success'],['--blue-soft','--blue'],['--magenta-soft','--magenta']];
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const byOrder=(a,b)=>(a.order??0)-(b.order??0)||String(a.title||a.name).localeCompare(String(b.title||b.name));
+const catName=id=>{const c=S.cats.find(c=>c.id===id);return c?c.name:t('Bez kategorie')};
+const initials=a=>(a.icon||String(a.title||'?').split(/\s+/).map(w=>w[0]).join('')).slice(0,2).toUpperCase();
+const STAR='<path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill="FILL"/>';
+async function toggleFav(id){
+  const i=S.favs.indexOf(id);if(i<0)S.favs.push(id);else S.favs.splice(i,1);render();
+  try{await db.collection('data/users/'+ME).doc('board').set({favs:S.favs})}catch(e){toast(e&&e.code==='quota_exceeded'?t('Úložiště je plné.'):String(e&&e.message||e))}
+}
+function viz(a){const z=a.viz;if(!z)return null;const W=120,H=36;let g='';
+  if(z.type==='meter'){const p=Math.max(0,Math.min(1,z.used/z.max));
+    g='<rect x="0" y="14" width="'+W+'" height="8" rx="4" fill="var(--surface-2)"/><rect x="0" y="14" width="'+(W*p).toFixed(1)+'" height="8" rx="4" fill="'+(z.warn?'var(--danger)':'var(--accent)')+'"/>'+(z.target!=null?'<line x1="'+(W*z.target/z.max).toFixed(1)+'" x2="'+(W*z.target/z.max).toFixed(1)+'" y1="9" y2="27" stroke="var(--ink)" stroke-width="1.5"/>':'')}
+  else if(z.type==='line'){const v=z.vals,mn=Math.min(...v),mx=Math.max(...v),r=mx-mn||1;
+    const P=v.map((x,i)=>[i*(W-6)/(v.length-1)+3,H-4-(x-mn)/r*(H-8)]);
+    g='<polyline points="'+P.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ')+'" fill="none" stroke="var(--ink-3)" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="'+P[P.length-1][0].toFixed(1)+'" cy="'+P[P.length-1][1].toFixed(1)+'" r="3" fill="var(--accent)"/>'}
+  else{const v=z.vals,n=v.length,mx=Math.max(...v.map(Math.abs))||1,neg=v.some(x=>x<0),base=neg?H/2:H,step=W/n,bw=step*.68;
+    g=v.map((x,i)=>{const h=Math.max(1.5,Math.abs(x)/mx*(neg?H/2-2:H-2)),y=x>=0?base-h:base,hl=z.hl!=null?i===z.hl:i===n-1;
+      return '<rect x="'+(i*step+(step-bw)/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+h.toFixed(1)+'" rx="1.5" fill="'+(hl?'var(--accent)':x<0?'var(--danger)':'var(--ink-3)')+'" opacity="'+(hl||x<0?1:.45)+'"/>'}).join('')+(neg?'<line x1="0" x2="'+W+'" y1="'+base+'" y2="'+base+'" stroke="var(--line)"/>':'')}
+  const s=el('span',{class:'spark'});s.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" aria-hidden="true">'+g+'</svg>';
+  return el('div',{class:'tile-viz'},el('div',{class:'tile-kv'},el('div',{class:'l',text:t(z.l)}),el('div',{class:'v',text:z.v})),s)}
+function tile(a){
+  const ci=Math.max(0,S.cats.findIndex(c=>c.id===a.category));const[bg,fg]=TONES[ci%TONES.length];
+  const fav=S.favs.includes(a.id);
+  const star=el('button',{class:'star',type:'button','aria-pressed':String(fav),title:t(fav?'Odebrat z oblíbených':'Přidat do oblíbených'),'aria-label':t(fav?'Odebrat z oblíbených':'Přidat do oblíbených'),
+    onclick:e=>{e.preventDefault();e.stopPropagation();toggleFav(a.id)}});
+  star.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+STAR.replace('FILL',fav?'currentColor':'none')+'</svg>';
+  return el('a',{class:'tile',href:a.url,target:'_top',rel:'noopener'},
+    el('div',{class:'tile-top'},el('div',{class:'tile-ico',style:'background:var('+bg+');color:var('+fg+')',text:initials(a)}),ME?star:null),
+    el('h3',{text:a.title}),el('p',{text:a.description||''}),viz(a),
+    el('div',{class:'tile-foot'},el('span',{class:'badge',text:catName(a.category)}),el('span',{text:t('Otevřít')+' →'})));
+}
+function emptyCard(msg){return el('div',{class:'card empty'},el('p',{text:t(msg)}),
+  IS_ADMIN&&msg!=='Zatím nemáte oblíbené. Označte artefakt hvězdičkou.'?el('button',{class:'btn primary',type:'button',onclick:openAdd},t('Přidat artefakt')):null)}
+function openAdd(){S.view='settings';S.settingsPage='artifacts';
+  document.querySelectorAll('#nav button').forEach(x=>x.setAttribute('aria-current',x.dataset.view==='settings'?'page':'false'));render()}
+function render(){const v=$('#view');v.textContent='';
+  $('#ctas').hidden=!IS_ADMIN;
+  if(S.view==='settings')return renderSettings(v);
+  if(S.view==='help')return v.append(el('div',{class:'card'},el('h2',{text:t('Jak to funguje')}),el('p',{text:t('Tohle je demo s fiktivními daty e-shopu Zelená bedýnka. Stejný systém provozujeme u sebe a nasadíme ho i u vás.')}),el('p',{text:t('Agenti každé ráno načtou data z napojených nástrojů, zapíšou je do firemního mozku a připraví návrhy. Člověk je schválí – tady, ve Slacku nebo v chatu s Claude.')}),el('p',{class:'muted',text:t('Kapacita databáze je odhad. Návštěvnost zachytí jen úroveň Contributor a výš. Statistiky vidí jen admini. Plné úložiště se hlásí „Úložiště je plné.“')})));
+  if(!S.loaded)return v.append(el('div',{class:'card'},el('p',{class:'muted',text:t('Načítám…')})));
+  const items=[...S.items].sort(byOrder);
+  if(S.view==='favs'){const f=S.favs.map(id=>items.find(a=>a.id===id)).filter(Boolean);
+    return v.append(f.length?el('div',{class:'grid'},f.map(tile)):emptyCard('Zatím nemáte oblíbené. Označte artefakt hvězdičkou.'))}
+  if(!items.length)return v.append(emptyCard('Zatím tu nejsou žádné artefakty.'));
+  const cats=[...S.cats].sort(byOrder).filter(c=>items.some(a=>a.category===c.id));
+  const chip=(id,label,n)=>el('button',{type:'button','aria-pressed':String(S.cat===id),onclick:()=>{S.cat=id;render()}},label,el('span',{class:'n',text:n}));
+  const shown=S.cat==='all'?items:items.filter(a=>(a.category||'')===(S.cat==='none'?'':S.cat));
+  const none=items.filter(a=>!S.cats.some(c=>c.id===a.category)).length;
+  v.append(el('div',{class:'chips',role:'group'},chip('all',t('Vše'),items.length),cats.map(c=>chip(c.id,c.name,items.filter(a=>a.category===c.id).length)),none&&S.cats.length?chip('none',t('Bez kategorie'),none):null),
+    el('div',{class:'grid'},shown.map(tile)));
+}
+function renderSettings(v){
+  const page=S.settingsPage;
+  const menu=el('nav',{class:'smenu','aria-label':t('Nastavení')},SETTINGS_MENU.map(([sec,items])=>el('div',{class:'smenu-sec'},
+    el('div',{class:'smenu-h',text:t(sec)}),
+    items.map(([id,label])=>el('button',{type:'button','aria-current':id===page?'page':null,onclick:()=>{S.settingsPage=id;render()}},t(label))))));
+  let content;
+  if(!IS_ADMIN&&(page==='categories'||page==='artifacts'))content=el('div',{class:'card'},el('p',{class:'muted',text:t('Kategorie a artefakty spravují jen admini.')}));
+  else if(page==='categories')content=categoriesCard();
+  else if(page==='artifacts')content=artifactsCard();
+  else if(!IS_ADMIN&&(page==='traffic'||page==='usage'))content=el('div',{class:'card'},el('p',{class:'muted',text:t('Statistiky vidí jen admini.')}));
+  else if(page==='traffic')content=trafficCard();
+  else if(page==='usage'){content=el('div',{class:'card'},el('p',{class:'muted',text:t('Načítám…')}));usageCard().then(c=>content.replaceWith(c))}
+  else content=el('div',{class:'card'},'…');
+  v.append(el('div',{class:'settings'},menu,el('div',{class:'scontent'},content)));
+}
+async function save(path,data,create){try{const r=db.doc(path);await (create?r.set(data):r.update(data));toast(t('Uloženo.'))}catch(e){toast(e&&e.code==='quota_exceeded'?t('Úložiště je plné.'):String(e&&e.message||e))}}
+async function del(path){try{await db.doc(path).delete();toast(t('Smazáno.'))}catch(e){toast(String(e&&e.message||e))}}
+function move(list,coll,i,d){const a=list[i],b=list[i+d];if(!a||!b)return;save(coll+'/'+a.id,{order:i+d});save(coll+'/'+b.id,{order:i})}
+function categoriesCard(){
+  const cats=[...S.cats].sort(byOrder);const inp=el('input',{type:'text',placeholder:t('Nová kategorie')});
+  const add=()=>{const n=inp.value.trim();if(!n)return;save('categories/'+uid(),{name:n,order:cats.length},true);inp.value=''};
+  inp.addEventListener('keydown',e=>{if(e.key==='Enter')add()});
+  return el('div',{class:'card'},el('h2',{text:t('Kategorie')}),
+    el('div',{class:'form'},el('label',{class:'field'},t('Název'),inp),el('div',null,el('button',{class:'btn primary',type:'button',onclick:add},t('Přidat')))),
+    cats.length?el('div',{class:'tbl-wrap'},el('table',{class:'rows'},el('thead',null,el('tr',null,el('th',{text:t('Název')}),el('th',{class:'num',text:t('Artefakty')}),el('th',{class:'num',text:t('Akce')}))),
+      el('tbody',null,cats.map((c,i)=>{const n=el('input',{type:'text',value:c.name});n.addEventListener('change',()=>n.value.trim()&&save('categories/'+c.id,{name:n.value.trim()}));
+        return el('tr',null,el('td',null,n),el('td',{class:'num',text:S.items.filter(a=>a.category===c.id).length}),
+          el('td',{class:'num'},el('button',{class:'btn ghost sm',type:'button',title:t('Nahoru'),onclick:()=>move(cats,'categories',i,-1)},'↑'),el('button',{class:'btn ghost sm',type:'button',title:t('Dolů'),onclick:()=>move(cats,'categories',i,1)},'↓'),
+            el('button',{class:'btn ghost sm',type:'button',onclick:()=>del('categories/'+c.id)},t('Smazat'))))}))))
+    :el('p',{class:'muted',text:t('Žádná data.')}));
+}
+function catSelect(val){return el('select',null,el('option',{value:''},t('Bez kategorie')),[...S.cats].sort(byOrder).map(c=>el('option',{value:c.id,selected:c.id===val},c.name)))}
+function artifactsCard(){
+  const items=[...S.items].sort(byOrder);
+  const f={title:el('input',{type:'text'}),url:el('input',{type:'url',placeholder:'https://claude.ai/…'}),description:el('input',{type:'text'}),icon:el('input',{type:'text',maxlength:'2'}),category:catSelect('')};
+  const add=()=>{const d={title:f.title.value.trim(),url:f.url.value.trim(),description:f.description.value.trim(),icon:f.icon.value.trim(),category:f.category.value,order:items.length,addedAt:Date.now()};
+    if(!d.title||!/^https?:\/\//.test(d.url))return toast(t('Vyplňte název a odkaz.'));save('artifacts/'+uid(),d,true);for(const k of ['title','url','description','icon'])f[k].value=''};
+  return el('div',{class:'card'},el('h2',{text:t('Artefakty')}),
+    el('div',{class:'form'},el('label',{class:'field'},t('Název'),f.title),el('label',{class:'field'},t('Odkaz'),f.url),el('label',{class:'field'},t('Popis'),f.description),
+      el('label',{class:'field'},t('Kategorie artefaktu'),f.category),el('label',{class:'field'},t('Zkratka ikony'),f.icon),el('div',null,el('button',{class:'btn primary',type:'button',onclick:add},t('Přidat')))),
+    items.length?el('div',{class:'tbl-wrap',style:'margin-top:12px'},el('table',{class:'rows'},el('thead',null,el('tr',null,el('th',{text:t('Název')}),el('th',{text:t('Kategorie artefaktu')}),el('th',{class:'num',text:t('Akce')}))),
+      el('tbody',null,items.map((a,i)=>{const s=catSelect(a.category);s.addEventListener('change',()=>save('artifacts/'+a.id,{category:s.value}));
+        const n=el('input',{type:'text',value:a.title});n.addEventListener('change',()=>n.value.trim()&&save('artifacts/'+a.id,{title:n.value.trim()}));
+        return el('tr',null,el('td',null,n),el('td',null,s),el('td',{class:'num'},
+          el('button',{class:'btn ghost sm',type:'button',title:t('Nahoru'),onclick:()=>move(items,'artifacts',i,-1)},'↑'),el('button',{class:'btn ghost sm',type:'button',title:t('Dolů'),onclick:()=>move(items,'artifacts',i,1)},'↓'),
+          el('button',{class:'btn ghost sm',type:'button',onclick:()=>del('artifacts/'+a.id)},t('Smazat'))))}))))
+    :null);
+}
+function trafficCard(){
+  const today=dayKey(Date.now());const days=[];for(let i=29;i>=0;i--)days.push(dayKey(Date.now()-i*864e5));
+  const per=Object.fromEntries(days.map(d=>[d,0]));let total=0,todayN=0;const users=[];
+  for(const r of S.visits){let n=0;for(const[d,c]of Object.entries(r.days||{}))if(d in per){per[d]+=c;n+=c;total+=c;if(d===today)todayN+=c}
+    if(n)users.push({id:r.id,n,last:r.last})}
+  users.sort((a,b)=>b.n-a.n);const max=Math.max(1,...Object.values(per));
+  return el('div',null,
+    el('div',{class:'kpis'},
+      el('div',{class:'kpi accent'},el('div',{class:'kpi-l',text:t('Návštěv za 30 dní')}),el('div',{class:'kpi-v',text:total.toLocaleString(LANG)})),
+      el('div',{class:'kpi'},el('div',{class:'kpi-l',text:t('Unikátních uživatelů')}),el('div',{class:'kpi-v',text:users.length})),
+      el('div',{class:'kpi'},el('div',{class:'kpi-l',text:t('Dnes')}),el('div',{class:'kpi-v',text:todayN}))),
+    el('div',{class:'card'},el('h2',{text:t('Návštěvy po dnech')}),
+      el('div',{class:'bars'},days.map(d=>el('div',{title:d+': '+per[d],style:'height:'+(per[d]/max*100)+'%'})))),
+    el('div',{class:'card'},el('h2',{text:t('Nejaktivnější uživatelé')}),users.length?el('div',{class:'tbl-wrap'},el('table',null,
+      el('thead',null,el('tr',null,el('th',{text:t('Uživatel')}),el('th',{class:'num',text:t('Návštěv')}),el('th',{class:'num',text:t('Naposledy')}))),
+      el('tbody',null,users.slice(0,20).map(u=>el('tr',null,el('td',{text:S.names[u.id]||t('Neznámý')}),el('td',{class:'num',text:u.n}),el('td',{class:'num',text:u.last?new Date(u.last).toLocaleString(LANG):'–'}))))))
+      :el('p',{class:'muted',text:t('Žádná data.')})));
+}
+function meter(label,used,max,unit){const p=max?Math.min(100,used/max*100):0;
+  return el('div',{class:'meter'},el('div',{class:'meter-h'},el('span',null,el('b',{text:t(label)}),' · '+used.toLocaleString(LANG)+' / '+max.toLocaleString(LANG)+' '+unit),el('span',{text:Math.round(p)+' %'})),
+    el('div',{class:'track'},el('div',{class:'fill'+(p>80?' warn':''),style:'width:'+p+'%'})))}
+const fmtB=b=>b>=1048576?(b/1048576).toFixed(1)+' MB':Math.round(b/1024)+' kB';
+async function usageCard(){
+  let docs=0;for(const c of COLLECTIONS){try{const q=await db.collection(c).get();DOC_COUNTS[c]=q.size??q.docs.length;docs+=DOC_COUNTS[c]}catch(e){}}
+  const card=el('div',{class:'card'},el('h2',{text:t('Využití databáze a úložiště')}),meter('Databáze',docs,DOC_CAP,t('dokumentů')));
+  if(assets){try{const{usage:u}=await assets.list();
+    card.append(meter('Úložiště souborů',u.files,u.maxFiles,t('souborů')),
+      el('p',{class:'muted',style:'margin:0;font-size:13px',text:fmtB(u.bytes)+' / '+fmtB(u.maxBytes)}))}catch(e){}}
+  card.append(el('div',{class:'tbl-wrap',style:'margin-top:12px'},el('table',null,el('tbody',null,
+    Object.entries(DOC_COUNTS).map(([c,n])=>el('tr',null,el('td',{text:c}),el('td',{class:'num',text:n})))))));
+  return card;
+}
+
+/* ---------- start ---------- */
+applyLang();
+(async()=>{
+  const use=n=>window.claude?window.claude.use(n):Promise.resolve(null);
+  [db,user,assets]=await Promise.all([use('db'),use('user'),use('assets')]);
+  if(user){ME=await user.id();IS_ADMIN=await user.canEdit()}
+  $('#ctaAdd').addEventListener('click',openAdd);
+  render();
+  if(!db){S.loaded=true;toast(t('Board se nepodařilo načíst.'));return render()}
+  const timer=setTimeout(()=>{if(!S.loaded){S.loaded=true;render()}},10000);
+  const rerender=()=>{if(S.view!=='settings'||['categories','artifacts'].includes(S.settingsPage))render()};
+  db.collection('artifacts').onSnapshot(q=>{S.items=q.docs.map(d=>({id:d.id,...d.data()}));S.loaded=true;clearTimeout(timer);rerender()},()=>{S.loaded=true;render()});
+  db.collection('categories').onSnapshot(q=>{S.cats=q.docs.map(d=>({id:d.id,...d.data()}));rerender()});
+  if(ME)db.collection('data/users/'+ME).doc('board').get().then(s=>{S.favs=(s.exists&&s.data().favs)||[];rerender()}).catch(()=>{});
+  await trackVisit();
+  if(db&&IS_ADMIN)db.collection('visits').onSnapshot(q=>{S.visits=q.docs.map(d=>({id:d.id,...d.data()}));
+    user&&user.profiles(S.visits.map(v=>v.id)).then(ps=>{for(const[id,p]of Object.entries(ps||{}))S.names[id]=p&&p.name||'';if(S.view==='settings')render()});
+    if(S.view==='settings')render()});
+  render();
+})();
+})();
+</script>
+</body>
+</html>

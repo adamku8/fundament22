@@ -1,0 +1,19 @@
+# Fundament 22
+
+> Hotový AI podvozek firmy: firemní mozek (zapsané know-how firmy) a AI agenti postavení na Claude. Agent navrhuje, člověk schvaluje.
+
+## Stránky
+
+- [Úvod a nabídka](https://adamku8.github.io/fundament22/): co to je, jak to funguje, nabídka Základy / Patra / Servis, pro koho to je a není
+- [Demo: Zelená bedýnka](https://adamku8.github.io/fundament22/demo/): ukázka na fiktivním e-shopu, 8 přehledů s frontou návrhů ke schválení
+
+## Přehledy v demu (fiktivní data)
+
+- [Přehled firmy](https://adamku8.github.io/fundament22/demo/prehled-firmy/)
+- [Objednávky](https://adamku8.github.io/fundament22/demo/objednavky/)
+- [Finance](https://adamku8.github.io/fundament22/demo/finance/)
+- [Produkty](https://adamku8.github.io/fundament22/demo/produkty/)
+- [Support](https://adamku8.github.io/fundament22/demo/support/)
+- [Klienti](https://adamku8.github.io/fundament22/demo/klienti/)
+- [Marketing](https://adamku8.github.io/fundament22/demo/marketing/)
+- [CEO](https://adamku8.github.io/fundament22/demo/ceo/)
