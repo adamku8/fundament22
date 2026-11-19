@@ -212,6 +212,9 @@ footer{background:#0B0F2E;color:#8E93BA;padding:28px 0;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
 footer a{color:#C9CCE6}
 .micro{margin-top:14px;font-size:15px;color:var(--ink3)}
+.ob ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;font-size:16px;color:var(--ink2)}
+.ob li{display:flex;gap:10px}.ob li::before{content:"→";flex:none;color:var(--or);font-weight:800}
+@media(max-width:759px){.ob{gap:12px;margin-top:22px}.ob .card{padding:18px 20px}.ob ul{gap:6px;font-size:15.5px}}
 .az .verdict h2{font-size:clamp(22px,4.6vw,30px);margin:0 0 6px}
 .az .cal{display:inline-block;text-decoration:none;color:#fff;margin-top:6px}
 @media(max-width:639px){
@@ -238,44 +241,25 @@ footer a{color:#C9CCE6}
 
 <main>
 <section class="hero"><div class="wrap">
-<a class="free" href="#analyza"><b>Zdarma</b>30 minut konzultace</a>
 <h1>Přestaňte dělat práci,<br><span>kterou zvládne AI.</span></h1>
 <p class="lead">AI agenti práci připraví. <b>Vy ji jen zkontrolujete.</b></p>
-<a class="herostat" href="#pripady" aria-label="Zpracování dokladů: z 30 hodin práce na 3 hodiny kontroly"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span><span class="what">zpracování dokladů<br>práce → jen kontrola</span></a>
+<a class="herostat" href="#obory" aria-label="Zpracování dokladů: z 30 hodin práce na 3 hodiny kontroly"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span><span class="what">zpracování dokladů<br>práce → jen kontrola</span></a>
 <div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a></div>
-<p class="micro">Pět otázek, dvě minuty. Pak si domluvíme termín.</p>
+<p class="micro">30 minut, zdarma. Začíná pěti otázkami na dvě minuty.</p>
 </div></section>
 
-<section id="pripady"><div class="wrap">
-<p class="eyebrow">Úspora času</p>
-<h2>Z hodin práce zbydou hodiny kontroly.</h2>
-<div class="ucs">
-<article class="uc"><h3>Zpracování dokladů</h3>
-<div class="nums"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:10%"></i></div>
-<p>Agent je přečte, zařadí a připraví k zaúčtování.</p></article>
-<article class="uc"><h3>Dotazy zákazníků</h3>
-<div class="nums"><span class="was">15 h</span><span class="arr">→</span><span class="now">6 h</span><span class="per">týdně</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:40%"></i></div>
-<p>Odpověď je připravená, vy ji schválíte.</p></article>
-<article class="uc"><h3>Poptávky a připomenutí</h3>
-<div class="nums"><span class="was">8 h</span><span class="arr">→</span><span class="now">3 h</span><span class="per">týdně</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:38%"></i></div>
-<p>Zprávy jsou nachystané, odesíláte vy.</p></article>
-<article class="uc"><h3>Reporty a zjišťování stavu</h3>
-<div class="nums"><span class="was">6 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:17%"></i></div>
-<p>Ráno přijde hotový přehled.</p></article>
-<article class="uc"><h3>Zápisy a hledání informací</h3>
-<div class="nums"><span class="was">5 h</span><span class="arr">→</span><span class="now">1,5 h</span><span class="per">týdně</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:30%"></i></div>
-<p>Všechno je zapsané na jednom místě.</p></article>
-<article class="uc"><h3>Kontroly e‑shopu a reklamy</h3>
-<div class="nums"><span class="was">4 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
-<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:25%"></i></div>
-<p>Agent hlídá každý den, vy řešíte nálezy.</p></article>
+<section id="obory"><div class="wrap">
+<p class="eyebrow">Obory</p>
+<h2>Kde to umíme zavést.</h2>
+<div class="grid3 ob">
+<article class="card"><h3>E‑commerce a retail</h3><ul>
+<li>Odpovědi zákaznické podpory</li><li>Ranní přehled obratu po zemích</li><li>Kontrola PPC agentury</li><li>Překlady a ceny v mutacích</li></ul></article>
+<article class="card"><h3>Profesní služby</h3><ul>
+<li>Zápisy ze schůzek a follow‑upy</li><li>Třídění pošty a úkolů</li><li>Hlídání termínů a lhůt</li><li>Podklady k fakturaci</li></ul></article>
+<article class="card"><h3>Výroba a velkoobchod</h3><ul>
+<li>Nabídky z poptávek</li><li>Podklady k reklamacím</li><li>Přehled objednávek a skladu</li><li>Upomínky pohledávek</li></ul></article>
 </div>
-<p class="est"><b>Jsou to odhady, ne měření.</b> Týdenní čísla platí pro tříčlenný tým menšího e‑shopu. Vaše spočítáme v první analýze.</p>
+<p class="est">Podnikáte v jiném oboru? Projdeme to spolu na konzultaci.</p>
 <div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a></div>
 </div></section>
 
