@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AI agenti pro firmy: konzultace 30 minut zdarma | Fundament 22</title>
-<meta name="description" content="Naučíme AI, jak vaše firma funguje, a nasadíme agenty, kteří připraví odpovědi zákazníkům, přehledy a podklady. Pět otázek a uvidíte, kde u vás začít. Konzultace 30 minut zdarma.">
+<meta name="description" content="AI agenti připraví doklady, odpovědi zákazníkům, reporty a upomínky. Vy jen kontrolujete a schvalujete. Pět otázek a uvidíte, kde u vás začít. Konzultace 30 minut zdarma.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://adamku8.github.io/fundament22/start/">
 <meta property="og:type" content="website">
@@ -120,6 +120,30 @@ section{padding:72px 0}
 .band .wrap{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:center;justify-content:space-between}
 .band h2{color:#fff;font-size:clamp(28px,4.4vw,44px)}
 .band p{margin-top:10px;font-size:18px;max-width:560px;color:#FFE9DC}
+.herostat{display:inline-flex;align-items:center;gap:14px;margin:26px auto 0;padding:14px 22px;border-radius:18px;background:var(--dark);color:#fff;text-decoration:none;box-shadow:0 18px 50px rgba(21,24,58,.22)}
+.herostat .was,.uc .was{font-family:var(--disp);font-weight:800;color:#8E93BA;text-decoration:line-through;text-decoration-thickness:2px}
+.herostat .was{font-size:28px}.herostat .arr{color:#FF9A3D;font-size:24px;font-weight:800}
+.herostat .now{font-family:var(--disp);font-weight:800;font-size:44px;letter-spacing:-.03em;color:#FF7A2F;line-height:1}
+.herostat .what{font-size:14px;line-height:1.35;color:#D9DBEF;text-align:left;border-left:1px solid rgba(255,255,255,.18);padding-left:14px}
+.herostat .was,.herostat .now,.herostat .arr,.uc .nums span{white-space:nowrap}
+@media(max-width:600px){.herostat{gap:10px;padding:12px 16px}.herostat .was{font-size:22px}.herostat .now{font-size:36px}.herostat .what{font-size:13px;padding-left:10px}}
+.ucs{display:grid;gap:16px;margin-top:32px}
+@media(min-width:640px){.ucs{grid-template-columns:1fr 1fr}}
+@media(min-width:960px){.ucs{grid-template-columns:repeat(3,1fr)}}
+.uc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px}
+.uc:first-child{border-color:rgba(232,84,26,.5);box-shadow:0 18px 50px rgba(232,84,26,.12)}
+.uc .nums{display:flex;align-items:baseline;gap:10px;margin-top:12px}
+.uc .was{font-size:22px;color:var(--ink3)}
+.uc .arr{color:var(--or);font-weight:800;font-size:20px}
+.uc .now{font-family:var(--disp);font-weight:800;font-size:40px;letter-spacing:-.03em;line-height:1;color:var(--or)}
+.uc .per{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-left:2px}
+.bars{position:relative;height:10px;margin:14px 0 12px}
+.bars i{position:absolute;left:0;top:0;height:10px;border-radius:6px}
+.bars .b1{width:100%;background:rgba(21,24,58,.10)}
+.bars .b2{background:var(--or)}
+.uc p{font-size:15.5px;color:var(--ink2)}
+.est{margin-top:22px;font-size:15px;color:var(--ink2);background:rgba(21,24,58,.05);border-radius:12px;padding:12px 16px}
+.est b{color:var(--ink)}
 /* ---------- online analýza (formulář z FIREMNI AI) ---------- */
 .az{background:var(--dark);color:#fff;padding:80px 0;background-image:radial-gradient(900px 500px at 85% -10%,rgba(200,50,126,.22),transparent 60%),radial-gradient(700px 420px at -10% 110%,rgba(255,154,61,.14),transparent 60%);scroll-margin-top:60px;
 --line:#3a3e5e;--muted:#a9adcb;--soft:#d9dbef;--acard:#1d2150;--bg2:#15183a;--o1:#ff9a3d;font-family:var(--disp);font-size:16px;line-height:1.5}
@@ -201,9 +225,44 @@ footer a{color:#C9CCE6}
 <section class="hero"><div class="wrap">
 <a class="free" href="#analyza"><b>Zdarma</b>30 minut konzultace o vaší firmě</a>
 <h1>Přestaňte dělat práci,<br><span>kterou zvládne AI.</span></h1>
-<p class="lead">Odpovědi zákazníkům, ranní přehledy, upomínky, podklady na poradu. Tohle za vás připraví AI agenti. I v noci. <b>Vy jen schvalujete.</b></p>
+<p class="lead">Zpracování dokladů: místo 30 hodin práce 3 hodiny kontroly. Stejně tak odpovědi zákazníkům, reporty nebo upomínky. Připraví je AI agenti, <b>vy jen schvalujete.</b></p>
+<a class="herostat" href="#pripady" aria-label="Zpracování dokladů: z 30 hodin práce na 3 hodiny kontroly"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span><span class="what">zpracování dokladů<br>práce → jen kontrola</span></a>
 <div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a><a class="btn ghost" href="../demo/">Podívat se na ukázku</a></div>
-<ul class="pills"><li>30 minut, nic neplatíte</li><li>k ničemu se nezavazujete</li><li>bez vás nic neodejde</li></ul>
+<ul class="pills" style="margin-top:22px"><li>30 minut, nic neplatíte</li><li>k ničemu se nezavazujete</li><li>bez vás nic neodejde</li></ul>
+</div></section>
+
+<section id="pripady"><div class="wrap">
+<p class="eyebrow">Kde se vám vrátí čas</p>
+<h2>Z hodin práce zbydou hodiny kontroly.</h2>
+<p class="sub">Šest prací, které firmy dělají ručně každý týden. Agent je připraví, člověk zkontroluje a schválí.</p>
+<div class="ucs">
+<article class="uc"><h3>Zpracování dokladů</h3>
+<div class="nums"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:10%"></i></div>
+<p>Agent doklady přečte, zařadí a připraví k zaúčtování. Vy projdete jen to, co označil.</p></article>
+<article class="uc"><h3>Dotazy zákazníků</h3>
+<div class="nums"><span class="was">15 h</span><span class="arr">→</span><span class="now">6 h</span><span class="per">týdně</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:40%"></i></div>
+<p>U každého dotazu čeká návrh odpovědi s údaji z objednávky. Stačí schválit nebo upravit.</p></article>
+<article class="uc"><h3>Poptávky a připomenutí</h3>
+<div class="nums"><span class="was">8 h</span><span class="arr">→</span><span class="now">3 h</span><span class="per">týdně</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:38%"></i></div>
+<p>Odpovědi na poptávky a zprávy rozjednaným klientům jsou nachystané. Odesíláte vy.</p></article>
+<article class="uc"><h3>Reporty a zjišťování stavu</h3>
+<div class="nums"><span class="was">6 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:17%"></i></div>
+<p>Místo exportů a dotazů kolegům přijde ráno hotový přehled.</p></article>
+<article class="uc"><h3>Zápisy a hledání informací</h3>
+<div class="nums"><span class="was">5 h</span><span class="arr">→</span><span class="now">1,5 h</span><span class="per">týdně</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:30%"></i></div>
+<p>Co se domluvilo, je zapsané na jednom místě. Nikdo to nehledá v e-mailech.</p></article>
+<article class="uc"><h3>Kontroly e-shopu a reklamy</h3>
+<div class="nums"><span class="was">4 h</span><span class="arr">→</span><span class="now">1 h</span><span class="per">týdně</span></div>
+<div class="bars" aria-hidden="true"><i class="b1"></i><i class="b2" style="width:25%"></i></div>
+<p>Agent kontroluje každý den. Člověk řeší jen to, co našel.</p></article>
+</div>
+<p class="est"><b>Jsou to odhady, ne měření.</b> Čísla týdně počítáme pro tříčlenný tým menšího e-shopu. Jak to vyjde u vás, spočítáme na vašich datech v první analýze.</p>
+<div class="cta"><a class="btn big" href="#analyza">Chci vědět, kolik ušetříme my</a></div>
 </div></section>
 
 <section class="white"><div class="wrap split">
@@ -218,16 +277,6 @@ footer a{color:#C9CCE6}
 <div class="m"><div class="av">P</div><div><b>Podpora</b><time>06:30</time><p>K devíti dotazům mám připravené odpovědi. Jednu reklamaci nechávám na vás, nejsem si jistý.</p><span class="ok">Schválit 9</span><span class="no">Otevřít</span></div></div>
 <div class="m"><div class="av">O</div><div><b>Obchod</b><time>06:45</time><p>Tři rozjednané nabídky čekají na ozvání. Zprávy mám nachystané, u každé je, o čem byla řeč naposledy.</p></div></div>
 <div class="m"><div class="av">F</div><div><b>Finance</b><time>07:00</time><p>Tři faktury jsou po splatnosti. Upomínky jsou připravené, nic neodešlo.</p></div></div>
-</div>
-</div></section>
-
-<section><div class="wrap">
-<p class="eyebrow">Jak to funguje</p>
-<h2>Tři věci, nic složitého.</h2>
-<div class="grid3">
-<div class="card"><div class="n">1</div><h3>Sepíšeme, jak to u vás chodí</h3><p>Ceny, pravidla, postupy, co se komu slíbilo. Dnes je to v hlavách a v e-mailech. Dáme to na jedno místo, které patří vám.</p></div>
-<div class="card"><div class="n">2</div><h3>Agenti si to přečtou a pracují</h3><p>Každý má jednu práci: odpovědi zákazníkům, ranní přehled, upomínky, podklady na poradu. Řídí se tím, co u vás platí.</p></div>
-<div class="card"><div class="n">3</div><h3>Poslední slovo máte vy</h3><p>Agent navrhne, člověk schválí. Nic neodejde zákazníkovi ani do účetnictví bez vašeho kliknutí.</p></div>
 </div>
 </div></section>
 
