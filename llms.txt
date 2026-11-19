@@ -5,6 +5,7 @@
 ## Stránky
 
 - [Úvod a nabídka](https://adamku8.github.io/fundament22/): co to je, jak to funguje, nabídka Základy / Patra / Servis, pro koho to je a není
+- [Krátká verze s online analýzou](https://adamku8.github.io/fundament22/start/): shrnutí na jedné obrazovce a pětiotázkový formulář, který doporučí první tři agenty
 - [Demo: Zelená bedýnka](https://adamku8.github.io/fundament22/demo/): ukázka na fiktivním e-shopu, 8 přehledů s frontou návrhů ke schválení
 
 ## Přehledy v demu (fiktivní data)
