@@ -212,6 +212,24 @@ footer{background:#0B0F2E;color:#8E93BA;padding:28px 0;font-size:14px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;align-items:center}
 footer a{color:#C9CCE6}
 .micro{margin-top:14px;font-size:15px;color:var(--ink3)}
+.saves{max-width:540px;margin:28px auto 0;background:var(--dark);color:#fff;border-radius:20px;box-shadow:0 18px 50px rgba(21,24,58,.22);overflow:hidden;text-align:left}
+.saves .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.saves .track::-webkit-scrollbar{display:none}
+.saves .slide{flex:0 0 100%;scroll-snap-align:start;padding:22px 26px 6px}
+.saves .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#FF9A3D}
+.saves .nums{display:flex;align-items:baseline;gap:12px;margin-top:10px;white-space:nowrap}
+.saves .was{font-family:var(--disp);font-weight:800;font-size:26px;color:#8E93BA;text-decoration:line-through;text-decoration-thickness:2px}
+.saves .arr{color:#FF9A3D;font-size:24px;font-weight:800}
+.saves .now{font-family:var(--disp);font-weight:800;font-size:48px;letter-spacing:-.03em;line-height:1;color:#FF7A2F}
+.saves .per{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#A9ADCB}
+.saves .slide>p:last-child{margin-top:12px;font-size:16px;line-height:1.45;color:#D9DBEF}
+.saves .foot{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 16px 10px 26px;font-size:12.5px;color:#8E93BA}
+.saves .dots{display:flex}
+.saves .dots button{appearance:none;border:0;background:none;padding:0;width:28px;height:28px;display:grid;place-items:center;cursor:pointer}
+.saves .dots button::before{content:"";width:8px;height:8px;border-radius:8px;background:rgba(255,255,255,.3);transition:width .25s,background .25s}
+.saves .dots button[aria-current="true"]::before{width:20px;background:#FF7A2F}
+.saves .dots button:focus-visible{outline:2px solid #FF9A3D;outline-offset:-4px}
+@media(max-width:600px){.saves{margin-top:22px}.saves .slide{padding:18px 20px 4px}.saves .was{font-size:22px}.saves .now{font-size:42px}.saves .slide>p:last-child{font-size:15.5px}.saves .foot{padding-left:20px}}
 .ob ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:8px;font-size:16px;color:var(--ink2)}
 .ob li{display:flex;gap:10px}.ob li::before{content:"→";flex:none;color:var(--or);font-weight:800}
 @media(max-width:759px){.ob{gap:12px;margin-top:22px}.ob .card{padding:18px 20px}.ob ul{gap:6px;font-size:15.5px}}
@@ -243,7 +261,20 @@ footer a{color:#C9CCE6}
 <section class="hero"><div class="wrap">
 <h1>Přestaňte dělat práci,<br><span>kterou zvládne AI.</span></h1>
 <p class="lead">AI agenti práci připraví. <b>Vy ji jen zkontrolujete.</b></p>
-<a class="herostat" href="#obory" aria-label="Zpracování dokladů: z 30 hodin práce na 3 hodiny kontroly"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span><span class="what">zpracování dokladů<br>práce → jen kontrola</span></a>
+<div class="saves" id="saves" role="region" aria-roledescription="karusel" aria-label="Tři příklady úspory času">
+<div class="track">
+<article class="slide" aria-label="Příklad 1 ze 3"><p class="k">Přijaté faktury a doklady</p>
+<div class="nums"><span class="was">30 h</span><span class="arr">→</span><span class="now">3 h</span></div>
+<p>Agent je přečte, zařadí a připraví k zaúčtování. Vy je jen zkontrolujete.</p></article>
+<article class="slide" aria-label="Příklad 2 ze 3"><p class="k">Dotazy zákazníků e‑shopu</p>
+<div class="nums"><span class="was">15 h</span><span class="arr">→</span><span class="now">6 h</span><span class="per">týdně</span></div>
+<p>U každého dotazu čeká odpověď s údaji z objednávky. Stačí ji schválit.</p></article>
+<article class="slide" aria-label="Příklad 3 ze 3"><p class="k">Odpovědi na poptávky</p>
+<div class="nums"><span class="was">8 h</span><span class="arr">→</span><span class="now">3 h</span><span class="per">týdně</span></div>
+<p>Návrh odpovědi čeká připravený. Odpovíte týž den, ne za dva tři dny.</p></article>
+</div>
+<div class="foot"><span>Odhady, ne měření</span><div class="dots"><button type="button" aria-label="Příklad 1" aria-current="true"></button><button type="button" aria-label="Příklad 2" aria-current="false"></button><button type="button" aria-label="Příklad 3" aria-current="false"></button></div></div>
+</div>
 <div class="cta"><a class="btn big" href="#analyza">Chci konzultaci zdarma</a></div>
 <p class="micro">30 minut, zdarma. Začíná pěti otázkami na dvě minuty.</p>
 </div></section>
@@ -300,6 +331,22 @@ footer a{color:#C9CCE6}
 
 <footer><div class="wrap"><span>Fundament 22 · Základy firmy pro 22. století</span><span><a href="../">Podrobná verze webu</a> · <a href="../demo/">Ukázka</a> · <a href="mailto:petr@locoglobal.ai">petr@locoglobal.ai</a></span></div></footer>
 <script>
+/* Posuvník tří příkladů úspory: sám se posouvá, po doteku nebo kliknutí zůstane stát. */
+(function(){
+  const box=document.getElementById("saves"); if(!box) return;
+  const tr=box.querySelector(".track"), dots=[...box.querySelectorAll(".dots button")];
+  let i=0, timer=null, hover=false;
+  const go=(n,smooth)=>{ i=(n+dots.length)%dots.length; tr.scrollTo({left:i*tr.clientWidth,behavior:smooth?"smooth":"auto"}); };
+  const sync=()=>{ i=Math.round(tr.scrollLeft/tr.clientWidth); dots.forEach((d,k)=>d.setAttribute("aria-current",String(k===i))); };
+  const stop=()=>{ clearInterval(timer); timer=null; box.dataset.stopped="1"; };
+  tr.addEventListener("scroll",()=>requestAnimationFrame(sync),{passive:true});
+  dots.forEach((d,k)=>d.addEventListener("click",()=>{ stop(); go(k,true); }));
+  ["pointerdown","touchstart","keydown","focusin"].forEach(e=>box.addEventListener(e,stop,{passive:true}));
+  box.addEventListener("mouseenter",()=>hover=true); box.addEventListener("mouseleave",()=>hover=false);
+  addEventListener("resize",()=>go(i,false));
+  if(!matchMedia("(prefers-reduced-motion: reduce)").matches)
+    timer=setInterval(()=>{ if(!hover && !document.hidden) go(i+1,true); },4500);
+})();
 (function(){
 /* ============================================================
    NASTAVENÍ — značka, kontakt a cíl formuláře se mění jen tady
