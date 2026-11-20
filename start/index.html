@@ -45,7 +45,12 @@ p{margin:0}
 .top{position:sticky;top:0;z-index:20;background:rgba(247,245,240,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .top::before{content:"";display:block;height:3px;background:linear-gradient(90deg,#FF9A3D,#E8442A 45%,#C8327E 75%,#6D3BD6)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:11px;padding-bottom:11px}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--disp);font-weight:800;font-size:18px;letter-spacing:-.02em}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--disp);font-weight:800;font-size:17px;letter-spacing:.01em;white-space:nowrap}
+.logo .ai{color:var(--or)}
+.top .btn{white-space:nowrap}
+@media(max-width:420px){.logo{font-size:15px;gap:8px}.top .btn.sm{padding:9px 13px;font-size:14px}}
+@media(max-width:375px){.logo{font-size:14px;gap:7px}.logo svg{width:23px;height:23px}.top .btn.sm{padding:8px 11px;font-size:13.5px}}
+@media(max-width:340px){.logo{font-size:13px}.logo svg{display:none}}
 .btn{display:inline-block;font-family:inherit;font-weight:700;font-size:16px;text-decoration:none;border-radius:12px;padding:14px 22px;background:var(--or);color:#fff;box-shadow:0 10px 30px rgba(232,84,26,.28);transition:transform .2s,box-shadow .2s}
 .btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(232,84,26,.38);color:#fff}
 .btn.sm{padding:10px 16px;font-size:15px;box-shadow:none;background:var(--ink)}
@@ -253,7 +258,7 @@ footer a{color:#C9CCE6}
 </head>
 <body>
 <header class="top"><div class="wrap">
-<a class="logo" href="../" aria-label="Fundament 22"><svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#E8541A"/><path d="M9.5 18.5L18.5 9.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="9.5" cy="18.5" r="3.6" fill="#fff"/><circle cx="18.5" cy="9.5" r="3.6" fill="#15183A"/></svg>Fundament 22</a>
+<a class="logo" href="../" aria-label="FUNDAMENT22 AI"><svg viewBox="0 0 28 28" width="26" height="26" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#E8541A"/><path d="M9.5 18.5L18.5 9.5" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><circle cx="9.5" cy="18.5" r="3.6" fill="#fff"/><circle cx="18.5" cy="9.5" r="3.6" fill="#15183A"/></svg><span>FUNDAMENT22 <span class="ai">AI</span></span></a>
 <a class="btn sm" href="#analyza">Konzultace zdarma</a>
 </div></header>
 
